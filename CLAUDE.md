@@ -12,6 +12,13 @@ uv run black .
 General:
 
 1. Don't use comments to split up your files. The function/class names you use should be sufficiently descriptive to not require sections (e.g., # 1. Clean Data). If you find yourself wanting to do this, this is probably a sign you need split your file into multiple files. 
+2. Avoid catching exceptions like these where you just raise a very similar exception afterwards.
 
+```
+ try:
+    return json.loads(json_str)
+except json.JSONDecodeError as e:
+    raise ValueError(f"Invalid JSON in response: {e}")
+```
 ### Testing
 When you are writing unit tests, please do not use classes. If you see you have states you need to keep track with, favor pytest fixtures
