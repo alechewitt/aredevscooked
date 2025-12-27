@@ -416,7 +416,7 @@ def build_metrics_structure(
 
             high_end_job_companies[name] = {
                 "current": current_jobs,
-                "collection_date": job_posting_data[name].get("collection_date", ""),
+                "collection_date": date.today().isoformat(),  # Use today's date for clarity
                 "changes": changes,
             }
 
