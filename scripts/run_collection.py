@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Main orchestration script for data collection and processing."""
 
+import asyncio
 import json
 from datetime import date, datetime, timedelta, timezone
 from typing import Any
@@ -14,10 +15,40 @@ from aredevscooked.processors.jobs_processor import JobsProcessor
 from aredevscooked.utils.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
 
 
-def collect_all_stock_data(
+async def collect_single_stock_data(
+    collector: GeminiCollector,
+    company_name: str,
+    ticker: str,
+    one_year_ago: date,
+) -> tuple[str, dict[str, Any] | None]:
+    """Collect stock data for a single company (async wrapper).
+
+    Args:
+        collector: GeminiCollector instance
+        company_name: Company name
+        ticker: Stock ticker symbol
+        one_year_ago: Date from exactly 1 year ago
+
+    Returns:
+        Tuple of (company_name, data) or (company_name, None) on error
+    """
+    try:
+        print(f"  Collecting stock data for {company_name} ({ticker})...")
+        # Run blocking I/O in thread pool
+        data = await asyncio.to_thread(
+            collector.collect_stock_data, company_name, ticker, one_year_ago
+        )
+        print(f"    ✓ Current: ${data['current_price']:.2f}")
+        return company_name, data
+    except Exception as e:
+        print(f"    ✗ Error collecting {company_name}: {e}")
+        return company_name, None
+
+
+async def collect_all_stock_data(
     collector: GeminiCollector, one_year_ago: date
 ) -> dict[str, dict[str, Any]]:
-    """Collect stock price data for all IT consultancies.
+    """Collect stock price data for all IT consultancies concurrently.
 
     Args:
         collector: GeminiCollector instance
@@ -26,28 +57,47 @@ def collect_all_stock_data(
     Returns:
         Dictionary mapping company name to stock data
     """
-    stock_data = {}
+    tasks = [
+        collect_single_stock_data(
+            collector, company_info["name"], company_info["ticker"], one_year_ago
+        )
+        for company_info in IT_CONSULTANCIES
+    ]
 
-    for company_info in IT_CONSULTANCIES:
-        company_name = company_info["name"]
-        ticker = company_info["ticker"]
+    results = await asyncio.gather(*tasks)
 
-        try:
-            print(f"  Collecting stock data for {company_name} ({ticker})...")
-            data = collector.collect_stock_data(company_name, ticker, one_year_ago)
-            stock_data[company_name] = data
-            print(f"    ✓ Current: ${data['current_price']:.2f}")
-        except Exception as e:
-            print(f"    ✗ Error collecting {company_name}: {e}")
-            continue
-
+    # Filter out failed collections (None values)
+    stock_data = {name: data for name, data in results if data is not None}
     return stock_data
 
 
-def collect_all_headcount_data(
+async def collect_single_headcount_data(
+    collector: GeminiCollector, company_name: str
+) -> tuple[str, dict[str, Any] | None]:
+    """Collect headcount data for a single company (async wrapper).
+
+    Args:
+        collector: GeminiCollector instance
+        company_name: Company name
+
+    Returns:
+        Tuple of (company_name, data) or (company_name, None) on error
+    """
+    try:
+        print(f"  Collecting headcount for {company_name}...")
+        # Run blocking I/O in thread pool
+        data = await asyncio.to_thread(collector.collect_headcount, company_name)
+        print(f"    ✓ Headcount: {data['current_headcount']:,}")
+        return company_name, data
+    except Exception as e:
+        print(f"    ✗ Error collecting {company_name}: {e}")
+        return company_name, None
+
+
+async def collect_all_headcount_data(
     collector: GeminiCollector,
 ) -> dict[str, dict[str, Any]]:
-    """Collect headcount data for all companies (IT consultancies + Big Tech).
+    """Collect headcount data for all companies (IT consultancies + Big Tech) concurrently.
 
     Args:
         collector: GeminiCollector instance
@@ -55,30 +105,53 @@ def collect_all_headcount_data(
     Returns:
         Dictionary mapping company name to headcount data
     """
-    headcount_data = {}
-
     # Combine IT consultancies and big tech
     all_companies = [c["name"] for c in IT_CONSULTANCIES] + [
         c["name"] for c in BIG_TECH_COMPANIES
     ]
 
-    for company_name in all_companies:
-        try:
-            print(f"  Collecting headcount for {company_name}...")
-            data = collector.collect_headcount(company_name)
-            headcount_data[company_name] = data
-            print(f"    ✓ Headcount: {data['current_headcount']:,}")
-        except Exception as e:
-            print(f"    ✗ Error collecting {company_name}: {e}")
-            continue
+    tasks = [
+        collect_single_headcount_data(collector, company_name)
+        for company_name in all_companies
+    ]
 
+    results = await asyncio.gather(*tasks)
+
+    # Filter out failed collections (None values)
+    headcount_data = {name: data for name, data in results if data is not None}
     return headcount_data
 
 
-def collect_all_job_posting_data(
+async def collect_single_job_posting_data(
+    collector: GeminiCollector, company_name: str, greenhouse_board: str
+) -> tuple[str, dict[str, Any] | None]:
+    """Collect job posting data for a single company (async wrapper).
+
+    Args:
+        collector: GeminiCollector instance
+        company_name: Company name
+        greenhouse_board: Greenhouse board name
+
+    Returns:
+        Tuple of (company_name, data) or (company_name, None) on error
+    """
+    try:
+        print(f"  Collecting job postings for {company_name}...")
+        # Run blocking I/O in thread pool
+        data = await asyncio.to_thread(
+            collector.collect_job_postings, company_name, greenhouse_board
+        )
+        print(f"    ✓ Technical jobs: {data['total_technical_jobs']}")
+        return company_name, data
+    except Exception as e:
+        print(f"    ✗ Error collecting {company_name}: {e}")
+        return company_name, None
+
+
+async def collect_all_job_posting_data(
     collector: GeminiCollector,
 ) -> dict[str, dict[str, Any]]:
-    """Collect job posting data for all AI labs.
+    """Collect job posting data for all AI labs concurrently.
 
     Args:
         collector: GeminiCollector instance
@@ -86,21 +159,17 @@ def collect_all_job_posting_data(
     Returns:
         Dictionary mapping company name to job posting data
     """
-    job_posting_data = {}
+    tasks = [
+        collect_single_job_posting_data(
+            collector, lab_info["name"], lab_info["greenhouse_board"]
+        )
+        for lab_info in AI_LABS
+    ]
 
-    for lab_info in AI_LABS:
-        company_name = lab_info["name"]
-        greenhouse_board = lab_info["greenhouse_board"]
+    results = await asyncio.gather(*tasks)
 
-        try:
-            print(f"  Collecting job postings for {company_name}...")
-            data = collector.collect_job_postings(company_name, greenhouse_board)
-            job_posting_data[company_name] = data
-            print(f"    ✓ Technical jobs: {data['total_technical_jobs']}")
-        except Exception as e:
-            print(f"    ✗ Error collecting {company_name}: {e}")
-            continue
-
+    # Filter out failed collections (None values)
+    job_posting_data = {name: data for name, data in results if data is not None}
     return job_posting_data
 
 
@@ -196,8 +265,8 @@ def build_metrics_structure(
     }
 
 
-def main():
-    """Main entry point for data collection."""
+async def main_async():
+    """Main async entry point for data collection."""
     # Load environment variables
     load_dotenv()
 
@@ -216,17 +285,17 @@ def main():
     # Calculate dates
     one_year_ago = date.today() - timedelta(days=365)
 
-    # Collect all data
+    # Collect all data concurrently
     print("\n📊 Collecting stock price data...")
-    stock_data = collect_all_stock_data(collector, one_year_ago)
+    stock_data = await collect_all_stock_data(collector, one_year_ago)
     print(f"  Collected {len(stock_data)}/7 companies")
 
     print("\n👥 Collecting headcount data...")
-    headcount_data = collect_all_headcount_data(collector)
+    headcount_data = await collect_all_headcount_data(collector)
     print(f"  Collected {len(headcount_data)}/12 companies")
 
     print("\n🎯 Collecting job posting data...")
-    job_posting_data = collect_all_job_posting_data(collector)
+    job_posting_data = await collect_all_job_posting_data(collector)
     print(f"  Collected {len(job_posting_data)}/3 companies")
 
     print("\n📝 Generating AI summary...")
@@ -251,6 +320,11 @@ def main():
     print("=" * 60)
 
     return 0
+
+
+def main():
+    """Synchronous entry point that runs async main."""
+    return asyncio.run(main_async())
 
 
 if __name__ == "__main__":

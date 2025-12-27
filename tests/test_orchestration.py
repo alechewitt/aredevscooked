@@ -14,7 +14,8 @@ from scripts.run_collection import (
 # Stock Data Collection Tests
 
 
-def test_collect_all_stock_data_returns_dict(mocker):
+@pytest.mark.asyncio
+async def test_collect_all_stock_data_returns_dict(mocker):
     """Should collect stock data for all IT consultancies."""
     mock_collector = mocker.Mock()
     mock_collector.collect_stock_data.return_value = {
@@ -24,7 +25,7 @@ def test_collect_all_stock_data_returns_dict(mocker):
         "price_1_year_ago": 1320.00,
     }
 
-    result = collect_all_stock_data(mock_collector, date(2024, 12, 26))
+    result = await collect_all_stock_data(mock_collector, date(2024, 12, 26))
 
     assert isinstance(result, dict)
     assert len(result) == 7  # 7 IT consultancies
@@ -32,7 +33,8 @@ def test_collect_all_stock_data_returns_dict(mocker):
     assert mock_collector.collect_stock_data.call_count == 7
 
 
-def test_collect_all_stock_data_calls_collector_for_each_company(mocker):
+@pytest.mark.asyncio
+async def test_collect_all_stock_data_calls_collector_for_each_company(mocker):
     """Should call collector for each IT consultancy."""
     mock_collector = mocker.Mock()
     mock_collector.collect_stock_data.return_value = {
@@ -43,7 +45,7 @@ def test_collect_all_stock_data_calls_collector_for_each_company(mocker):
     }
 
     one_year_ago = date(2024, 12, 26)
-    collect_all_stock_data(mock_collector, one_year_ago)
+    await collect_all_stock_data(mock_collector, one_year_ago)
 
     # Verify called with correct company and ticker
     calls = mock_collector.collect_stock_data.call_args_list
@@ -54,7 +56,8 @@ def test_collect_all_stock_data_calls_collector_for_each_company(mocker):
     assert calls[0][0][2] == one_year_ago  # date
 
 
-def test_collect_all_stock_data_handles_errors(mocker, caplog):
+@pytest.mark.asyncio
+async def test_collect_all_stock_data_handles_errors(mocker, caplog):
     """Should handle errors gracefully and continue collecting."""
     mock_collector = mocker.Mock()
     # First call fails, rest succeed
@@ -72,7 +75,7 @@ def test_collect_all_stock_data_handles_errors(mocker, caplog):
         {"company": "Wipro", "current_price": 400.0, "price_1_year_ago": 420.0},
     ]
 
-    result = collect_all_stock_data(mock_collector, date(2024, 12, 26))
+    result = await collect_all_stock_data(mock_collector, date(2024, 12, 26))
 
     # Should have 6 successful results (1 failed)
     assert len(result) == 6
@@ -83,7 +86,8 @@ def test_collect_all_stock_data_handles_errors(mocker, caplog):
 # Headcount Data Collection Tests
 
 
-def test_collect_all_headcount_data_returns_dict(mocker):
+@pytest.mark.asyncio
+async def test_collect_all_headcount_data_returns_dict(mocker):
     """Should collect headcount for all companies (IT + Big Tech)."""
     mock_collector = mocker.Mock()
     mock_collector.collect_headcount.return_value = {
@@ -92,7 +96,7 @@ def test_collect_all_headcount_data_returns_dict(mocker):
         "data_date": "2025-09-30",
     }
 
-    result = collect_all_headcount_data(mock_collector)
+    result = await collect_all_headcount_data(mock_collector)
 
     assert isinstance(result, dict)
     assert len(result) == 12  # 7 IT consultancies + 5 big tech
@@ -101,7 +105,8 @@ def test_collect_all_headcount_data_returns_dict(mocker):
     assert mock_collector.collect_headcount.call_count == 12
 
 
-def test_collect_all_headcount_data_calls_collector_for_each_company(mocker):
+@pytest.mark.asyncio
+async def test_collect_all_headcount_data_calls_collector_for_each_company(mocker):
     """Should call collector for each company."""
     mock_collector = mocker.Mock()
     mock_collector.collect_headcount.return_value = {
@@ -109,7 +114,7 @@ def test_collect_all_headcount_data_calls_collector_for_each_company(mocker):
         "current_headcount": 228000,
     }
 
-    collect_all_headcount_data(mock_collector)
+    await collect_all_headcount_data(mock_collector)
 
     # Verify called with correct companies
     calls = mock_collector.collect_headcount.call_args_list
@@ -122,7 +127,8 @@ def test_collect_all_headcount_data_calls_collector_for_each_company(mocker):
 # Job Posting Data Collection Tests
 
 
-def test_collect_all_job_posting_data_returns_dict(mocker):
+@pytest.mark.asyncio
+async def test_collect_all_job_posting_data_returns_dict(mocker):
     """Should collect job postings for all AI labs."""
     mock_collector = mocker.Mock()
     mock_collector.collect_job_postings.return_value = {
@@ -130,7 +136,7 @@ def test_collect_all_job_posting_data_returns_dict(mocker):
         "total_technical_jobs": 45,
     }
 
-    result = collect_all_job_posting_data(mock_collector)
+    result = await collect_all_job_posting_data(mock_collector)
 
     assert isinstance(result, dict)
     assert len(result) == 3  # 3 AI labs
@@ -138,7 +144,8 @@ def test_collect_all_job_posting_data_returns_dict(mocker):
     assert mock_collector.collect_job_postings.call_count == 3
 
 
-def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker):
+@pytest.mark.asyncio
+async def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker):
     """Should call collector for each AI lab with board name."""
     mock_collector = mocker.Mock()
     mock_collector.collect_job_postings.return_value = {
@@ -146,7 +153,7 @@ def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker):
         "total_technical_jobs": 35,
     }
 
-    collect_all_job_posting_data(mock_collector)
+    await collect_all_job_posting_data(mock_collector)
 
     # Verify called with correct company and board
     calls = mock_collector.collect_job_postings.call_args_list

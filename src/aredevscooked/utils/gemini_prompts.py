@@ -44,9 +44,14 @@ def create_headcount_prompt(company_name: str) -> str:
     Returns:
         Formatted prompt string for Gemini API
     """
+    # Special handling for Amazon to get corporate-only headcount
+    additional_instruction = ""
+    if company_name == "Amazon":
+        additional_instruction = "\n\nIMPORTANT: For Amazon, report CORPORATE employee headcount only, excluding warehouse and fulfillment center workers. Look for breakdowns in SEC filings or investor presentations that separate corporate from operations employees."
+
     return f"""Search the web for the most recent total employee headcount of {company_name}.
 Look for official investor reports, earnings calls, or recent news articles. If layoffs have been announced,
-please infer how that impacts the latest resported headcounts. 
+please infer how that impacts the latest resported headcounts.{additional_instruction}
 
 Return ONLY a JSON object with this exact structure:
 {{
@@ -62,7 +67,7 @@ Confidence levels:
 - "medium": Data from reputable news sources
 - "low": Estimates or unverified sources
 
-Replace placeholder values with actual data. Headcount should be an integer between 1,000 and 1,000,000.
+Replace placeholder values with actual data. Headcount should be an integer between 1,000 and 2,000,000.
 Include source URLs for verification."""
 
 
