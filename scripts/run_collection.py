@@ -5,6 +5,7 @@ import json
 from datetime import date, datetime, timedelta, timezone
 from typing import Any
 from pathlib import Path
+from dotenv import load_dotenv
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.processors.stock_processor import StockProcessor
@@ -197,6 +198,9 @@ def build_metrics_structure(
 
 def main():
     """Main entry point for data collection."""
+    # Load environment variables
+    load_dotenv()
+
     print("🚀 Starting aredevscooked data collection...")
     print("=" * 60)
 
