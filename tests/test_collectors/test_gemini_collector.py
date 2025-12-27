@@ -44,8 +44,8 @@ def test_collect_stock_data_returns_dict(collector, mock_gemini_response, mocker
   "source_urls": ["https://finance.yahoo.com"]
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.collect_stock_data("HCLTech", "HCL.NS", date(2024, 12, 26))
 
@@ -67,8 +67,8 @@ def test_collect_stock_data_parses_json(collector, mock_gemini_response, mocker)
   "source_urls": ["https://finance.yahoo.com"]
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.collect_stock_data("HCLTech", "HCL.NS", date(2024, 12, 26))
 
@@ -93,8 +93,8 @@ def test_collect_stock_data_validates_positive_price(
   "source_urls": ["https://finance.yahoo.com"]
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     with pytest.raises(ValueError, match="positive"):
         collector.collect_stock_data("HCLTech", "HCL.NS", date(2024, 12, 26))
@@ -114,8 +114,8 @@ def test_collect_headcount_returns_dict(collector, mock_gemini_response, mocker)
   "source_urls": ["https://microsoft.com"]
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.collect_headcount("Microsoft")
 
@@ -135,8 +135,8 @@ def test_collect_headcount_parses_json(collector, mock_gemini_response, mocker):
   "source_urls": ["https://microsoft.com"]
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.collect_headcount("Microsoft")
 
@@ -156,8 +156,8 @@ def test_collect_headcount_validates_range(collector, mock_gemini_response, mock
   "source_urls": ["https://microsoft.com"]
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     with pytest.raises(ValueError, match="range"):
         collector.collect_headcount("Microsoft")
@@ -177,8 +177,8 @@ def test_collect_job_postings_returns_dict(collector, mock_gemini_response, mock
   "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.collect_job_postings("DeepMind", "deepmind")
 
@@ -198,8 +198,8 @@ def test_collect_job_postings_parses_json(collector, mock_gemini_response, mocke
   "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.collect_job_postings("DeepMind", "deepmind")
 
@@ -221,8 +221,8 @@ def test_collect_job_postings_validates_non_negative(
   "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
 }
 ```"""
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     with pytest.raises(ValueError, match="non-negative"):
         collector.collect_job_postings("DeepMind", "deepmind")
@@ -234,8 +234,8 @@ def test_collect_job_postings_validates_non_negative(
 def test_generate_summary_returns_string(collector, mock_gemini_response, mocker):
     """Summary generation should return a string."""
     mock_response_text = "The tech job market shows mixed signals."
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.generate_summary({"test": "data"})
 
@@ -246,8 +246,8 @@ def test_generate_summary_returns_string(collector, mock_gemini_response, mocker
 def test_generate_summary_returns_text(collector, mock_gemini_response, mocker):
     """Summary generation should return the text from response."""
     mock_response_text = "The tech job market shows mixed signals across all tiers."
-    mock_model = mocker.patch.object(collector, "model")
-    mock_model.generate_content.return_value = mock_gemini_response(mock_response_text)
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     result = collector.generate_summary({"test": "data"})
 

@@ -5,7 +5,8 @@ import re
 import os
 from datetime import date
 from typing import Any
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from aredevscooked.utils.gemini_prompts import (
     create_stock_price_prompt,
     create_headcount_prompt,
@@ -28,12 +29,10 @@ class GeminiCollector:
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY must be provided or set in environment")
 
-        genai.configure(api_key=self.api_key)
-        self.model = genai.GenerativeModel(
-            model_name=GEMINI_CONFIG["model"],
-            generation_config={
-                "temperature": GEMINI_CONFIG["temperature"],
-            },
+        self.client = genai.Client(api_key=self.api_key)
+        self.model_name = GEMINI_CONFIG["model"]
+        self.generation_config = types.GenerateContentConfig(
+            temperature=GEMINI_CONFIG["temperature"],
         )
 
     def collect_stock_data(
@@ -53,7 +52,9 @@ class GeminiCollector:
             ValueError: If prices are invalid or out of range
         """
         prompt = create_stock_price_prompt(company_name, ticker, one_year_ago)
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=self.model_name, contents=prompt, config=self.generation_config
+        )
         data = self._extract_json(response.text)
 
         # Validate prices
@@ -89,7 +90,9 @@ class GeminiCollector:
             ValueError: If headcount is out of plausible range
         """
         prompt = create_headcount_prompt(company_name)
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=self.model_name, contents=prompt, config=self.generation_config
+        )
         data = self._extract_json(response.text)
 
         # Validate headcount range
@@ -121,7 +124,9 @@ class GeminiCollector:
             ValueError: If job count is negative
         """
         prompt = create_job_postings_prompt(company_name, greenhouse_board)
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=self.model_name, contents=prompt, config=self.generation_config
+        )
         data = self._extract_json(response.text)
 
         # Validate job count
@@ -141,7 +146,9 @@ class GeminiCollector:
             One-paragraph summary text
         """
         prompt = create_summary_prompt(metrics_data)
-        response = self.model.generate_content(prompt)
+        response = self.client.models.generate_content(
+            model=self.model_name, contents=prompt, config=self.generation_config
+        )
         return response.text.strip()
 
     def _extract_json(self, text: str) -> dict[str, Any]:
