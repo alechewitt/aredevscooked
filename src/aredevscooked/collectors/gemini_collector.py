@@ -55,7 +55,8 @@ class GeminiCollector:
         response = self.client.models.generate_content(
             model=self.model_name, contents=prompt, config=self.generation_config
         )
-        data = self._extract_json(response.text)
+        text = self._get_response_text(response)
+        data = self._extract_json(text)
 
         # Validate prices
         current_price = data.get("current_price", 0)
@@ -93,7 +94,8 @@ class GeminiCollector:
         response = self.client.models.generate_content(
             model=self.model_name, contents=prompt, config=self.generation_config
         )
-        data = self._extract_json(response.text)
+        text = self._get_response_text(response)
+        data = self._extract_json(text)
 
         # Validate headcount range
         headcount = data.get("current_headcount", 0)
@@ -127,7 +129,8 @@ class GeminiCollector:
         response = self.client.models.generate_content(
             model=self.model_name, contents=prompt, config=self.generation_config
         )
-        data = self._extract_json(response.text)
+        text = self._get_response_text(response)
+        data = self._extract_json(text)
 
         # Validate job count
         job_count = data.get("total_technical_jobs", 0)
@@ -149,7 +152,35 @@ class GeminiCollector:
         response = self.client.models.generate_content(
             model=self.model_name, contents=prompt, config=self.generation_config
         )
-        return response.text.strip()
+        text = self._get_response_text(response)
+        return text.strip()
+
+    def _get_response_text(self, response) -> str:
+        """Extract text from Gemini API response.
+
+        Args:
+            response: Gemini API response object
+
+        Returns:
+            Text content from the response
+
+        Raises:
+            ValueError: If text cannot be extracted from response
+        """
+        # Try direct .text attribute (most common)
+        if hasattr(response, "text") and response.text is not None:
+            return response.text
+
+        # Try candidates structure
+        if hasattr(response, "candidates") and response.candidates:
+            candidate = response.candidates[0]
+            if hasattr(candidate, "content") and candidate.content:
+                if hasattr(candidate.content, "parts") and candidate.content.parts:
+                    part = candidate.content.parts[0]
+                    if hasattr(part, "text") and part.text is not None:
+                        return part.text
+
+        raise ValueError(f"Could not extract text from Gemini response: {response}")
 
     def _extract_json(self, text: str) -> dict[str, Any]:
         """Extract JSON from Gemini response text.
@@ -165,6 +196,9 @@ class GeminiCollector:
         Raises:
             ValueError: If JSON cannot be extracted or parsed
         """
+        if not text:
+            raise ValueError("Empty response text from Gemini")
+
         # Try to extract JSON from markdown code block
         json_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
         if json_match:
