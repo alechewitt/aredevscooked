@@ -569,6 +569,15 @@ async def main_async():
         json.dump(metrics, f, indent=2)
 
     print(f"\n✅ Metrics written to {output_file}")
+
+    # Also copy to website/ directory for GitHub Pages deployment
+    website_dir = Path("website")
+    website_metrics_file = website_dir / "metrics_latest.json"
+
+    with open(website_metrics_file, "w") as f:
+        json.dump(metrics, f, indent=2)
+
+    print(f"✅ Metrics copied to {website_metrics_file} (for GitHub Pages)")
     print("=" * 60)
 
     return 0

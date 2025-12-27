@@ -1,0 +1,401 @@
+{
+  "metadata": {
+    "last_updated": "2025-12-27T05:37:58.478302+00:00",
+    "collection_status": "success"
+  },
+  "low_end": {
+    "headcount": {
+      "companies": {
+        "HCLTech": {
+          "current": 218621,
+          "data_date": "2024-09-30",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "LTIMindtree": {
+          "current": 84438,
+          "data_date": "2024-09-30",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Cognizant": {
+          "current": 340100,
+          "data_date": "2024-09-30",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Infosys": {
+          "current": 317240,
+          "data_date": "2024-03-31",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "TCS": {
+          "current": 601546,
+          "data_date": "2024-03-31",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Tech Mahindra": {
+          "current": 145455,
+          "data_date": "2024-03-31",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Wipro": {
+          "current": 234054,
+          "data_date": "2024-03-31",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        }
+      },
+      "aggregate_badge": "neutral"
+    },
+    "stock_index": {
+      "current_value": 100.0,
+      "baseline_date": "2024-12-26",
+      "changes": {
+        "1_day": 0.0,
+        "30_day": 0.0,
+        "1_year": 0.0
+      },
+      "companies": {
+        "HCLTech": {
+          "ticker": "HCL.NS",
+          "current_price": 1634.0,
+          "weight": 0.14285714285714285
+        },
+        "LTIMindtree": {
+          "ticker": "LTIM.NS",
+          "current_price": 4815.0,
+          "weight": 0.14285714285714285
+        },
+        "Cognizant": {
+          "ticker": "CTSH",
+          "current_price": 77.48,
+          "weight": 0.14285714285714285
+        },
+        "Infosys": {
+          "ticker": "INFY",
+          "current_price": 22.38,
+          "weight": 0.14285714285714285
+        },
+        "TCS": {
+          "ticker": "TCS.NS",
+          "current_price": 3846.15,
+          "weight": 0.14285714285714285
+        },
+        "Tech Mahindra": {
+          "ticker": "TECHM.NS",
+          "current_price": 1664.0,
+          "weight": 0.14285714285714285
+        },
+        "Wipro": {
+          "ticker": "WIT",
+          "current_price": 5.38,
+          "weight": 0.14285714285714285
+        }
+      }
+    }
+  },
+  "medium_end": {
+    "headcount": {
+      "companies": {
+        "Microsoft": {
+          "current": 228000,
+          "data_date": "2024-06-30",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Meta": {
+          "current": 70799,
+          "data_date": "2024-06-30",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Apple": {
+          "current": 160400,
+          "data_date": "2024-04-04",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Amazon": {
+          "current": 350000,
+          "data_date": "2024-09-30",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        },
+        "NVIDIA": {
+          "current": 29600,
+          "data_date": "2024-01-28",
+          "changes": {
+            "1_day_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral"
+            }
+          }
+        }
+      },
+      "aggregate_badge": "neutral"
+    }
+  },
+  "high_end": {
+    "job_postings": {
+      "companies": {
+        "DeepMind": {
+          "current": 62,
+          "collection_date": "2024-05-23",
+          "changes": {}
+        },
+        "Anthropic": {
+          "current": 58,
+          "collection_date": "2024-05-23",
+          "changes": {}
+        },
+        "OpenAI": {
+          "current": 142,
+          "collection_date": "2024-05-22",
+          "changes": {}
+        }
+      },
+      "aggregate_badge": "neutral"
+    }
+  },
+  "ai_summary": "Market data collection in progress..."
+}

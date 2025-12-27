@@ -3,7 +3,7 @@
     'use strict';
 
     // Configuration
-    const METRICS_URL = '/data/processed/metrics_latest.json';
+    const METRICS_URL = 'metrics_latest.json';
 
     // Utility functions
     function formatNumber(num) {
