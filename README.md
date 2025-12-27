@@ -240,6 +240,8 @@ The static website (`website/` directory) can be served via GitHub Pages:
 4. Folder: `/website`
 5. Site will be live at `https://yourusername.github.io/aredevscooked/`
 
+**Important**: The collection script automatically copies `metrics_latest.json` to the `website/` directory for GitHub Pages deployment. This ensures the website can load data without needing to access the `data/` directory.
+
 ## TDD Workflow
 
 This project follows Test-Driven Development:
