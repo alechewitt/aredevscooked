@@ -12,6 +12,7 @@ from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.processors.stock_processor import StockProcessor
 from aredevscooked.processors.headcount_processor import HeadcountProcessor
 from aredevscooked.processors.jobs_processor import JobsProcessor
+from aredevscooked.generators.badge_generator import BadgeGenerator
 from aredevscooked.utils.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
 
 
@@ -173,6 +174,84 @@ async def collect_all_job_posting_data(
     return job_posting_data
 
 
+def load_baselines() -> dict[str, Any] | None:
+    """Load baseline data from baselines.json.
+
+    Returns:
+        Baseline data dict or None if file doesn't exist
+    """
+    baselines_file = Path("data/processed/baselines.json")
+    if not baselines_file.exists():
+        print("  ⚠️  No baselines.json found, skipping change calculations")
+        return None
+
+    with open(baselines_file, "r") as f:
+        return json.load(f)
+
+
+def calculate_headcount_changes(
+    current: int,
+    company_name: str,
+    baselines_data: dict[str, Any],
+    headcount_processor: HeadcountProcessor,
+) -> dict[str, dict[str, Any]]:
+    """Calculate headcount changes against all baselines.
+
+    Args:
+        current: Current headcount
+        company_name: Company name
+        baselines_data: Baseline data structure
+        headcount_processor: HeadcountProcessor instance
+
+    Returns:
+        Dictionary of changes for each baseline period
+    """
+    changes = {}
+
+    for baseline_name in ["1_day_ago", "30_days_ago", "1_year_ago", "q1_2023"]:
+        baseline = baselines_data["baselines"].get(baseline_name, {})
+        headcounts = baseline.get("headcounts", {})
+
+        if company_name in headcounts:
+            baseline_value = headcounts[company_name]["headcount"]
+            pct_change = headcount_processor.calculate_percentage_change(
+                current, baseline_value
+            )
+            abs_change = headcount_processor.calculate_absolute_change(
+                current, baseline_value
+            )
+            badge = headcount_processor.classify_change(pct_change)
+
+            changes[baseline_name] = {
+                "value": abs_change,
+                "pct": round(pct_change, 2),
+                "badge": badge,
+            }
+
+    return changes
+
+
+def load_history_snapshot(days_ago: int) -> dict[str, Any] | None:
+    """Load a snapshot from metrics_history.json.
+
+    Args:
+        days_ago: Number of days ago (1, 30, etc.)
+
+    Returns:
+        Snapshot data or None if not found
+    """
+    history_file = Path("data/processed/metrics_history.json")
+    if not history_file.exists():
+        return None
+
+    target_date = (date.today() - timedelta(days=days_ago)).isoformat()
+
+    with open(history_file, "r") as f:
+        history = json.load(f)
+
+    return history.get("snapshots", {}).get(target_date)
+
+
 def build_metrics_structure(
     stock_data: dict[str, dict[str, Any]],
     headcount_data: dict[str, dict[str, Any]],
@@ -194,6 +273,11 @@ def build_metrics_structure(
     stock_processor = StockProcessor()
     headcount_processor = HeadcountProcessor()
     jobs_processor = JobsProcessor()
+    badge_generator = BadgeGenerator()
+
+    # Load baselines for change calculations
+    baselines_data = load_baselines()
+    has_baselines = baselines_data is not None
 
     # Build metadata
     metadata = {
@@ -206,14 +290,34 @@ def build_metrics_structure(
 
     # Populate headcount data for IT consultancies
     low_end_headcount_companies = {}
+    low_end_badges = []
+
     for name in low_end_companies:
         if name in headcount_data:
+            current_headcount = headcount_data[name]["current_headcount"]
+
+            # Calculate changes if we have baselines
+            if has_baselines:
+                changes = calculate_headcount_changes(
+                    current_headcount, name, baselines_data, headcount_processor
+                )
+                # Collect badges for aggregate calculation
+                for change_data in changes.values():
+                    low_end_badges.append(change_data["badge"])
+            else:
+                changes = {}
+
             low_end_headcount_companies[name] = {
-                "current": headcount_data[name]["current_headcount"],
+                "current": current_headcount,
                 "data_date": headcount_data[name].get("data_date", ""),
-                # Historical changes will be populated when we have baseline data
-                "changes": {},
+                "changes": changes,
             }
+
+    # Calculate aggregate badge (worst wins)
+    if low_end_badges:
+        low_end_aggregate_badge = badge_generator.get_aggregate_badge(low_end_badges)
+    else:
+        low_end_aggregate_badge = "neutral"
 
     # Populate stock index data
     stock_index_companies = {}
@@ -237,7 +341,7 @@ def build_metrics_structure(
     low_end = {
         "headcount": {
             "companies": low_end_headcount_companies,
-            "aggregate_badge": "neutral",  # Placeholder until we have historical data
+            "aggregate_badge": low_end_aggregate_badge,
         },
         "stock_index": stock_index_structure,
     }
@@ -247,19 +351,41 @@ def build_metrics_structure(
 
     # Populate headcount data for Big Tech
     medium_end_headcount_companies = {}
+    medium_end_badges = []
+
     for name in medium_end_companies:
         if name in headcount_data:
+            current_headcount = headcount_data[name]["current_headcount"]
+
+            # Calculate changes if we have baselines
+            if has_baselines:
+                changes = calculate_headcount_changes(
+                    current_headcount, name, baselines_data, headcount_processor
+                )
+                # Collect badges for aggregate calculation
+                for change_data in changes.values():
+                    medium_end_badges.append(change_data["badge"])
+            else:
+                changes = {}
+
             medium_end_headcount_companies[name] = {
-                "current": headcount_data[name]["current_headcount"],
+                "current": current_headcount,
                 "data_date": headcount_data[name].get("data_date", ""),
-                # Historical changes will be populated when we have baseline data
-                "changes": {},
+                "changes": changes,
             }
+
+    # Calculate aggregate badge
+    if medium_end_badges:
+        medium_end_aggregate_badge = badge_generator.get_aggregate_badge(
+            medium_end_badges
+        )
+    else:
+        medium_end_aggregate_badge = "neutral"
 
     medium_end = {
         "headcount": {
             "companies": medium_end_headcount_companies,
-            "aggregate_badge": "neutral",  # Placeholder until we have historical data
+            "aggregate_badge": medium_end_aggregate_badge,
         }
     }
 
@@ -267,20 +393,43 @@ def build_metrics_structure(
     high_end_companies = [c["name"] for c in AI_LABS]
 
     # Populate job posting data for AI labs
+    # Note: We use history snapshots for job postings since Greenhouse doesn't provide historical data
     high_end_job_companies = {}
+    high_end_badges = []
+
     for name in high_end_companies:
         if name in job_posting_data:
+            current_jobs = job_posting_data[name]["total_technical_jobs"]
+            changes = {}
+
+            # Try to get historical snapshots from metrics_history.json
+            for days_ago, key in [(1, "1_day_ago"), (30, "30_days_ago")]:
+                snapshot = load_history_snapshot(days_ago)
+                if snapshot and name in snapshot.get("job_postings", {}):
+                    historical_jobs = snapshot["job_postings"][name][
+                        "total_technical_jobs"
+                    ]
+                    job_change = current_jobs - historical_jobs
+                    badge = jobs_processor.classify_change(job_change)
+                    changes[key] = {"value": job_change, "badge": badge}
+                    high_end_badges.append(badge)
+
             high_end_job_companies[name] = {
-                "current": job_posting_data[name]["total_technical_jobs"],
+                "current": current_jobs,
                 "collection_date": job_posting_data[name].get("collection_date", ""),
-                # Historical changes will be populated when we have baseline data
-                "changes": {},
+                "changes": changes,
             }
+
+    # Calculate aggregate badge
+    if high_end_badges:
+        high_end_aggregate_badge = badge_generator.get_aggregate_badge(high_end_badges)
+    else:
+        high_end_aggregate_badge = "neutral"
 
     high_end = {
         "job_postings": {
             "companies": high_end_job_companies,
-            "aggregate_badge": "neutral",  # Placeholder until we have historical data
+            "aggregate_badge": high_end_aggregate_badge,
         }
     }
 

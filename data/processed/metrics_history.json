@@ -2,12 +2,12 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-27T05:22:20.855740+00:00"
+    "last_updated": "2025-12-27T05:25:33.006112+00:00"
   },
   "snapshots": {
     "2025-12-26": {
       "date": "2025-12-26",
-      "timestamp": "2025-12-27T05:22:20.855633+00:00",
+      "timestamp": "2025-12-27T05:25:33.006055+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1634.0,
