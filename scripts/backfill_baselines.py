@@ -68,8 +68,10 @@ async def collect_historical_headcount(
     """
     try:
         print(f"  Collecting {company_name} headcount for {target_date}...")
-        # Note: Gemini will search for headcount as of the target date
-        data = await asyncio.to_thread(collector.collect_headcount, company_name)
+        # Pass target_date to Gemini so it searches for historical data
+        data = await asyncio.to_thread(
+            collector.collect_headcount, company_name, target_date.isoformat()
+        )
         return {
             "company": company_name,
             "headcount": data.get("current_headcount"),
@@ -177,7 +179,6 @@ async def main_async():
         "q1_2023": date(2023, 3, 31),  # Q1 2023 baseline
         "1_year_ago": today - timedelta(days=365),  # Annual comparison
         "30_days_ago": today - timedelta(days=30),  # Monthly trend
-        "1_day_ago": today - timedelta(days=1),  # Daily change
     }
 
     # Collect all baselines

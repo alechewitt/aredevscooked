@@ -80,11 +80,12 @@ class GeminiCollector:
 
         return data
 
-    def collect_headcount(self, company_name: str) -> dict[str, Any]:
+    def collect_headcount(self, company_name: str, target_date: str | None = None) -> dict[str, Any]:
         """Collect employee headcount data for a company.
 
         Args:
             company_name: Full company name
+            target_date: Optional target date in YYYY-MM-DD format for historical data
 
         Returns:
             Dictionary with headcount data
@@ -92,7 +93,7 @@ class GeminiCollector:
         Raises:
             ValueError: If headcount is out of plausible range
         """
-        prompt = create_headcount_prompt(company_name)
+        prompt = create_headcount_prompt(company_name, target_date)
         response = self.client.models.generate_content(
             model=self.model_name, contents=prompt, config=self.generation_config
         )

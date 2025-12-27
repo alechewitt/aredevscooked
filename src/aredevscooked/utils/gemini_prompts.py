@@ -35,11 +35,12 @@ Replace the placeholder values with actual data. Ensure prices are positive numb
 Include source URLs for verification."""
 
 
-def create_headcount_prompt(company_name: str) -> str:
+def create_headcount_prompt(company_name: str, target_date: str | None = None) -> str:
     """Create prompt for collecting employee headcount data.
 
     Args:
         company_name: Full company name (e.g., "Microsoft")
+        target_date: Optional target date in YYYY-MM-DD format for historical data
 
     Returns:
         Formatted prompt string for Gemini API
@@ -49,9 +50,16 @@ def create_headcount_prompt(company_name: str) -> str:
     if company_name == "Amazon":
         additional_instruction = "\n\nIMPORTANT: For Amazon, report CORPORATE employee headcount only, excluding warehouse and fulfillment center workers. Look for breakdowns in SEC filings or investor presentations that separate corporate from operations employees."
 
-    return f"""Search the web for the most recent total employee headcount of {company_name}.
+    # Add date-specific instruction if target_date provided
+    date_instruction = ""
+    if target_date:
+        date_instruction = f"\n\nIMPORTANT: Find the employee headcount AS OF {target_date} or the closest available date. Look for quarterly reports, SEC filings, or earnings calls from that time period."
+    else:
+        date_instruction = "\n\nFind the most recent total employee headcount."
+
+    return f"""Search the web for the total employee headcount of {company_name}.{date_instruction}
 Look for official investor reports, earnings calls, or recent news articles. If layoffs have been announced,
-please infer how that impacts the latest resported headcounts.{additional_instruction}
+please infer how that impacts the headcount numbers.{additional_instruction}
 
 Return ONLY a JSON object with this exact structure:
 {{

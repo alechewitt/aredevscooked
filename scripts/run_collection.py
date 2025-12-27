@@ -208,7 +208,7 @@ def calculate_headcount_changes(
     """
     changes = {}
 
-    for baseline_name in ["1_day_ago", "30_days_ago", "1_year_ago", "q1_2023"]:
+    for baseline_name in ["30_days_ago", "1_year_ago", "q1_2023"]:
         baseline = baselines_data["baselines"].get(baseline_name, {})
         headcounts = baseline.get("headcounts", {})
 
@@ -403,7 +403,7 @@ def build_metrics_structure(
             changes = {}
 
             # Try to get historical snapshots from metrics_history.json
-            for days_ago, key in [(1, "1_day_ago"), (30, "30_days_ago")]:
+            for days_ago, key in [(30, "30_days_ago")]:
                 snapshot = load_history_snapshot(days_ago)
                 if snapshot and name in snapshot.get("job_postings", {}):
                     historical_jobs = snapshot["job_postings"][name][
