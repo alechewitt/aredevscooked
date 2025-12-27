@@ -203,56 +203,84 @@ def build_metrics_structure(
 
     # Build low-end tier (IT consultancies)
     low_end_companies = [c["name"] for c in IT_CONSULTANCIES]
-    low_end_headcount_data = {
-        name: headcount_data[name]
-        for name in low_end_companies
-        if name in headcount_data
-    }
 
-    # Calculate stock index (placeholder - will need baseline data)
-    # For now, just structure the data
+    # Populate headcount data for IT consultancies
+    low_end_headcount_companies = {}
+    for name in low_end_companies:
+        if name in headcount_data:
+            low_end_headcount_companies[name] = {
+                "current": headcount_data[name]["current_headcount"],
+                "data_date": headcount_data[name].get("data_date", ""),
+                # Historical changes will be populated when we have baseline data
+                "changes": {},
+            }
+
+    # Populate stock index data
+    stock_index_companies = {}
+    for company_info in IT_CONSULTANCIES:
+        name = company_info["name"]
+        ticker = company_info["ticker"]
+        if name in stock_data:
+            stock_index_companies[name] = {
+                "ticker": ticker,
+                "current_price": stock_data[name]["current_price"],
+                "weight": 1.0 / len(IT_CONSULTANCIES),  # Equal weights
+            }
+
     stock_index_structure = {
-        "current_value": 100.0,  # Placeholder
+        "current_value": 100.0,  # Placeholder - will calculate when we have baselines
         "baseline_date": (date.today() - timedelta(days=365)).isoformat(),
         "changes": {"1_day": 0.0, "30_day": 0.0, "1_year": 0.0},
-        "companies": {},
+        "companies": stock_index_companies,
     }
 
     low_end = {
         "headcount": {
-            "companies": {},
-            "aggregate_badge": "neutral",  # Placeholder
+            "companies": low_end_headcount_companies,
+            "aggregate_badge": "neutral",  # Placeholder until we have historical data
         },
         "stock_index": stock_index_structure,
     }
 
     # Build medium-end tier (Big Tech)
     medium_end_companies = [c["name"] for c in BIG_TECH_COMPANIES]
-    medium_end_headcount_data = {
-        name: headcount_data[name]
-        for name in medium_end_companies
-        if name in headcount_data
-    }
+
+    # Populate headcount data for Big Tech
+    medium_end_headcount_companies = {}
+    for name in medium_end_companies:
+        if name in headcount_data:
+            medium_end_headcount_companies[name] = {
+                "current": headcount_data[name]["current_headcount"],
+                "data_date": headcount_data[name].get("data_date", ""),
+                # Historical changes will be populated when we have baseline data
+                "changes": {},
+            }
 
     medium_end = {
         "headcount": {
-            "companies": {},
-            "aggregate_badge": "neutral",  # Placeholder
+            "companies": medium_end_headcount_companies,
+            "aggregate_badge": "neutral",  # Placeholder until we have historical data
         }
     }
 
     # Build high-end tier (AI labs)
     high_end_companies = [c["name"] for c in AI_LABS]
-    high_end_job_data = {
-        name: job_posting_data[name]
-        for name in high_end_companies
-        if name in job_posting_data
-    }
+
+    # Populate job posting data for AI labs
+    high_end_job_companies = {}
+    for name in high_end_companies:
+        if name in job_posting_data:
+            high_end_job_companies[name] = {
+                "current": job_posting_data[name]["total_technical_jobs"],
+                "collection_date": job_posting_data[name].get("collection_date", ""),
+                # Historical changes will be populated when we have baseline data
+                "changes": {},
+            }
 
     high_end = {
         "job_postings": {
-            "companies": {},
-            "aggregate_badge": "neutral",  # Placeholder
+            "companies": high_end_job_companies,
+            "aggregate_badge": "neutral",  # Placeholder until we have historical data
         }
     }
 
