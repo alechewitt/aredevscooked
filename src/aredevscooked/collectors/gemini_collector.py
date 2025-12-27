@@ -33,6 +33,8 @@ class GeminiCollector:
         self.model_name = GEMINI_CONFIG["model"]
         self.generation_config = types.GenerateContentConfig(
             temperature=GEMINI_CONFIG["temperature"],
+            # Note: No response_mime_type - use default for free-form text
+            # We'll parse JSON from the response ourselves
         )
 
     def collect_stock_data(

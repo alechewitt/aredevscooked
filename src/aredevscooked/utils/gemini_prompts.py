@@ -45,7 +45,8 @@ def create_headcount_prompt(company_name: str) -> str:
         Formatted prompt string for Gemini API
     """
     return f"""Search the web for the most recent total employee headcount of {company_name}.
-Look for official investor reports, earnings calls, or recent news articles.
+Look for official investor reports, earnings calls, or recent news articles. If layoffs have been announced,
+please infer how that impacts the latest resported headcounts. 
 
 Return ONLY a JSON object with this exact structure:
 {{
