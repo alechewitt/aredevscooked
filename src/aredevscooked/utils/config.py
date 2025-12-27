@@ -96,7 +96,7 @@ VALIDATION = {
 
 # Gemini API Configuration
 GEMINI_CONFIG = {
-    "model": "gemini-2.0-flash-exp",  # Fast model with grounding
+    "model": "gemini-3-flash-preview",  # Fast model with grounding
     "max_retries": 3,
     "retry_delay_seconds": [1, 2, 4],  # Exponential backoff
     "temperature": 0.0,  # Deterministic for structured output
