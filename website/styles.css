@@ -1,0 +1,400 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Badge Colors */
+    --badge-strong: #10b981;
+    --badge-neutral: #6b7280;
+    --badge-reasonably-weak: #f59e0b;
+    --badge-weak: #ef4444;
+    --badge-collapsing: #7f1d1d;
+
+    /* Theme Colors */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #475569;
+    --accent: #3b82f6;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+header {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Summary Section */
+.summary-section {
+    margin-bottom: 3rem;
+}
+
+.summary-section h2 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.summary-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.summary-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* Tiers Grid */
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Tier Cards */
+.tier-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tier-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tier-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tier-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.tier-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Metric Sections */
+.metric-section {
+    margin-bottom: 2rem;
+}
+
+.metric-section:last-child {
+    margin-bottom: 0;
+}
+
+.metric-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Aggregate Badge */
+.aggregate-badge {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg-card);
+    border-radius: 8px;
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-strong,
+.badge.strong {
+    background: var(--badge-strong);
+    color: white;
+}
+
+.badge-neutral,
+.badge.neutral {
+    background: var(--badge-neutral);
+    color: white;
+}
+
+.badge-reasonably-weak,
+.badge.reasonably_weak {
+    background: var(--badge-reasonably-weak);
+    color: white;
+}
+
+.badge-weak,
+.badge.weak {
+    background: var(--badge-weak);
+    color: white;
+}
+
+.badge-collapsing,
+.badge.collapsing {
+    background: var(--badge-collapsing);
+    color: white;
+}
+
+/* Companies List */
+.companies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.company-item {
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--border-color);
+}
+
+.company-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.company-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.company-changes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.change-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.change-label {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.change-value {
+    font-weight: 600;
+}
+
+.change-value.positive {
+    color: var(--badge-strong);
+}
+
+.change-value.negative {
+    color: var(--badge-weak);
+}
+
+.change-value.neutral {
+    color: var(--text-secondary);
+}
+
+/* Stock Index */
+.stock-index {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.index-value {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.index-value .value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.index-value .label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.index-changes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.index-change {
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+}
+
+.index-change .period {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.index-change .value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Legend */
+.legend-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+.legend-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.legend-item span:last-child {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+footer p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .tiers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .company-changes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .index-changes {
+        grid-template-columns: 1fr;
+    }
+
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.error {
+    background: var(--badge-weak);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}

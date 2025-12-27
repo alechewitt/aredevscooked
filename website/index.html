@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are Devs Cooked? | IT Job Market Health Tracker</title>
+    <meta name="description" content="Real-time tracking of IT job market health across consultancies, big tech, and AI labs">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🔥 Are Devs Cooked?</h1>
+            <p class="tagline">Real-time IT Job Market Health Tracker</p>
+            <p class="last-updated" id="lastUpdated">Loading...</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- AI Summary Section -->
+        <section class="summary-section">
+            <h2>Market Summary</h2>
+            <div class="summary-card">
+                <p id="aiSummary" class="summary-text">Loading market analysis...</p>
+            </div>
+        </section>
+
+        <!-- Three Tiers Dashboard -->
+        <div class="tiers-grid">
+            <!-- Low-End: IT Consultancies -->
+            <section class="tier-card low-end">
+                <div class="tier-header">
+                    <h2>🔧 Low-End</h2>
+                    <p class="tier-subtitle">IT Consultancies</p>
+                </div>
+
+                <div class="metric-section">
+                    <h3>Headcount Trends</h3>
+                    <div class="aggregate-badge" id="lowEndHeadcountBadge">
+                        <span class="badge">neutral</span>
+                    </div>
+                    <div class="companies-list" id="lowEndHeadcount">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="metric-section">
+                    <h3>Stock Index</h3>
+                    <div class="stock-index" id="lowEndStockIndex">
+                        <div class="index-value">
+                            <span class="value">100.0</span>
+                            <span class="label">Index Value</span>
+                        </div>
+                        <div class="index-changes" id="stockIndexChanges">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medium-End: Big Tech -->
+            <section class="tier-card medium-end">
+                <div class="tier-header">
+                    <h2>💼 Medium-End</h2>
+                    <p class="tier-subtitle">Big Tech</p>
+                </div>
+
+                <div class="metric-section">
+                    <h3>Headcount Trends</h3>
+                    <div class="aggregate-badge" id="mediumEndHeadcountBadge">
+                        <span class="badge">neutral</span>
+                    </div>
+                    <div class="companies-list" id="mediumEndHeadcount">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- High-End: AI Labs -->
+            <section class="tier-card high-end">
+                <div class="tier-header">
+                    <h2>🚀 High-End</h2>
+                    <p class="tier-subtitle">AI Research Labs</p>
+                </div>
+
+                <div class="metric-section">
+                    <h3>Job Postings</h3>
+                    <div class="aggregate-badge" id="highEndJobsBadge">
+                        <span class="badge">neutral</span>
+                    </div>
+                    <div class="companies-list" id="highEndJobs">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Legend -->
+        <section class="legend-section">
+            <h3>Badge Legend</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <span class="badge badge-strong">Strong</span>
+                    <span>≥ +5% growth (headcount) or ≥ +10 jobs</span>
+                </div>
+                <div class="legend-item">
+                    <span class="badge badge-neutral">Neutral</span>
+                    <span>Stable (-5% to +5% or -10 to +10)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="badge badge-reasonably-weak">Reasonably Weak</span>
+                    <span>-5% to -10% decline or -10 to -20 jobs</span>
+                </div>
+                <div class="legend-item">
+                    <span class="badge badge-weak">Weak</span>
+                    <span>-10% to -20% decline or -20 to -40 jobs</span>
+                </div>
+                <div class="legend-item">
+                    <span class="badge badge-collapsing">Collapsing</span>
+                    <span>≤ -20% decline or ≤ -40 jobs</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Data collected via Gemini API with web search grounding</p>
+            <p>Updated daily at 08:05 UTC | <a href="https://github.com/yourusername/aredevscooked" target="_blank">View on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
