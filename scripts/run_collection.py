@@ -293,6 +293,77 @@ def build_metrics_structure(
     }
 
 
+def save_daily_snapshot(
+    stock_data: dict[str, dict[str, Any]],
+    headcount_data: dict[str, dict[str, Any]],
+    job_posting_data: dict[str, dict[str, Any]],
+) -> None:
+    """Save today's raw data as a snapshot in metrics_history.json.
+
+    This creates a historical record for future change calculations.
+
+    Args:
+        stock_data: Stock price data for IT consultancies
+        headcount_data: Headcount data for all companies
+        job_posting_data: Job posting data for AI labs
+    """
+    history_file = Path("data/processed/metrics_history.json")
+    today = date.today().isoformat()
+
+    # Load existing history or create new
+    if history_file.exists():
+        with open(history_file, "r") as f:
+            history = json.load(f)
+    else:
+        history = {
+            "metadata": {
+                "description": "Daily snapshots of market data",
+                "first_snapshot": today,
+            },
+            "snapshots": {},
+        }
+
+    # Create today's snapshot
+    snapshot = {
+        "date": today,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "stock_prices": {},
+        "headcounts": {},
+        "job_postings": {},
+    }
+
+    # Save stock prices
+    for company_name, data in stock_data.items():
+        snapshot["stock_prices"][company_name] = {
+            "price": data["current_price"],
+            "ticker": data["ticker"],
+        }
+
+    # Save headcounts
+    for company_name, data in headcount_data.items():
+        snapshot["headcounts"][company_name] = {
+            "headcount": data["current_headcount"],
+            "data_date": data.get("data_date", ""),
+        }
+
+    # Save job postings
+    for company_name, data in job_posting_data.items():
+        snapshot["job_postings"][company_name] = {
+            "total_technical_jobs": data["total_technical_jobs"],
+            "collection_date": data.get("collection_date", ""),
+        }
+
+    # Add to history
+    history["snapshots"][today] = snapshot
+    history["metadata"]["last_updated"] = datetime.now(timezone.utc).isoformat()
+
+    # Write back
+    with open(history_file, "w") as f:
+        json.dump(history, f, indent=2)
+
+    print(f"  💾 Daily snapshot saved to {history_file}")
+
+
 async def main_async():
     """Main async entry point for data collection."""
     # Load environment variables
@@ -329,6 +400,10 @@ async def main_async():
     print("\n📝 Generating AI summary...")
     # For now, use placeholder summary (will implement after we have data)
     ai_summary = "Market data collection in progress..."
+
+    # Save daily snapshot to history
+    print("\n💾 Saving daily snapshot...")
+    save_daily_snapshot(stock_data, headcount_data, job_posting_data)
 
     # Build metrics structure
     print("\n🏗️  Building metrics structure...")
