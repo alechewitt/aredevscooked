@@ -32,8 +32,16 @@ class GeminiCollector:
 
         self.client = genai.Client(api_key=self.api_key)
         self.model_name = GEMINI_CONFIG["model"]
+
+        # Configure grounding with Google Search if enabled
+        tools = None
+        if GEMINI_CONFIG.get("enable_grounding", True):
+            tools = [types.Tool(google_search=types.GoogleSearch())]
+
+        # Enable Google Search grounding for web-based queries
         self.generation_config = types.GenerateContentConfig(
             temperature=GEMINI_CONFIG["temperature"],
+            tools=tools,
             # Note: No response_mime_type - use default for free-form text
             # We'll parse JSON from the response ourselves
         )
@@ -92,8 +100,11 @@ class GeminiCollector:
             ValueError: If prices are invalid or out of range
         """
         prompt = create_stock_price_prompt(company_name, ticker, one_year_ago)
+
         response = self.client.models.generate_content(
-            model=self.model_name, contents=prompt, config=self.generation_config
+            model=self.model_name,
+            contents=prompt,
+            config=self.generation_config
         )
         text = self._get_response_text(response)
         self._log_response("stock", company_name, prompt, text, response)
@@ -133,8 +144,11 @@ class GeminiCollector:
             ValueError: If headcount is out of plausible range
         """
         prompt = create_headcount_prompt(company_name, target_date)
+
         response = self.client.models.generate_content(
-            model=self.model_name, contents=prompt, config=self.generation_config
+            model=self.model_name,
+            contents=prompt,
+            config=self.generation_config
         )
         text = self._get_response_text(response)
         date_suffix = f"_{target_date}" if target_date else ""
@@ -170,8 +184,11 @@ class GeminiCollector:
             ValueError: If job count is negative
         """
         prompt = create_job_postings_prompt(company_name, greenhouse_board)
+
         response = self.client.models.generate_content(
-            model=self.model_name, contents=prompt, config=self.generation_config
+            model=self.model_name,
+            contents=prompt,
+            config=self.generation_config
         )
         text = self._get_response_text(response)
         self._log_response("jobs", company_name, prompt, text, response)
@@ -194,8 +211,12 @@ class GeminiCollector:
             One-paragraph summary text
         """
         prompt = create_summary_prompt(metrics_data)
+
+        # Note: Summary generation doesn't need grounding - it's analyzing provided data
         response = self.client.models.generate_content(
-            model=self.model_name, contents=prompt, config=self.generation_config
+            model=self.model_name,
+            contents=prompt,
+            config=self.generation_config
         )
         text = self._get_response_text(response)
         self._log_response("summary", "market_summary", prompt, text, response)
