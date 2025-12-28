@@ -3,7 +3,8 @@
 import json
 import re
 import os
-from datetime import date
+from datetime import date, datetime, timezone
+from pathlib import Path
 from typing import Any
 from google import genai
 from google.genai import types
@@ -37,6 +38,43 @@ class GeminiCollector:
             # We'll parse JSON from the response ourselves
         )
 
+        # Setup logging directory
+        self.log_dir = Path("logs/gemini_responses")
+        self.log_dir.mkdir(parents=True, exist_ok=True)
+
+    def _log_response(self, query_type: str, company_name: str, prompt: str, response_text: str, response_obj: Any):
+        """Log Gemini API response to file for debugging.
+
+        Args:
+            query_type: Type of query (stock, headcount, jobs, summary)
+            company_name: Company name or identifier
+            prompt: The prompt sent to Gemini
+            response_text: The text response from Gemini
+            response_obj: The full response object from Gemini
+        """
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        safe_name = company_name.replace(" ", "_").replace("/", "_")
+        log_file = self.log_dir / f"{timestamp}_{query_type}_{safe_name}.log"
+
+        with open(log_file, "w") as f:
+            f.write(f"=== Gemini API Response Log ===\n")
+            f.write(f"Timestamp: {datetime.now(timezone.utc).isoformat()}\n")
+            f.write(f"Query Type: {query_type}\n")
+            f.write(f"Company: {company_name}\n")
+            f.write(f"Model: {self.model_name}\n\n")
+
+            f.write(f"=== PROMPT ===\n{prompt}\n\n")
+
+            f.write(f"=== RESPONSE TEXT ===\n{response_text}\n\n")
+
+            f.write(f"=== FULL RESPONSE OBJECT ===\n{response_obj}\n\n")
+
+            # Try to extract and format usage metadata
+            if hasattr(response_obj, 'usage_metadata'):
+                f.write(f"=== USAGE METADATA ===\n")
+                f.write(f"Prompt tokens: {response_obj.usage_metadata.prompt_token_count}\n")
+                f.write(f"Total tokens: {response_obj.usage_metadata.total_token_count}\n")
+
     def collect_stock_data(
         self, company_name: str, ticker: str, one_year_ago: date
     ) -> dict[str, Any]:
@@ -58,6 +96,7 @@ class GeminiCollector:
             model=self.model_name, contents=prompt, config=self.generation_config
         )
         text = self._get_response_text(response)
+        self._log_response("stock", company_name, prompt, text, response)
         data = self._extract_json(text)
 
         # Validate prices
@@ -98,6 +137,8 @@ class GeminiCollector:
             model=self.model_name, contents=prompt, config=self.generation_config
         )
         text = self._get_response_text(response)
+        date_suffix = f"_{target_date}" if target_date else ""
+        self._log_response("headcount", f"{company_name}{date_suffix}", prompt, text, response)
         data = self._extract_json(text)
 
         # Validate headcount range
@@ -133,6 +174,7 @@ class GeminiCollector:
             model=self.model_name, contents=prompt, config=self.generation_config
         )
         text = self._get_response_text(response)
+        self._log_response("jobs", company_name, prompt, text, response)
         data = self._extract_json(text)
 
         # Validate job count
@@ -156,6 +198,7 @@ class GeminiCollector:
             model=self.model_name, contents=prompt, config=self.generation_config
         )
         text = self._get_response_text(response)
+        self._log_response("summary", "market_summary", prompt, text, response)
         return text.strip()
 
     def _get_response_text(self, response) -> str:

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-12-28T00:36:20.049514+00:00",
+    "last_updated": "2025-12-28T00:40:32.712183+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -311,5 +311,5 @@
       "aggregate_badge": "neutral"
     }
   },
-  "ai_summary": "Market data collection in progress..."
+  "ai_summary": "The low-end IT consultancy sector exhibits a \"reasonably weak\" outlook, characterized by stagnant stock performance and significant headcount reductions since Q1 2023 at major firms like Infosys and Wipro, despite a recent surge in hiring at TCS. Medium-end Big Tech companies show a similar aggregate weakness, though NVIDIA remains a notable outlier with strong growth since early 2023 while Meta continues to navigate long-term staff declines. Meanwhile, high-end AI labs such as OpenAI and DeepMind maintain a neutral momentum with active job postings, indicating that specialized AI talent remains a priority even as the broader market faces consolidation."
 }

@@ -546,19 +546,23 @@ async def main_async():
     job_posting_data = await collect_all_job_posting_data(collector)
     print(f"  Collected {len(job_posting_data)}/3 companies")
 
+    # Build metrics structure first (needed for summary generation)
+    print("\n🏗️  Building metrics structure...")
+    metrics_without_summary = build_metrics_structure(
+        stock_data, headcount_data, job_posting_data, ""
+    )
+
     print("\n📝 Generating AI summary...")
-    # For now, use placeholder summary (will implement after we have data)
-    ai_summary = "Market data collection in progress..."
+    ai_summary = collector.generate_summary(metrics_without_summary)
+
+    # Rebuild with actual summary
+    metrics = build_metrics_structure(
+        stock_data, headcount_data, job_posting_data, ai_summary
+    )
 
     # Save daily snapshot to history
     print("\n💾 Saving daily snapshot...")
     save_daily_snapshot(stock_data, headcount_data, job_posting_data)
-
-    # Build metrics structure
-    print("\n🏗️  Building metrics structure...")
-    metrics = build_metrics_structure(
-        stock_data, headcount_data, job_posting_data, ai_summary
-    )
 
     # Write to file
     output_dir = Path("data/processed")
