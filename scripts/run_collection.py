@@ -321,20 +321,52 @@ def build_metrics_structure(
 
     # Populate stock index data
     stock_index_companies = {}
+    current_prices = {}
     for company_info in IT_CONSULTANCIES:
         name = company_info["name"]
         ticker = company_info["ticker"]
         if name in stock_data:
+            current_price = stock_data[name]["current_price"]
             stock_index_companies[name] = {
                 "ticker": ticker,
-                "current_price": stock_data[name]["current_price"],
+                "current_price": current_price,
                 "weight": 1.0 / len(IT_CONSULTANCIES),  # Equal weights
             }
+            current_prices[name] = current_price
+
+    # Calculate stock index changes vs baselines
+    stock_index_changes = {}
+    baseline_date_1yr = date.today() - timedelta(days=365)
+
+    for baseline_name, days_ago in [("30_day", 30), ("1_year", 365)]:
+        baseline_key = "30_days_ago" if baseline_name == "30_day" else "1_year_ago"
+        baseline = baselines_data["baselines"].get(baseline_key, {})
+        baseline_stocks = baseline.get("stock_prices", {})
+
+        if baseline_stocks:
+            # Extract baseline prices
+            baseline_prices = {}
+            for name in current_prices:
+                if name in baseline_stocks:
+                    baseline_prices[name] = baseline_stocks[name]["price"]
+
+            # Calculate index if we have matching companies
+            if len(baseline_prices) == len(current_prices):
+                try:
+                    current_index = stock_processor.calculate_index(current_prices, baseline_prices)
+                    index_change = stock_processor.calculate_index_change(current_index, 100.0)
+                    stock_index_changes[baseline_name] = round(index_change, 2)
+                except ValueError:
+                    stock_index_changes[baseline_name] = 0.0
+            else:
+                stock_index_changes[baseline_name] = 0.0
+        else:
+            stock_index_changes[baseline_name] = 0.0
 
     stock_index_structure = {
-        "current_value": 100.0,  # Placeholder - will calculate when we have baselines
-        "baseline_date": (date.today() - timedelta(days=365)).isoformat(),
-        "changes": {"1_day": 0.0, "30_day": 0.0, "1_year": 0.0},
+        "current_value": 100.0,
+        "baseline_date": baseline_date_1yr.isoformat(),
+        "changes": stock_index_changes,
         "companies": stock_index_companies,
     }
 
