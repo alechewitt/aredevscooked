@@ -219,7 +219,20 @@
           "date": "2024-01-28"
         }
       },
-      "job_postings": {}
+      "job_postings": {
+        "Anthropic": {
+          "company": "Anthropic",
+          "total_technical_jobs": 40,
+          "collection_date": "2024-12-26",
+          "source": "Manual entry - user provided"
+        },
+        "OpenAI": {
+          "company": "OpenAI",
+          "total_technical_jobs": 48,
+          "collection_date": "2024-12-26",
+          "source": "Manual entry - calculated as 34% of current 142 jobs"
+        }
+      }
     },
     "30_days_ago": {
       "baseline_name": "30_days_ago",

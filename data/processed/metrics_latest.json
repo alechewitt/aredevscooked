@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-12-28T00:58:10.378727+00:00",
+    "last_updated": "2025-12-28T01:08:38.960546+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -299,16 +299,26 @@
         "Anthropic": {
           "current": 58,
           "collection_date": "2025-12-27",
-          "changes": {}
+          "changes": {
+            "1_year_ago": {
+              "value": 18,
+              "badge": "strong"
+            }
+          }
         },
         "OpenAI": {
           "current": 142,
           "collection_date": "2025-12-27",
-          "changes": {}
+          "changes": {
+            "1_year_ago": {
+              "value": 94,
+              "badge": "strong"
+            }
+          }
         }
       },
-      "aggregate_badge": "neutral"
+      "aggregate_badge": "strong"
     }
   },
-  "ai_summary": "The low-end IT consultancy sector exhibits a \"reasonably weak\" headcount trend, with firms like Infosys and Wipro down significantly since early 2023, though the sector's stock index has surged 11.53% over the last 30 days. Medium-end Big Tech companies show signs of stabilization with recent modest headcount gains at Microsoft and Meta, though Meta's workforce remains over 8% smaller than in Q1 2023 while NVIDIA has grown by 13.14% in that same timeframe. High-end AI labs maintain steady hiring momentum, led by OpenAI with 142 active job postings, signaling a neutral but active market for specialized AI roles compared to the more volatile broader IT landscape."
+  "ai_summary": "The low-end IT consultancy sector remains \"reasonably weak\" as major firms like Infosys and Wipro report significant headcount declines since early 2023, even as the sector's stock index recently climbed 11.53%. Medium-end Big Tech companies show a similarly mixed landscape, with NVIDIA maintaining strong long-term growth while others like Meta continue to navigate headcount reductions from previous peaks. Conversely, the high-end AI market demonstrates powerful hiring momentum, characterized by a \"strong\" aggregate badge and substantial year-over-year increases in job postings at leading labs like OpenAI and Anthropic."
 }

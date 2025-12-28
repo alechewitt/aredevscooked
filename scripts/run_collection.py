@@ -434,7 +434,18 @@ def build_metrics_structure(
             current_jobs = job_posting_data[name]["total_technical_jobs"]
             changes = {}
 
-            # Try to get historical snapshots from metrics_history.json
+            # Try to get historical data from baselines (1_year_ago = Dec 26, 2024)
+            baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
+            baseline_jobs = baseline_1yr.get("job_postings", {})
+
+            if name in baseline_jobs:
+                historical_jobs = baseline_jobs[name]["total_technical_jobs"]
+                job_change = current_jobs - historical_jobs
+                badge = jobs_processor.classify_change(job_change)
+                changes["1_year_ago"] = {"value": job_change, "badge": badge}
+                high_end_badges.append(badge)
+
+            # Try to get historical snapshots from metrics_history.json for 30 days
             for days_ago, key in [(30, "30_days_ago")]:
                 snapshot = load_history_snapshot(days_ago)
                 if snapshot and name in snapshot.get("job_postings", {}):
