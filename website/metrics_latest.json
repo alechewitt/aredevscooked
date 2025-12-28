@@ -1,133 +1,154 @@
 {
   "metadata": {
-    "last_updated": "2025-12-28T01:14:45.628499+00:00",
+    "last_updated": "2025-12-28T01:34:22.959753+00:00",
     "collection_status": "success"
   },
   "low_end": {
     "headcount": {
       "companies": {
         "HCLTech": {
-          "current": 219032,
-          "data_date": "2024-06-30",
+          "current": 218621,
+          "data_date": "2024-09-30",
           "changes": {
             "30_days_ago": {
-              "value": -8449,
-              "pct": -3.71,
+              "value": -8860,
+              "pct": -3.89,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 411,
-              "pct": 0.19,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -6912,
-              "pct": -3.06,
+              "value": -7323,
+              "pct": -3.24,
               "badge": "neutral"
             }
           }
         },
         "LTIMindtree": {
-          "current": 81934,
-          "data_date": "2024-06-30",
+          "current": 86447,
+          "data_date": "2025-09-30",
           "changes": {
             "30_days_ago": {
-              "value": 284,
-              "pct": 0.35,
-              "badge": "neutral"
+              "value": 4797,
+              "pct": 5.88,
+              "badge": "strong"
             },
             "1_year_ago": {
-              "value": -2504,
-              "pct": -2.97,
+              "value": 2009,
+              "pct": 2.38,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -2612,
-              "pct": -3.09,
+              "value": 1901,
+              "pct": 2.25,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Cognizant": {
+          "current": 349800,
+          "data_date": "2025-09-30",
+          "changes": {
+            "30_days_ago": {
+              "value": 5400,
+              "pct": 1.57,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 9700,
+              "pct": 2.85,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": -1700,
+              "pct": -0.48,
               "badge": "neutral"
             }
           }
         },
         "Infosys": {
-          "current": 317240,
-          "data_date": "2024-03-31",
+          "current": 331991,
+          "data_date": "2025-09-30",
           "changes": {
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 14751,
+              "pct": 4.65,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": -548,
-              "pct": -0.17,
+              "value": 14203,
+              "pct": 4.47,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -25994,
-              "pct": -7.57,
-              "badge": "reasonably_weak"
+              "value": -11243,
+              "pct": -3.28,
+              "badge": "neutral"
             }
           }
         },
         "TCS": {
-          "current": 612724,
-          "data_date": "2024-09-30",
+          "current": 593314,
+          "data_date": "2025-09-30",
           "changes": {
             "30_days_ago": {
-              "value": 11178,
-              "pct": 1.86,
+              "value": -8232,
+              "pct": -1.37,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -19410,
+              "pct": -3.17,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -2071,
-              "pct": -0.34,
+              "value": -21481,
+              "pct": -3.49,
               "badge": "neutral"
             }
           }
         },
         "Tech Mahindra": {
-          "current": 147620,
-          "data_date": "2024-06-30",
+          "current": 152714,
+          "data_date": "2025-09-30",
           "changes": {
             "30_days_ago": {
-              "value": -6653,
-              "pct": -4.31,
+              "value": -1559,
+              "pct": -1.01,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": -6653,
-              "pct": -4.31,
+              "value": -1559,
+              "pct": -1.01,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -4780,
-              "pct": -3.14,
+              "value": 314,
+              "pct": 0.21,
               "badge": "neutral"
             }
           }
         },
         "Wipro": {
-          "current": 234391,
-          "data_date": "2024-06-30",
+          "current": 235492,
+          "data_date": "2025-09-30",
           "changes": {
             "30_days_ago": {
-              "value": 361,
-              "pct": 0.15,
+              "value": 1462,
+              "pct": 0.62,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 502,
-              "pct": 0.21,
+              "value": 1603,
+              "pct": 0.69,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -22530,
-              "pct": -8.77,
+              "value": -21429,
+              "pct": -8.34,
               "badge": "reasonably_weak"
             }
           }
@@ -139,43 +160,43 @@
       "current_value": 100.0,
       "baseline_date": "2024-12-27",
       "changes": {
-        "30_day": 11.53,
-        "1_year": 7.5
+        "30_day": 8.44,
+        "1_year": 3.0
       },
       "companies": {
         "HCLTech": {
           "ticker": "HCL.NS",
-          "current_price": 1338.3,
+          "current_price": 1660.9,
           "weight": 0.14285714285714285
         },
         "LTIMindtree": {
           "ticker": "LTIM.NS",
-          "current_price": 5580.0,
+          "current_price": 6035.5,
           "weight": 0.14285714285714285
         },
         "Cognizant": {
           "ticker": "CTSH",
-          "current_price": 74.44,
+          "current_price": 85.57,
           "weight": 0.14285714285714285
         },
         "Infosys": {
           "ticker": "INFY",
-          "current_price": 22.48,
+          "current_price": 18.79,
           "weight": 0.14285714285714285
         },
         "TCS": {
           "ticker": "TCS.NS",
-          "current_price": 4133.1,
+          "current_price": 3280.0,
           "weight": 0.14285714285714285
         },
         "Tech Mahindra": {
           "ticker": "TECHM.NS",
-          "current_price": 1311.05,
+          "current_price": 1612.3,
           "weight": 0.14285714285714285
         },
         "Wipro": {
           "ticker": "WIT",
-          "current_price": 5.34,
+          "current_price": 2.92,
           "weight": 0.14285714285714285
         }
       }
@@ -185,80 +206,80 @@
     "headcount": {
       "companies": {
         "Microsoft": {
-          "current": 227350,
-          "data_date": "2024-09-12",
+          "current": 219000,
+          "data_date": "2025-07-02",
           "changes": {
             "30_days_ago": {
-              "value": 6350,
-              "pct": 2.87,
+              "value": -2000,
+              "pct": -0.9,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": -650,
-              "pct": -0.29,
+              "value": -9000,
+              "pct": -3.95,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 6350,
-              "pct": 2.87,
+              "value": -2000,
+              "pct": -0.9,
               "badge": "neutral"
             }
           }
         },
         "Meta": {
-          "current": 70799,
-          "data_date": "2024-06-30",
+          "current": 78450,
+          "data_date": "2025-09-30",
           "changes": {
             "30_days_ago": {
-              "value": 1470,
-              "pct": 2.12,
-              "badge": "neutral"
+              "value": 9121,
+              "pct": 13.16,
+              "badge": "strong"
             },
             "1_year_ago": {
-              "value": -1605,
-              "pct": -2.22,
-              "badge": "neutral"
+              "value": 6046,
+              "pct": 8.35,
+              "badge": "strong"
             },
             "q1_2023": {
-              "value": -6315,
-              "pct": -8.19,
-              "badge": "reasonably_weak"
+              "value": 1336,
+              "pct": 1.73,
+              "badge": "neutral"
             }
           }
         },
         "Apple": {
-          "current": 161000,
-          "data_date": "2023-09-30",
+          "current": 166000,
+          "data_date": "2025-09-27",
           "changes": {
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 5000,
+              "pct": 3.11,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": -3000,
-              "pct": -1.83,
+              "value": 2000,
+              "pct": 1.22,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 5000,
+              "pct": 3.11,
               "badge": "neutral"
             }
           }
         },
         "Amazon": {
-          "current": 350000,
-          "data_date": "2024-09-16",
+          "current": 336000,
+          "data_date": "2025-12-28",
           "changes": {
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -14000,
+              "pct": -4.0,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -14000,
+              "pct": -4.0,
               "badge": "neutral"
             },
             "q1_2023": {
@@ -269,67 +290,39 @@
           }
         },
         "NVIDIA": {
-          "current": 29639,
-          "data_date": "2024-01-28",
+          "current": 36000,
+          "data_date": "2025-01-26",
           "changes": {
             "30_days_ago": {
-              "value": 39,
-              "pct": 0.13,
-              "badge": "neutral"
+              "value": 6400,
+              "pct": 21.62,
+              "badge": "strong"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
+              "value": 6361,
+              "pct": 21.46,
+              "badge": "strong"
             },
             "q1_2023": {
-              "value": 3443,
-              "pct": 13.14,
+              "value": 9804,
+              "pct": 37.43,
               "badge": "strong"
             }
           }
         }
       },
-      "aggregate_badge": "reasonably_weak"
+      "aggregate_badge": "neutral"
     }
   },
   "high_end": {
     "job_postings": {
       "companies": {
-        "DeepMind": {
-          "current": 62,
-          "collection_date": "2025-12-27",
-          "changes": {
-            "1_year_ago": {
-              "value": null,
-              "badge": "neutral"
-            },
-            "30_days_ago": {
-              "value": null,
-              "badge": "neutral"
-            }
-          }
-        },
-        "Anthropic": {
-          "current": 58,
-          "collection_date": "2025-12-27",
-          "changes": {
-            "1_year_ago": {
-              "value": 18,
-              "badge": "strong"
-            },
-            "30_days_ago": {
-              "value": null,
-              "badge": "neutral"
-            }
-          }
-        },
         "OpenAI": {
-          "current": 142,
+          "current": 286,
           "collection_date": "2025-12-27",
           "changes": {
             "1_year_ago": {
-              "value": 94,
+              "value": 238,
               "badge": "strong"
             },
             "30_days_ago": {
@@ -342,5 +335,5 @@
       "aggregate_badge": "strong"
     }
   },
-  "ai_summary": "The low-end IT consultancy sector shows a \"reasonably weak\" headcount trend with significant long-term declines at firms like Wipro and Infosys, despite a recent 11.53% surge in the stock index over the last 30 days. Big Tech companies in the medium-end tier exhibit mixed stability; while Microsoft and Meta have seen modest 30-day headcount gains, long-term figures remain suppressed compared to early 2023, with the notable exception of NVIDIA\u2019s robust 13.14% growth. In contrast, the high-end AI sector demonstrates strong hiring momentum, evidenced by substantial year-over-year increases in job postings at leading labs like OpenAI and Anthropic."
+  "ai_summary": "The IT consultancy sector exhibits a \"reasonably weak\" headcount trend characterized by significant 30-day losses at TCS and HCLTech, despite a recent 8.44% recovery in the sector's stock index. Big Tech remains neutral but highly polarized, as NVIDIA and Meta report double-digit headcount growth over the last month while Amazon saw a 4% reduction. Meanwhile, high-end AI labs maintain strong hiring momentum, exemplified by OpenAI increasing its job postings by 238 over the past year to reach a current total of 286."
 }
