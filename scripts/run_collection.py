@@ -227,6 +227,13 @@ def calculate_headcount_changes(
                 "pct": round(pct_change, 2),
                 "badge": badge,
             }
+        else:
+            # No baseline data available
+            changes[baseline_name] = {
+                "value": None,
+                "pct": None,
+                "badge": "neutral",
+            }
 
     return changes
 
@@ -444,18 +451,21 @@ def build_metrics_structure(
                 badge = jobs_processor.classify_change(job_change)
                 changes["1_year_ago"] = {"value": job_change, "badge": badge}
                 high_end_badges.append(badge)
+            else:
+                # No baseline data available for 1 year ago
+                changes["1_year_ago"] = {"value": None, "badge": "neutral"}
 
             # Try to get historical snapshots from metrics_history.json for 30 days
-            for days_ago, key in [(30, "30_days_ago")]:
-                snapshot = load_history_snapshot(days_ago)
-                if snapshot and name in snapshot.get("job_postings", {}):
-                    historical_jobs = snapshot["job_postings"][name][
-                        "total_technical_jobs"
-                    ]
-                    job_change = current_jobs - historical_jobs
-                    badge = jobs_processor.classify_change(job_change)
-                    changes[key] = {"value": job_change, "badge": badge}
-                    high_end_badges.append(badge)
+            snapshot = load_history_snapshot(30)
+            if snapshot and name in snapshot.get("job_postings", {}):
+                historical_jobs = snapshot["job_postings"][name]["total_technical_jobs"]
+                job_change = current_jobs - historical_jobs
+                badge = jobs_processor.classify_change(job_change)
+                changes["30_days_ago"] = {"value": job_change, "badge": badge}
+                high_end_badges.append(badge)
+            else:
+                # No 30-day snapshot available
+                changes["30_days_ago"] = {"value": None, "badge": "neutral"}
 
             high_end_job_companies[name] = {
                 "current": current_jobs,

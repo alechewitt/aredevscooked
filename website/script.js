@@ -54,17 +54,29 @@
             changesHTML = '<div class="company-changes">';
             for (const [period, change] of Object.entries(data.changes)) {
                 const periodLabel = period.replace(/_/g, ' ').replace('ago', '');
-                const valueClass = getChangeClass(change.value);
-                const valueText = change.value >= 0 ? `+${formatNumber(change.value)}` : formatNumber(change.value);
-                const pctText = formatPercentage(change.pct);
 
-                changesHTML += `
-                    <div class="change-item">
-                        <span class="change-label">${periodLabel}</span>
-                        <span class="change-value ${valueClass}">${pctText}</span>
-                        <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
-                    </div>
-                `;
+                // Check if data is available
+                if (change.value === null || change.pct === null) {
+                    changesHTML += `
+                        <div class="change-item">
+                            <span class="change-label">${periodLabel}</span>
+                            <span class="change-value" style="color: #6b7280;">N/A</span>
+                            <span class="badge badge-neutral" style="font-size: 0.7rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
+                        </div>
+                    `;
+                } else {
+                    const valueClass = getChangeClass(change.value);
+                    const valueText = change.value >= 0 ? `+${formatNumber(change.value)}` : formatNumber(change.value);
+                    const pctText = formatPercentage(change.pct);
+
+                    changesHTML += `
+                        <div class="change-item">
+                            <span class="change-label">${periodLabel}</span>
+                            <span class="change-value ${valueClass}">${pctText}</span>
+                            <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
+                        </div>
+                    `;
+                }
             }
             changesHTML += '</div>';
         }
@@ -87,16 +99,28 @@
             changesHTML = '<div class="company-changes">';
             for (const [period, change] of Object.entries(data.changes)) {
                 const periodLabel = period.replace(/_/g, ' ').replace('ago', '');
-                const valueClass = getChangeClass(change.value);
-                const valueText = change.value >= 0 ? `+${change.value}` : change.value;
 
-                changesHTML += `
-                    <div class="change-item">
-                        <span class="change-label">${periodLabel}</span>
-                        <span class="change-value ${valueClass}">${valueText} jobs</span>
-                        <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
-                    </div>
-                `;
+                // Check if data is available
+                if (change.value === null) {
+                    changesHTML += `
+                        <div class="change-item">
+                            <span class="change-label">${periodLabel}</span>
+                            <span class="change-value" style="color: #6b7280;">N/A</span>
+                            <span class="badge badge-neutral" style="font-size: 0.7rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
+                        </div>
+                    `;
+                } else {
+                    const valueClass = getChangeClass(change.value);
+                    const valueText = change.value >= 0 ? `+${change.value}` : change.value;
+
+                    changesHTML += `
+                        <div class="change-item">
+                            <span class="change-label">${periodLabel}</span>
+                            <span class="change-value ${valueClass}">${valueText} jobs</span>
+                            <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
+                        </div>
+                    `;
+                }
             }
             changesHTML += '</div>';
         }
