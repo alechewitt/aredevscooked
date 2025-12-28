@@ -1,85 +1,49 @@
 {
   "metadata": {
-    "last_updated": "2025-12-27T05:46:01.605769+00:00",
+    "last_updated": "2025-12-28T00:36:20.049514+00:00",
     "collection_status": "success"
   },
   "low_end": {
     "headcount": {
       "companies": {
         "HCLTech": {
-          "current": 218621,
-          "data_date": "2024-09-30",
+          "current": 219032,
+          "data_date": "2024-06-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -8449,
+              "pct": -3.71,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 411,
+              "pct": 0.19,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -6912,
+              "pct": -3.06,
               "badge": "neutral"
             }
           }
         },
         "LTIMindtree": {
-          "current": 84438,
-          "data_date": "2024-09-30",
+          "current": 81934,
+          "data_date": "2024-06-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 284,
+              "pct": 0.35,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -2504,
+              "pct": -2.97,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            }
-          }
-        },
-        "Cognizant": {
-          "current": 340100,
-          "data_date": "2024-09-30",
-          "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
-            "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
-            "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
-            "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -2612,
+              "pct": -3.09,
               "badge": "neutral"
             }
           }
@@ -88,40 +52,30 @@
           "current": 317240,
           "data_date": "2024-03-31",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -548,
+              "pct": -0.17,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
+              "value": -25994,
+              "pct": -7.57,
+              "badge": "reasonably_weak"
             }
           }
         },
         "TCS": {
-          "current": 601546,
-          "data_date": "2024-03-31",
+          "current": 612724,
+          "data_date": "2024-09-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 11178,
+              "pct": 1.86,
               "badge": "neutral"
             },
             "1_year_ago": {
@@ -130,70 +84,60 @@
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -2071,
+              "pct": -0.34,
               "badge": "neutral"
             }
           }
         },
         "Tech Mahindra": {
-          "current": 145455,
-          "data_date": "2024-03-31",
+          "current": 147620,
+          "data_date": "2024-06-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -6653,
+              "pct": -4.31,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -6653,
+              "pct": -4.31,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -4780,
+              "pct": -3.14,
               "badge": "neutral"
             }
           }
         },
         "Wipro": {
-          "current": 234054,
-          "data_date": "2024-03-31",
+          "current": 234391,
+          "data_date": "2024-06-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 361,
+              "pct": 0.15,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 502,
+              "pct": 0.21,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
+              "value": -22530,
+              "pct": -8.77,
+              "badge": "reasonably_weak"
             }
           }
         }
       },
-      "aggregate_badge": "neutral"
+      "aggregate_badge": "reasonably_weak"
     },
     "stock_index": {
       "current_value": 100.0,
-      "baseline_date": "2024-12-26",
+      "baseline_date": "2024-12-27",
       "changes": {
         "1_day": 0.0,
         "30_day": 0.0,
@@ -202,37 +146,37 @@
       "companies": {
         "HCLTech": {
           "ticker": "HCL.NS",
-          "current_price": 1634.0,
+          "current_price": 1338.3,
           "weight": 0.14285714285714285
         },
         "LTIMindtree": {
           "ticker": "LTIM.NS",
-          "current_price": 4815.0,
+          "current_price": 5580.0,
           "weight": 0.14285714285714285
         },
         "Cognizant": {
           "ticker": "CTSH",
-          "current_price": 77.48,
+          "current_price": 74.44,
           "weight": 0.14285714285714285
         },
         "Infosys": {
           "ticker": "INFY",
-          "current_price": 22.38,
+          "current_price": 22.48,
           "weight": 0.14285714285714285
         },
         "TCS": {
           "ticker": "TCS.NS",
-          "current_price": 3846.15,
+          "current_price": 4133.1,
           "weight": 0.14285714285714285
         },
         "Tech Mahindra": {
           "ticker": "TECHM.NS",
-          "current_price": 1664.0,
+          "current_price": 1311.05,
           "weight": 0.14285714285714285
         },
         "Wipro": {
           "ticker": "WIT",
-          "current_price": 5.38,
+          "current_price": 5.34,
           "weight": 0.14285714285714285
         }
       }
@@ -242,27 +186,22 @@
     "headcount": {
       "companies": {
         "Microsoft": {
-          "current": 228000,
-          "data_date": "2024-06-30",
+          "current": 227350,
+          "data_date": "2024-09-12",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 6350,
+              "pct": 2.87,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -650,
+              "pct": -0.29,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 6350,
+              "pct": 2.87,
               "badge": "neutral"
             }
           }
@@ -271,45 +210,35 @@
           "current": 70799,
           "data_date": "2024-06-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 1470,
+              "pct": 2.12,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -1605,
+              "pct": -2.22,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
+              "value": -6315,
+              "pct": -8.19,
+              "badge": "reasonably_weak"
             }
           }
         },
         "Apple": {
-          "current": 160400,
-          "data_date": "2024-04-04",
+          "current": 161000,
+          "data_date": "2023-09-30",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -3000,
+              "pct": -1.83,
               "badge": "neutral"
             },
             "q1_2023": {
@@ -321,24 +250,14 @@
         },
         "Amazon": {
           "current": 350000,
-          "data_date": "2024-09-30",
+          "data_date": "2024-09-16",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
-            "q1_2023": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral"
@@ -346,17 +265,12 @@
           }
         },
         "NVIDIA": {
-          "current": 29600,
+          "current": 29639,
           "data_date": "2024-01-28",
           "changes": {
-            "1_day_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
-            },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 39,
+              "pct": 0.13,
               "badge": "neutral"
             },
             "1_year_ago": {
@@ -365,14 +279,14 @@
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral"
+              "value": 3443,
+              "pct": 13.14,
+              "badge": "strong"
             }
           }
         }
       },
-      "aggregate_badge": "neutral"
+      "aggregate_badge": "reasonably_weak"
     }
   },
   "high_end": {
@@ -380,17 +294,17 @@
       "companies": {
         "DeepMind": {
           "current": 62,
-          "collection_date": "2025-12-26",
+          "collection_date": "2025-12-27",
           "changes": {}
         },
         "Anthropic": {
           "current": 58,
-          "collection_date": "2025-12-26",
+          "collection_date": "2025-12-27",
           "changes": {}
         },
         "OpenAI": {
           "current": 142,
-          "collection_date": "2025-12-26",
+          "collection_date": "2025-12-27",
           "changes": {}
         }
       },

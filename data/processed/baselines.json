@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "created_at": "2025-12-27T05:44:13.363364+00:00",
+    "created_at": "2025-12-27T05:57:01.424050+00:00",
     "description": "Historical baseline data for change calculations"
   },
   "baselines": {
@@ -54,63 +54,58 @@
       "headcounts": {
         "HCLTech": {
           "company": "HCLTech",
-          "headcount": 218621,
-          "date": "2024-09-30"
+          "headcount": 225944,
+          "date": "2023-03-31"
         },
         "LTIMindtree": {
           "company": "LTIMindtree",
-          "headcount": 84438,
-          "date": "2024-09-30"
+          "headcount": 84546,
+          "date": "2023-03-31"
         },
         "Cognizant": {
           "company": "Cognizant",
-          "headcount": 340100,
-          "date": "2024-09-30"
+          "headcount": 351500,
+          "date": "2023-03-31"
         },
         "Infosys": {
           "company": "Infosys",
-          "headcount": 317240,
-          "date": "2024-03-31"
+          "headcount": 343234,
+          "date": "2023-03-31"
         },
         "TCS": {
           "company": "TCS",
-          "headcount": 601546,
-          "date": "2024-03-31"
+          "headcount": 614795,
+          "date": "2023-03-31"
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
-          "headcount": 145455,
-          "date": "2024-03-31"
+          "headcount": 152400,
+          "date": "2023-03-31"
         },
         "Wipro": {
           "company": "Wipro",
-          "headcount": 234054,
-          "date": "2024-03-31"
+          "headcount": 256921,
+          "date": "2023-03-31"
         },
         "Microsoft": {
           "company": "Microsoft",
-          "headcount": 228000,
-          "date": "2024-06-30"
+          "headcount": 221000,
+          "date": "2023-03-31"
         },
         "Meta": {
           "company": "Meta",
-          "headcount": 70799,
-          "date": "2024-06-30"
+          "headcount": 77114,
+          "date": "2023-03-31"
         },
         "Apple": {
           "company": "Apple",
-          "headcount": 160400,
-          "date": "2024-04-04"
-        },
-        "Amazon": {
-          "company": "Amazon",
-          "headcount": 350000,
-          "date": "2024-09-30"
+          "headcount": 161000,
+          "date": "2023-09-30"
         },
         "NVIDIA": {
           "company": "NVIDIA",
-          "headcount": 29600,
-          "date": "2024-01-28"
+          "headcount": 26196,
+          "date": "2023-01-29"
         }
       },
       "job_postings": {}
@@ -180,23 +175,23 @@
         },
         "Infosys": {
           "company": "Infosys",
-          "headcount": 317240,
-          "date": "2024-03-31"
+          "headcount": 317788,
+          "date": "2024-09-30"
         },
         "TCS": {
           "company": "TCS",
-          "headcount": 601546,
-          "date": "2024-03-31"
+          "headcount": 612724,
+          "date": "2024-09-30"
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
-          "headcount": 145455,
-          "date": "2024-03-31"
+          "headcount": 154273,
+          "date": "2024-09-30"
         },
         "Wipro": {
           "company": "Wipro",
-          "headcount": 234054,
-          "date": "2024-03-31"
+          "headcount": 233889,
+          "date": "2024-09-30"
         },
         "Microsoft": {
           "company": "Microsoft",
@@ -205,22 +200,22 @@
         },
         "Meta": {
           "company": "Meta",
-          "headcount": 70799,
-          "date": "2024-06-30"
+          "headcount": 72404,
+          "date": "2024-09-30"
         },
         "Apple": {
           "company": "Apple",
-          "headcount": 160400,
-          "date": "2024-04-04"
+          "headcount": 164000,
+          "date": "2024-09-28"
         },
         "Amazon": {
           "company": "Amazon",
           "headcount": 350000,
-          "date": "2024-09-30"
+          "date": "2024-10-31"
         },
         "NVIDIA": {
           "company": "NVIDIA",
-          "headcount": 29600,
+          "headcount": 29639,
           "date": "2024-01-28"
         }
       },
@@ -276,18 +271,18 @@
       "headcounts": {
         "HCLTech": {
           "company": "HCLTech",
-          "headcount": 218621,
-          "date": "2024-09-30"
+          "headcount": 227481,
+          "date": "2024-03-31"
         },
         "LTIMindtree": {
           "company": "LTIMindtree",
-          "headcount": 84438,
-          "date": "2024-09-30"
+          "headcount": 81650,
+          "date": "2024-03-31"
         },
         "Cognizant": {
           "company": "Cognizant",
-          "headcount": 340100,
-          "date": "2024-09-30"
+          "headcount": 344400,
+          "date": "2024-03-31"
         },
         "Infosys": {
           "company": "Infosys",
@@ -301,144 +296,33 @@
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
-          "headcount": 145455,
-          "date": "2024-03-31"
+          "headcount": 154273,
+          "date": "2024-09-30"
         },
         "Wipro": {
           "company": "Wipro",
-          "headcount": 234054,
+          "headcount": 234030,
           "date": "2024-03-31"
         },
         "Microsoft": {
           "company": "Microsoft",
-          "headcount": 228000,
-          "date": "2024-06-30"
+          "headcount": 221000,
+          "date": "2023-06-30"
         },
         "Meta": {
           "company": "Meta",
-          "headcount": 70799,
-          "date": "2024-06-30"
+          "headcount": 69329,
+          "date": "2024-03-31"
         },
         "Apple": {
           "company": "Apple",
-          "headcount": 160400,
-          "date": "2024-04-04"
+          "headcount": 161000,
+          "date": "2023-09-30"
         },
         "Amazon": {
           "company": "Amazon",
           "headcount": 350000,
-          "date": "2024-09-30"
-        },
-        "NVIDIA": {
-          "company": "NVIDIA",
-          "headcount": 29600,
-          "date": "2024-01-28"
-        }
-      },
-      "job_postings": {}
-    },
-    "1_day_ago": {
-      "baseline_name": "1_day_ago",
-      "date": "2025-12-25",
-      "stock_prices": {
-        "HCLTech": {
-          "company": "HCLTech",
-          "ticker": "HCL.NS",
-          "price": 1433.55,
-          "date": "2025-12-25"
-        },
-        "LTIMindtree": {
-          "company": "LTIMindtree",
-          "ticker": "LTIM.NS",
-          "price": 6290.35,
-          "date": "2025-12-25"
-        },
-        "Cognizant": {
-          "company": "Cognizant",
-          "ticker": "CTSH",
-          "price": 75.34,
-          "date": "2025-12-25"
-        },
-        "Infosys": {
-          "company": "Infosys",
-          "ticker": "INFY",
-          "price": 15.34,
-          "date": "2025-12-25"
-        },
-        "TCS": {
-          "company": "TCS",
-          "ticker": "TCS.NS",
-          "price": 3793.4,
-          "date": "2025-12-25"
-        },
-        "Tech Mahindra": {
-          "company": "Tech Mahindra",
-          "ticker": "TECHM.NS",
-          "price": 1031.15,
-          "date": "2025-12-25"
-        },
-        "Wipro": {
-          "company": "Wipro",
-          "ticker": "WIT",
-          "price": 4.51,
-          "date": "2025-12-25"
-        }
-      },
-      "headcounts": {
-        "HCLTech": {
-          "company": "HCLTech",
-          "headcount": 218621,
-          "date": "2024-09-30"
-        },
-        "LTIMindtree": {
-          "company": "LTIMindtree",
-          "headcount": 84438,
-          "date": "2024-09-30"
-        },
-        "Cognizant": {
-          "company": "Cognizant",
-          "headcount": 340100,
-          "date": "2024-09-30"
-        },
-        "Infosys": {
-          "company": "Infosys",
-          "headcount": 317240,
-          "date": "2024-03-31"
-        },
-        "TCS": {
-          "company": "TCS",
-          "headcount": 601546,
-          "date": "2024-03-31"
-        },
-        "Tech Mahindra": {
-          "company": "Tech Mahindra",
-          "headcount": 145455,
-          "date": "2024-03-31"
-        },
-        "Wipro": {
-          "company": "Wipro",
-          "headcount": 234054,
-          "date": "2024-03-31"
-        },
-        "Microsoft": {
-          "company": "Microsoft",
-          "headcount": 228000,
-          "date": "2024-06-30"
-        },
-        "Meta": {
-          "company": "Meta",
-          "headcount": 70799,
-          "date": "2024-06-30"
-        },
-        "Apple": {
-          "company": "Apple",
-          "headcount": 160400,
-          "date": "2024-04-04"
-        },
-        "Amazon": {
-          "company": "Amazon",
-          "headcount": 350000,
-          "date": "2024-09-30"
+          "date": "2024-05-22"
         },
         "NVIDIA": {
           "company": "NVIDIA",

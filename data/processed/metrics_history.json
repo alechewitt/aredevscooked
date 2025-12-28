@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-27T05:46:01.604291+00:00"
+    "last_updated": "2025-12-28T00:36:20.047686+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -85,6 +85,100 @@
         },
         "NVIDIA": {
           "headcount": 29600,
+          "data_date": "2024-01-28"
+        }
+      },
+      "job_postings": {
+        "DeepMind": {
+          "total_technical_jobs": 62,
+          "collection_date": "2024-05-23"
+        },
+        "Anthropic": {
+          "total_technical_jobs": 58,
+          "collection_date": "2024-05-23"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 142,
+          "collection_date": "2024-05-22"
+        }
+      }
+    },
+    "2025-12-27": {
+      "date": "2025-12-27",
+      "timestamp": "2025-12-28T00:36:20.047589+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1338.3,
+          "ticker": "HCL.NS"
+        },
+        "LTIMindtree": {
+          "price": 5580.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 74.44,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 22.48,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 4133.1,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1311.05,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 5.34,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 219032,
+          "data_date": "2024-06-30"
+        },
+        "LTIMindtree": {
+          "headcount": 81934,
+          "data_date": "2024-06-30"
+        },
+        "Infosys": {
+          "headcount": 317240,
+          "data_date": "2024-03-31"
+        },
+        "TCS": {
+          "headcount": 612724,
+          "data_date": "2024-09-30"
+        },
+        "Tech Mahindra": {
+          "headcount": 147620,
+          "data_date": "2024-06-30"
+        },
+        "Wipro": {
+          "headcount": 234391,
+          "data_date": "2024-06-30"
+        },
+        "Microsoft": {
+          "headcount": 227350,
+          "data_date": "2024-09-12"
+        },
+        "Meta": {
+          "headcount": 70799,
+          "data_date": "2024-06-30"
+        },
+        "Apple": {
+          "headcount": 161000,
+          "data_date": "2023-09-30"
+        },
+        "Amazon": {
+          "headcount": 350000,
+          "data_date": "2024-09-16"
+        },
+        "NVIDIA": {
+          "headcount": 29639,
           "data_date": "2024-01-28"
         }
       },

@@ -118,10 +118,6 @@
 
         const changesHTML = `
             <div class="index-change">
-                <span class="period">1 Day</span>
-                <span class="value ${getChangeClass(changes['1_day'])}">${formatPercentage(changes['1_day'])}</span>
-            </div>
-            <div class="index-change">
                 <span class="period">30 Days</span>
                 <span class="value ${getChangeClass(changes['30_day'])}">${formatPercentage(changes['30_day'])}</span>
             </div>
