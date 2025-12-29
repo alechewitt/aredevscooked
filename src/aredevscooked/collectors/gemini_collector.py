@@ -177,7 +177,7 @@ class GeminiCollector:
         text = self._get_response_text(response)
         self._log_response("stock", company_name, prompt, text, response)
         print(f"      [API call took {api_duration:.1f}s]")
-        data = self._extract_json(text)
+        data = self._extract_json(text, response)
 
         # Validate prices
         current_price = data.get("current_price", 0)
@@ -231,7 +231,7 @@ class GeminiCollector:
             "headcount", f"{company_name}{date_suffix}", prompt, text, response
         )
         print(f"      [API call took {api_duration:.1f}s]")
-        data = self._extract_json(text)
+        data = self._extract_json(text, response)
 
         # Validate headcount range
         headcount = data.get("current_headcount", 0)
@@ -275,7 +275,7 @@ class GeminiCollector:
         text = self._get_response_text(response)
         self._log_response("jobs", company_name, prompt, text, response)
         print(f"      [API call took {api_duration:.1f}s]")
-        data = self._extract_json(text)
+        data = self._extract_json(text, response)
 
         # Validate job count
         job_count = data.get("total_technical_jobs", 0)
@@ -330,13 +330,40 @@ class GeminiCollector:
 
         raise ValueError(f"Could not extract text from Gemini response: {response}")
 
-    def _extract_json(self, text: str) -> dict[str, Any]:
+    def _extract_grounding_urls(self, response) -> list[str]:
+        """Extract actual source URLs from grounding metadata.
+
+        Args:
+            response: Gemini API response object
+
+        Returns:
+            List of source URLs from grounding chunks
+        """
+        urls = []
+        try:
+            if hasattr(response, "candidates") and response.candidates:
+                candidate = response.candidates[0]
+                if hasattr(candidate, "grounding_metadata"):
+                    metadata = candidate.grounding_metadata
+                    if (
+                        hasattr(metadata, "grounding_chunks")
+                        and metadata.grounding_chunks
+                    ):
+                        for chunk in metadata.grounding_chunks:
+                            if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
+                                urls.append(chunk.web.uri)
+        except Exception as e:
+            print(f"      [Warning: Could not extract grounding URLs: {e}]")
+        return urls
+
+    def _extract_json(self, text: str, response=None) -> dict[str, Any]:
         """Extract JSON from Gemini response text.
 
         Handles responses that may have JSON in markdown code blocks or plain text.
 
         Args:
             text: Response text from Gemini
+            response: Optional response object to extract grounding URLs from
 
         Returns:
             Parsed JSON as dictionary
@@ -360,6 +387,14 @@ class GeminiCollector:
                 raise ValueError(f"Could not extract JSON from response: {text[:200]}")
 
         try:
-            return json.loads(json_str)
+            data = json.loads(json_str)
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON in response: {e}")
+
+        # Replace source_urls with actual grounding URLs if available
+        if response:
+            grounding_urls = self._extract_grounding_urls(response)
+            if grounding_urls:
+                data["source_urls"] = grounding_urls
+
+        return data

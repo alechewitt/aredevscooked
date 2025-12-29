@@ -1,28 +1,32 @@
 {
   "metadata": {
-    "last_updated": "2025-12-28T01:34:22.959753+00:00",
+    "last_updated": "2025-12-29T18:39:16.921491+00:00",
     "collection_status": "success"
   },
   "low_end": {
     "headcount": {
       "companies": {
         "HCLTech": {
-          "current": 218621,
-          "data_date": "2024-09-30",
+          "current": 226640,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.hcltech.com/investors/results-reports",
+            "https://www.hcltech.com/investors/key-facts-data"
+          ],
           "changes": {
             "30_days_ago": {
-              "value": -8860,
-              "pct": -3.89,
+              "value": -841,
+              "pct": -0.37,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 8019,
+              "pct": 3.67,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -7323,
-              "pct": -3.24,
+              "value": 696,
+              "pct": 0.31,
               "badge": "neutral"
             }
           }
@@ -30,6 +34,10 @@
         "LTIMindtree": {
           "current": 86447,
           "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.ltimindtree.com/investors/",
+            "https://www.ltimindtree.com/news-event/ltimindtree-reports-strong-q2-results-with-2-4-sequential-growth-and-margin-expansion/"
+          ],
           "changes": {
             "30_days_ago": {
               "value": 4797,
@@ -51,6 +59,10 @@
         "Cognizant": {
           "current": 349800,
           "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.cognizant.com/us/en/news/releases/2025/cognizant-reports-third-quarter-2025-results",
+            "https://www.thehindu.com/business/cognizant-q3-net-income-falls-53-to-274-million-revenue-rises-73-to-54-billion/article68808844.ece"
+          ],
           "changes": {
             "30_days_ago": {
               "value": 5400,
@@ -72,6 +84,10 @@
         "Infosys": {
           "current": 331991,
           "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.outlookbusiness.com/corporate/infosys-q2-net-profit-rises-13-to-7364-cr-ups-growth-outlook",
+            "https://www.infosys.com/investors/reports-filings.html"
+          ],
           "changes": {
             "30_days_ago": {
               "value": 14751,
@@ -93,6 +109,11 @@
         "TCS": {
           "current": 593314,
           "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.forbesindia.com/article/news/tcs-headcount-plunges-to-14quarter-low-amid-restructuring-drive/94561/1",
+            "https://economictimes.indiatimes.com/tech/ites/tcs-headcount-drops-by-20000-in-september-quarter-amid-layoff-blitz/articleshow/114085421.cms",
+            "https://www.financialexpress.com/industry/tcs-q2-results-highlights-tcs-plan-for-1gw-data-center-raises-analyst-concerns-how-will-6-billion-investment-impact-margins/3635421/"
+          ],
           "changes": {
             "30_days_ago": {
               "value": -8232,
@@ -114,6 +135,10 @@
         "Tech Mahindra": {
           "current": 152714,
           "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.techmahindra.com/en-in/investors/financial-results/",
+            "https://www.business-standard.com/company/tech-mahindra-3249/financials-quarterly"
+          ],
           "changes": {
             "30_days_ago": {
               "value": -1559,
@@ -135,6 +160,10 @@
         "Wipro": {
           "current": 235492,
           "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.financialexpress.com/business/industry-wipro-q2fy26-5-key-highlights-from-q3-cautious-guidance-to-no-decision-on-wage-hike-yet-3641144/",
+            "https://www.ndtvprofit.com/business/wipro-q2-attrition-rate-drops-to-149-headcount-rises-by-over-2000-employees"
+          ],
           "changes": {
             "30_days_ago": {
               "value": 1462,
@@ -154,95 +183,59 @@
           }
         }
       },
-      "aggregate_badge": "reasonably_weak"
-    },
-    "stock_index": {
-      "current_value": 100.0,
-      "baseline_date": "2024-12-27",
-      "changes": {
-        "30_day": 8.44,
-        "1_year": 3.0
-      },
-      "companies": {
-        "HCLTech": {
-          "ticker": "HCL.NS",
-          "current_price": 1660.9,
-          "weight": 0.14285714285714285
-        },
-        "LTIMindtree": {
-          "ticker": "LTIM.NS",
-          "current_price": 6035.5,
-          "weight": 0.14285714285714285
-        },
-        "Cognizant": {
-          "ticker": "CTSH",
-          "current_price": 85.57,
-          "weight": 0.14285714285714285
-        },
-        "Infosys": {
-          "ticker": "INFY",
-          "current_price": 18.79,
-          "weight": 0.14285714285714285
-        },
-        "TCS": {
-          "ticker": "TCS.NS",
-          "current_price": 3280.0,
-          "weight": 0.14285714285714285
-        },
-        "Tech Mahindra": {
-          "ticker": "TECHM.NS",
-          "current_price": 1612.3,
-          "weight": 0.14285714285714285
-        },
-        "Wipro": {
-          "ticker": "WIT",
-          "current_price": 2.92,
-          "weight": 0.14285714285714285
-        }
-      }
+      "aggregate_badge": "neutral",
+      "net_headcount_pct_yoy": 0.7424179326170984
     }
   },
   "medium_end": {
     "headcount": {
       "companies": {
         "Microsoft": {
-          "current": 219000,
-          "data_date": "2025-07-02",
+          "current": 228000,
+          "data_date": "2025-06-30",
+          "source_urls": [
+            "https://www.microsoft.com/en-us/investor/annual-reports.aspx",
+            "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm"
+          ],
           "changes": {
             "30_days_ago": {
-              "value": -2000,
-              "pct": -0.9,
+              "value": 7000,
+              "pct": 3.17,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": -9000,
-              "pct": -3.95,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": -2000,
-              "pct": -0.9,
+              "value": 7000,
+              "pct": 3.17,
               "badge": "neutral"
             }
           }
         },
         "Meta": {
-          "current": 78450,
-          "data_date": "2025-09-30",
+          "current": 77850,
+          "data_date": "2025-12-29",
+          "source_urls": [
+            "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Third-Quarter-2025-Results/default.aspx",
+            "https://economictimes.indiatimes.com/tech/technology/meta-layoffs-heres-the-email-it-sent-to-its-employees-it-just-sacked/articleshow/114645678.cms"
+          ],
           "changes": {
             "30_days_ago": {
-              "value": 9121,
-              "pct": 13.16,
+              "value": 8521,
+              "pct": 12.29,
               "badge": "strong"
             },
             "1_year_ago": {
-              "value": 6046,
-              "pct": 8.35,
+              "value": 5446,
+              "pct": 7.52,
               "badge": "strong"
             },
             "q1_2023": {
-              "value": 1336,
-              "pct": 1.73,
+              "value": 736,
+              "pct": 0.95,
               "badge": "neutral"
             }
           }
@@ -250,6 +243,11 @@
         "Apple": {
           "current": 166000,
           "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/",
+            "https://stockanalysis.com/stocks/aapl/employees/",
+            "https://www.macrotrends.net/stocks/charts/AAPL/apple/number-of-employees"
+          ],
           "changes": {
             "30_days_ago": {
               "value": 5000,
@@ -270,7 +268,11 @@
         },
         "Amazon": {
           "current": 336000,
-          "data_date": "2025-12-28",
+          "data_date": "2025-10-28",
+          "source_urls": [
+            "https://www.aboutamazon.com/news/company-news/staying-nimble-and-continuing-to-strengthen-our-organizations",
+            "https://www.theguardian.com/technology/2025/oct/27/amazon-layoffs-corporate-workers"
+          ],
           "changes": {
             "30_days_ago": {
               "value": -14000,
@@ -292,6 +294,11 @@
         "NVIDIA": {
           "current": 36000,
           "data_date": "2025-01-26",
+          "source_urls": [
+            "https://investor.nvidia.com/financial-reports/default.aspx",
+            "https://stockanalysis.com/stocks/nvda/employees/",
+            "https://www.macrotrends.net/stocks/charts/NVDA/nvidia/number-of-employees"
+          ],
           "changes": {
             "30_days_ago": {
               "value": 6400,
@@ -311,18 +318,50 @@
           }
         }
       },
-      "aggregate_badge": "neutral"
+      "aggregate_badge": "neutral",
+      "net_headcount_pct_yoy": -0.0228661335974589
     }
   },
   "high_end": {
     "job_postings": {
       "companies": {
-        "OpenAI": {
-          "current": 286,
-          "collection_date": "2025-12-27",
+        "DeepMind": {
+          "current": 62,
+          "collection_date": "2024-05-23",
+          "source_url": "",
           "changes": {
             "1_year_ago": {
-              "value": 238,
+              "value": null,
+              "badge": "neutral"
+            },
+            "30_days_ago": {
+              "value": null,
+              "badge": "neutral"
+            }
+          }
+        },
+        "Anthropic": {
+          "current": 73,
+          "collection_date": "2025-12-28",
+          "source_url": "",
+          "changes": {
+            "1_year_ago": {
+              "value": 33,
+              "badge": "strong"
+            },
+            "30_days_ago": {
+              "value": null,
+              "badge": "neutral"
+            }
+          }
+        },
+        "OpenAI": {
+          "current": 326,
+          "collection_date": "2025-12-28",
+          "source_url": "",
+          "changes": {
+            "1_year_ago": {
+              "value": 278,
               "badge": "strong"
             },
             "30_days_ago": {
@@ -332,8 +371,55 @@
           }
         }
       },
-      "aggregate_badge": "strong"
+      "aggregate_badge": "strong",
+      "net_change_pct_yoy": 423.8636363636363
     }
   },
-  "ai_summary": "The IT consultancy sector exhibits a \"reasonably weak\" headcount trend characterized by significant 30-day losses at TCS and HCLTech, despite a recent 8.44% recovery in the sector's stock index. Big Tech remains neutral but highly polarized, as NVIDIA and Meta report double-digit headcount growth over the last month while Amazon saw a 4% reduction. Meanwhile, high-end AI labs maintain strong hiring momentum, exemplified by OpenAI increasing its job postings by 238 over the past year to reach a current total of 286."
+  "stock_index": {
+    "current_value": 107.85,
+    "baseline_date": "2024-12-29",
+    "changes": {
+      "30_day": 14.12,
+      "1_year": 7.85
+    },
+    "companies": {
+      "HCLTech": {
+        "ticker": "HCL.NS",
+        "current_price": 1641.0,
+        "weight": 0.14285714285714285,
+        "change_30_day": 27.36,
+        "change_1_year": 12.43
+      },
+      "LTIMindtree": {
+        "ticker": "LTIM.NS",
+        "current_price": 6034.0,
+        "weight": 0.14285714285714285,
+        "change_30_day": 11.43,
+        "change_1_year": -4.07
+      },
+      "Infosys": {
+        "ticker": "INFY",
+        "current_price": 18.42,
+        "weight": 0.14285714285714285,
+        "change_30_day": 6.41,
+        "change_1_year": 20.08
+      },
+      "TCS": {
+        "ticker": "TCS.NS",
+        "current_price": 3252.0,
+        "weight": 0.14285714285714285,
+        "change_30_day": -7.47,
+        "change_1_year": -14.28
+      },
+      "Tech Mahindra": {
+        "ticker": "TECHM.NS",
+        "current_price": 1612.4,
+        "weight": 0.14285714285714285,
+        "change_30_day": 32.87,
+        "change_1_year": 25.08
+      }
+    },
+    "aggregate_badge": "strong"
+  },
+  "ai_summary": "The IT consultancy sector exhibits a bifurcated trend, with a modest 0.74% year-over-year headcount increase despite significant losses at TCS, while the associated stock index has surged 14.12% in the last 30 days. Big Tech remains volatile as massive workforce reductions at Amazon are offset by aggressive expansion at NVIDIA and Meta, resulting in a nearly flat net headcount change of -0.02% annually. In contrast, high-end AI labs are experiencing explosive hiring momentum, evidenced by a 423.86% year-over-year increase in job postings at firms like OpenAI and Anthropic."
 }

@@ -38,16 +38,21 @@
     }
 
     // Render functions
-    function renderAggregateBadge(elementId, badge) {
+    function renderAggregateBadge(elementId, badge, summaryText = null) {
         const element = document.getElementById(elementId);
         if (element) {
-            element.innerHTML = getBadgeHTML(badge);
+            let html = getBadgeHTML(badge);
+            if (summaryText) {
+                html += `<span class="summary-text" style="margin-left: 0.75rem; color: var(--text-secondary); font-size: 0.9rem;">${summaryText}</span>`;
+            }
+            element.innerHTML = html;
         }
     }
 
     function renderHeadcountCompany(companyName, data) {
         const current = formatNumber(data.current);
-        const dataDate = data.data_date ? ` (as of ${data.data_date})` : '';
+        const dataDate = data.data_date ? `as of ${data.data_date}` : '';
+        const sourceUrls = data.source_urls || [];
 
         let changesHTML = '';
         if (data.changes && Object.keys(data.changes).length > 0) {
@@ -81,10 +86,21 @@
             changesHTML += '</div>';
         }
 
+        // Build citation links
+        let citationHTML = '';
+        if (sourceUrls.length > 0) {
+            const links = sourceUrls.map((url, i) => `<a href="${url}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
+            citationHTML = `<span class="citation-links">${links}</span>`;
+        }
+
         return `
             <div class="company-item">
                 <div class="company-name">${companyName}</div>
-                <div class="company-value">${current} employees${dataDate}</div>
+                <div class="company-value">${current} employees</div>
+                <div class="company-meta">
+                    ${dataDate ? `<span>${dataDate}</span>` : ''}
+                    ${citationHTML}
+                </div>
                 ${changesHTML}
             </div>
         `;
@@ -92,7 +108,8 @@
 
     function renderJobPostingCompany(companyName, data) {
         const current = formatNumber(data.current);
-        const collectionDate = data.collection_date ? ` (as of ${data.collection_date})` : '';
+        const collectionDate = data.collection_date ? `as of ${data.collection_date}` : '';
+        const sourceUrl = data.source_url || '';
 
         let changesHTML = '';
         if (data.changes && Object.keys(data.changes).length > 0) {
@@ -125,10 +142,20 @@
             changesHTML += '</div>';
         }
 
+        // Build citation link
+        let citationHTML = '';
+        if (sourceUrl) {
+            citationHTML = `<span class="citation-links"><a href="${sourceUrl}" target="_blank" rel="noopener">[source]</a></span>`;
+        }
+
         return `
             <div class="company-item">
                 <div class="company-name">${companyName}</div>
-                <div class="company-value">${current} technical jobs${collectionDate}</div>
+                <div class="company-value">${current} technical jobs</div>
+                <div class="company-meta">
+                    ${collectionDate ? `<span>${collectionDate}</span>` : ''}
+                    ${citationHTML}
+                </div>
                 ${changesHTML}
             </div>
         `;
@@ -152,6 +179,34 @@
         `;
 
         document.getElementById('stockIndexChanges').innerHTML = changesHTML;
+
+        if (stockIndexData.companies) {
+            const companiesHTML = Object.entries(stockIndexData.companies)
+                .map(([name, data]) => {
+                    const change30d = data.change_30_day;
+                    const change1y = data.change_1_year;
+
+                    return `
+                    <div class="company-item">
+                        <div class="company-name">${name}</div>
+                        <div class="company-value">${data.current_price.toLocaleString('en-US', { style: 'currency', currency: data.ticker.endsWith('.NS') ? 'INR' : 'USD' })}</div>
+                        <div class="company-meta">
+                            <span>${data.ticker}</span>
+                        </div>
+                        <div class="company-changes">
+                            <div class="change-item">
+                                <span class="change-label">30 Days</span>
+                                <span class="change-value ${change30d != null ? getChangeClass(change30d) : ''}">${change30d != null ? formatPercentage(change30d) : 'N/A'}</span>
+                            </div>
+                            <div class="change-item">
+                                <span class="change-label">1 Year</span>
+                                <span class="change-value ${change1y != null ? getChangeClass(change1y) : ''}">${change1y != null ? formatPercentage(change1y) : 'N/A'}</span>
+                            </div>
+                        </div>
+                    </div>
+                `}).join('');
+            document.getElementById('stockCompaniesList').innerHTML = companiesHTML;
+        }
     }
 
     function renderMetrics(data) {
@@ -162,18 +217,27 @@
         document.getElementById('aiSummary').textContent = data.ai_summary;
 
         // Low-End: IT Consultancies
-        renderAggregateBadge('lowEndHeadcountBadge', data.low_end.headcount.aggregate_badge);
+        let lowEndSummary = null;
+        if (data.low_end.headcount.net_headcount_pct_yoy != null) {
+            const pct = data.low_end.headcount.net_headcount_pct_yoy;
+            const sign = pct > 0 ? '+' : '';
+            lowEndSummary = `(${sign}${pct.toFixed(1)}% net headcount YoY)`;
+        }
+        renderAggregateBadge('lowEndHeadcountBadge', data.low_end.headcount.aggregate_badge, lowEndSummary);
 
         const lowEndHTML = Object.entries(data.low_end.headcount.companies)
             .map(([name, companyData]) => renderHeadcountCompany(name, companyData))
             .join('');
         document.getElementById('lowEndHeadcount').innerHTML = lowEndHTML;
 
-        // Stock Index
-        renderStockIndex(data.low_end.stock_index);
-
         // Medium-End: Big Tech
-        renderAggregateBadge('mediumEndHeadcountBadge', data.medium_end.headcount.aggregate_badge);
+        let mediumEndSummary = null;
+        if (data.medium_end.headcount.net_headcount_pct_yoy != null) {
+            const pct = data.medium_end.headcount.net_headcount_pct_yoy;
+            const sign = pct > 0 ? '+' : '';
+            mediumEndSummary = `(${sign}${pct.toFixed(1)}% net headcount YoY)`;
+        }
+        renderAggregateBadge('mediumEndHeadcountBadge', data.medium_end.headcount.aggregate_badge, mediumEndSummary);
 
         const mediumEndHTML = Object.entries(data.medium_end.headcount.companies)
             .map(([name, companyData]) => renderHeadcountCompany(name, companyData))
@@ -181,12 +245,23 @@
         document.getElementById('mediumEndHeadcount').innerHTML = mediumEndHTML;
 
         // High-End: AI Labs
-        renderAggregateBadge('highEndJobsBadge', data.high_end.job_postings.aggregate_badge);
+        let highEndSummary = null;
+        if (data.high_end.job_postings.net_change_pct_yoy != null) {
+            const pct = data.high_end.job_postings.net_change_pct_yoy;
+            const sign = pct > 0 ? '+' : '';
+            highEndSummary = `(${sign}${pct.toFixed(1)}% net jobs YoY)`;
+        }
+        renderAggregateBadge('highEndJobsBadge', data.high_end.job_postings.aggregate_badge, highEndSummary);
 
         const highEndHTML = Object.entries(data.high_end.job_postings.companies)
             .map(([name, companyData]) => renderJobPostingCompany(name, companyData))
             .join('');
         document.getElementById('highEndJobs').innerHTML = highEndHTML;
+
+        // Stock Index: IT Consultancies
+        const stockIndexData = data.stock_index || data.low_end.stock_index;
+        renderAggregateBadge('stockIndexBadge', stockIndexData.aggregate_badge);
+        renderStockIndex(stockIndexData);
     }
 
     function showError(message) {

@@ -491,10 +491,36 @@ def build_metrics_structure(
         ticker = company_info["ticker"]
         if name in stock_data:
             current_price = stock_data[name]["current_price"]
+
+            # Calculate per-stock changes
+            change_30_day = None
+            change_1_year = None
+
+            if has_baselines:
+                baseline_30d = baselines_data["baselines"].get("30_days_ago", {})
+                baseline_30d_stocks = baseline_30d.get("stock_prices", {})
+                if name in baseline_30d_stocks:
+                    baseline_price_30d = baseline_30d_stocks[name]["price"]
+                    change_30_day = round(
+                        ((current_price - baseline_price_30d) / baseline_price_30d) * 100,
+                        2,
+                    )
+
+                baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
+                baseline_1yr_stocks = baseline_1yr.get("stock_prices", {})
+                if name in baseline_1yr_stocks:
+                    baseline_price_1yr = baseline_1yr_stocks[name]["price"]
+                    change_1_year = round(
+                        ((current_price - baseline_price_1yr) / baseline_price_1yr) * 100,
+                        2,
+                    )
+
             stock_index_companies[name] = {
                 "ticker": ticker,
                 "current_price": current_price,
                 "weight": 1.0 / len(IT_CONSULTANCIES),  # Equal weights
+                "change_30_day": change_30_day,
+                "change_1_year": change_1_year,
             }
             current_prices[name] = current_price
 

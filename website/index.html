@@ -25,8 +25,35 @@
             </div>
         </section>
 
-        <!-- Three Tiers Dashboard -->
+        <!-- Four Tiers Dashboard -->
         <div class="tiers-grid">
+            <!-- Stock Index: IT Consultancies Market (LEFT SIDE) -->
+            <section class="tier-card stock-tier">
+                <div class="tier-header">
+                    <h2>📈 Stock Market</h2>
+                    <p class="tier-subtitle">IT Consultancies Index</p>
+                </div>
+
+                <div class="metric-section">
+                    <h3>Equal-Weighted Index</h3>
+                    <div class="aggregate-badge" id="stockIndexBadge">
+                        <span class="badge">neutral</span>
+                    </div>
+                    <div class="stock-index" id="stockIndexData">
+                        <div class="index-value">
+                            <span class="value">100.0</span>
+                            <span class="label">Index Value</span>
+                        </div>
+                        <div class="index-changes" id="stockIndexChanges">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="companies-list" id="stockCompaniesList">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
             <!-- Low-End: IT Consultancies -->
             <section class="tier-card low-end">
                 <div class="tier-header">
@@ -41,19 +68,6 @@
                     </div>
                     <div class="companies-list" id="lowEndHeadcount">
                         <!-- Populated by JavaScript -->
-                    </div>
-                </div>
-
-                <div class="metric-section">
-                    <h3>Stock Index</h3>
-                    <div class="stock-index" id="lowEndStockIndex">
-                        <div class="index-value">
-                            <span class="value">100.0</span>
-                            <span class="label">Index Value</span>
-                        </div>
-                        <div class="index-changes" id="stockIndexChanges">
-                            <!-- Populated by JavaScript -->
-                        </div>
                     </div>
                 </div>
             </section>
