@@ -26,6 +26,12 @@ dev = [
 [project.scripts]
 aredevscooked = "aredevscooked.cli:main"
 
+[tool.pytest.ini_options]
+addopts = "--ignore=tests/test_collectors/test_gemini_collector_integration.py"
+markers = [
+    "integration: marks tests as integration tests requiring API credentials",
+]
+
 [build-system]
 requires = ["uv_build>=0.9.18,<0.10.0"]
 build-backend = "uv_build"

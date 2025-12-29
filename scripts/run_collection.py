@@ -3,17 +3,90 @@
 
 import asyncio
 import json
+import sys
+import time
 from datetime import date, datetime, timedelta, timezone
-from typing import Any
+from typing import Any, Coroutine
 from pathlib import Path
 from dotenv import load_dotenv
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
+from aredevscooked.utils.gemini_prompts import (
+    create_stock_price_prompt,
+    create_headcount_prompt,
+    create_job_postings_prompt,
+)
 from aredevscooked.processors.stock_processor import StockProcessor
 from aredevscooked.processors.headcount_processor import HeadcountProcessor
 from aredevscooked.processors.jobs_processor import JobsProcessor
 from aredevscooked.generators.badge_generator import BadgeGenerator
 from aredevscooked.utils.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
+
+LOG_TIMEOUT_SECONDS = 60
+STAGGER_SECONDS = 5
+MAX_TIMEOUT_SECONDS = 600
+
+
+async def with_timeout_logging(
+    coro: Coroutine,
+    task_name: str,
+    position: int,
+    prompt: str | None = None,
+) -> Any:
+    """Wrap a coroutine with timeout logging and hard timeout.
+
+    Logs a warning if the task takes longer than LOG_TIMEOUT + (position * STAGGER_SECONDS).
+    Raises TimeoutError if the task exceeds MAX_TIMEOUT_SECONDS.
+
+    Args:
+        coro: The coroutine to run
+        task_name: Name of the task for logging
+        position: Position in the batch (0-indexed), used to stagger log messages
+        prompt: Optional prompt string to log when timeout threshold is hit
+
+    Returns:
+        The result of the coroutine
+
+    Raises:
+        TimeoutError: If task exceeds MAX_TIMEOUT_SECONDS
+    """
+    log_threshold = LOG_TIMEOUT_SECONDS + (position * STAGGER_SECONDS)
+    start_time = time.time()
+    last_log_time = 0.0
+
+    task = asyncio.create_task(coro)
+
+    try:
+        while not task.done():
+            elapsed = time.time() - start_time
+
+            if elapsed > MAX_TIMEOUT_SECONDS:
+                task.cancel()
+                raise TimeoutError(
+                    f"{task_name} timed out after {MAX_TIMEOUT_SECONDS}s"
+                )
+
+            # Log on first threshold, then every 60s after
+            should_log = elapsed > log_threshold and (
+                last_log_time == 0.0 or elapsed - last_log_time >= 60.0
+            )
+            if should_log:
+                print(f"    ⏳ {task_name} still running after {elapsed:.0f}s...")
+                if prompt:
+                    # Show first 2 lines of prompt (the actual request, not the JSON template)
+                    first_lines = "\n".join(prompt.split("\n")[:2])
+                    print(f"       Request: {first_lines}")
+                last_log_time = elapsed
+
+            try:
+                return await asyncio.wait_for(asyncio.shield(task), timeout=5.0)
+            except asyncio.TimeoutError:
+                continue
+
+        return await task
+    except asyncio.CancelledError:
+        task.cancel()
+        raise
 
 
 async def collect_single_stock_data(
@@ -21,6 +94,7 @@ async def collect_single_stock_data(
     company_name: str,
     ticker: str,
     one_year_ago: date,
+    position: int,
 ) -> tuple[str, dict[str, Any] | None]:
     """Collect stock data for a single company (async wrapper).
 
@@ -29,15 +103,22 @@ async def collect_single_stock_data(
         company_name: Company name
         ticker: Stock ticker symbol
         one_year_ago: Date from exactly 1 year ago
+        position: Position in batch for staggered timeout logging
 
     Returns:
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
         print(f"  Collecting stock data for {company_name} ({ticker})...")
-        # Run blocking I/O in thread pool
-        data = await asyncio.to_thread(
-            collector.collect_stock_data, company_name, ticker, one_year_ago
+        prompt = create_stock_price_prompt(company_name, ticker, one_year_ago)
+
+        async def do_collect():
+            return await asyncio.to_thread(
+                collector.collect_stock_data, company_name, ticker, one_year_ago
+            )
+
+        data = await with_timeout_logging(
+            do_collect(), f"{company_name} stock", position, prompt
         )
         print(f"    ✓ Current: ${data['current_price']:.2f}")
         return company_name, data
@@ -60,9 +141,13 @@ async def collect_all_stock_data(
     """
     tasks = [
         collect_single_stock_data(
-            collector, company_info["name"], company_info["ticker"], one_year_ago
+            collector,
+            company_info["name"],
+            company_info["ticker"],
+            one_year_ago,
+            position=i,
         )
-        for company_info in IT_CONSULTANCIES
+        for i, company_info in enumerate(IT_CONSULTANCIES)
     ]
 
     results = await asyncio.gather(*tasks)
@@ -73,21 +158,28 @@ async def collect_all_stock_data(
 
 
 async def collect_single_headcount_data(
-    collector: GeminiCollector, company_name: str
+    collector: GeminiCollector, company_name: str, position: int
 ) -> tuple[str, dict[str, Any] | None]:
     """Collect headcount data for a single company (async wrapper).
 
     Args:
         collector: GeminiCollector instance
         company_name: Company name
+        position: Position in batch for staggered timeout logging
 
     Returns:
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
         print(f"  Collecting headcount for {company_name}...")
-        # Run blocking I/O in thread pool
-        data = await asyncio.to_thread(collector.collect_headcount, company_name)
+        prompt = create_headcount_prompt(company_name)
+
+        async def do_collect():
+            return await asyncio.to_thread(collector.collect_headcount, company_name)
+
+        data = await with_timeout_logging(
+            do_collect(), f"{company_name} headcount", position, prompt
+        )
         print(f"    ✓ Headcount: {data['current_headcount']:,}")
         return company_name, data
     except Exception as e:
@@ -112,8 +204,8 @@ async def collect_all_headcount_data(
     ]
 
     tasks = [
-        collect_single_headcount_data(collector, company_name)
-        for company_name in all_companies
+        collect_single_headcount_data(collector, company_name, position=i)
+        for i, company_name in enumerate(all_companies)
     ]
 
     results = await asyncio.gather(*tasks)
@@ -124,7 +216,7 @@ async def collect_all_headcount_data(
 
 
 async def collect_single_job_posting_data(
-    collector: GeminiCollector, company_name: str, greenhouse_board: str
+    collector: GeminiCollector, company_name: str, greenhouse_board: str, position: int
 ) -> tuple[str, dict[str, Any] | None]:
     """Collect job posting data for a single company (async wrapper).
 
@@ -132,15 +224,22 @@ async def collect_single_job_posting_data(
         collector: GeminiCollector instance
         company_name: Company name
         greenhouse_board: Greenhouse board name
+        position: Position in batch for staggered timeout logging
 
     Returns:
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
         print(f"  Collecting job postings for {company_name}...")
-        # Run blocking I/O in thread pool
-        data = await asyncio.to_thread(
-            collector.collect_job_postings, company_name, greenhouse_board
+        prompt = create_job_postings_prompt(company_name, greenhouse_board)
+
+        async def do_collect():
+            return await asyncio.to_thread(
+                collector.collect_job_postings, company_name, greenhouse_board
+            )
+
+        data = await with_timeout_logging(
+            do_collect(), f"{company_name} jobs", position, prompt
         )
         print(f"    ✓ Technical jobs: {data['total_technical_jobs']}")
         return company_name, data
@@ -162,9 +261,9 @@ async def collect_all_job_posting_data(
     """
     tasks = [
         collect_single_job_posting_data(
-            collector, lab_info["name"], lab_info["greenhouse_board"]
+            collector, lab_info["name"], lab_info["greenhouse_board"], position=i
         )
-        for lab_info in AI_LABS
+        for i, lab_info in enumerate(AI_LABS)
     ]
 
     results = await asyncio.gather(*tasks)
@@ -259,6 +358,44 @@ def load_history_snapshot(days_ago: int) -> dict[str, Any] | None:
     return history.get("snapshots", {}).get(target_date)
 
 
+def find_recent_job_posting_data(
+    company_name: str, max_days_old: int = 7
+) -> dict[str, Any] | None:
+    """Find the most recent job posting data for a company from history.
+
+    Searches backwards through daily snapshots up to max_days_old days.
+
+    Args:
+        company_name: Name of the company to search for
+        max_days_old: Maximum age of data to accept (default: 7 days)
+
+    Returns:
+        Most recent job posting data or None if not found
+    """
+    history_file = Path("data/processed/metrics_history.json")
+    if not history_file.exists():
+        return None
+
+    with open(history_file, "r") as f:
+        history = json.load(f)
+
+    snapshots = history.get("snapshots", {})
+
+    # Search backwards from today up to max_days_old
+    for days_back in range(max_days_old + 1):
+        target_date = (date.today() - timedelta(days=days_back)).isoformat()
+        snapshot = snapshots.get(target_date)
+
+        if snapshot and company_name in snapshot.get("job_postings", {}):
+            job_data = snapshot["job_postings"][company_name]
+            print(
+                f"  ⏪ Using {days_back}-day-old data for {company_name}: {job_data['total_technical_jobs']} jobs"
+            )
+            return job_data
+
+    return None
+
+
 def build_metrics_structure(
     stock_data: dict[str, dict[str, Any]],
     headcount_data: dict[str, dict[str, Any]],
@@ -297,7 +434,6 @@ def build_metrics_structure(
 
     # Populate headcount data for IT consultancies
     low_end_headcount_companies = {}
-    low_end_badges = []
 
     for name in low_end_companies:
         if name in headcount_data:
@@ -308,21 +444,42 @@ def build_metrics_structure(
                 changes = calculate_headcount_changes(
                     current_headcount, name, baselines_data, headcount_processor
                 )
-                # Collect badges for aggregate calculation
-                for change_data in changes.values():
-                    low_end_badges.append(change_data["badge"])
             else:
                 changes = {}
 
             low_end_headcount_companies[name] = {
                 "current": current_headcount,
                 "data_date": headcount_data[name].get("data_date", ""),
+                "source_urls": headcount_data[name].get("source_urls", []),
                 "changes": changes,
             }
 
-    # Calculate aggregate badge (worst wins)
-    if low_end_badges:
-        low_end_aggregate_badge = badge_generator.get_aggregate_badge(low_end_badges)
+    # Calculate net headcount YoY percentage for low-end
+    total_current_headcount = sum(
+        data["current"] for data in low_end_headcount_companies.values()
+    )
+    net_headcount_pct_yoy_low = None
+    if has_baselines:
+        baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
+        baseline_headcounts = baseline_1yr.get("headcounts", {})
+        if baseline_headcounts:
+            total_baseline_headcount = sum(
+                baseline_headcounts[name]["headcount"]
+                for name in baseline_headcounts
+                if name in low_end_headcount_companies
+            )
+            if total_baseline_headcount > 0:
+                net_headcount_pct_yoy_low = (
+                    (total_current_headcount - total_baseline_headcount)
+                    / total_baseline_headcount
+                    * 100
+                )
+
+    # Calculate aggregate badge based on total average YoY percentage
+    if net_headcount_pct_yoy_low is not None:
+        low_end_aggregate_badge = badge_generator.get_headcount_badge(
+            net_headcount_pct_yoy_low
+        )
     else:
         low_end_aggregate_badge = "neutral"
 
@@ -343,6 +500,7 @@ def build_metrics_structure(
 
     # Calculate stock index changes vs baselines
     stock_index_changes = {}
+    stock_index_current_value = 100.0  # Default if calculation fails
     baseline_date_1yr = date.today() - timedelta(days=365)
 
     for baseline_name, days_ago in [("30_day", 30), ("1_year", 365)]:
@@ -360,9 +518,16 @@ def build_metrics_structure(
             # Calculate index if we have matching companies
             if len(baseline_prices) == len(current_prices):
                 try:
-                    current_index = stock_processor.calculate_index(current_prices, baseline_prices)
-                    index_change = stock_processor.calculate_index_change(current_index, 100.0)
+                    current_index = stock_processor.calculate_index(
+                        current_prices, baseline_prices
+                    )
+                    index_change = stock_processor.calculate_index_change(
+                        current_index, 100.0
+                    )
                     stock_index_changes[baseline_name] = round(index_change, 2)
+                    # Store the actual current index value from 1-year calculation
+                    if baseline_name == "1_year":
+                        stock_index_current_value = round(current_index, 2)
                 except ValueError:
                     stock_index_changes[baseline_name] = 0.0
             else:
@@ -370,19 +535,24 @@ def build_metrics_structure(
         else:
             stock_index_changes[baseline_name] = 0.0
 
+    # Calculate aggregate badge for stock index based on 1-year performance
+    stock_index_1yr_change = stock_index_changes.get("1_year", 0.0)
+    stock_index_badge = headcount_processor.classify_change(stock_index_1yr_change)
+
     stock_index_structure = {
-        "current_value": 100.0,
+        "current_value": stock_index_current_value,
         "baseline_date": baseline_date_1yr.isoformat(),
         "changes": stock_index_changes,
         "companies": stock_index_companies,
+        "aggregate_badge": stock_index_badge,
     }
 
     low_end = {
         "headcount": {
             "companies": low_end_headcount_companies,
             "aggregate_badge": low_end_aggregate_badge,
+            "net_headcount_pct_yoy": net_headcount_pct_yoy_low,
         },
-        "stock_index": stock_index_structure,
     }
 
     # Build medium-end tier (Big Tech)
@@ -390,7 +560,6 @@ def build_metrics_structure(
 
     # Populate headcount data for Big Tech
     medium_end_headcount_companies = {}
-    medium_end_badges = []
 
     for name in medium_end_companies:
         if name in headcount_data:
@@ -401,22 +570,41 @@ def build_metrics_structure(
                 changes = calculate_headcount_changes(
                     current_headcount, name, baselines_data, headcount_processor
                 )
-                # Collect badges for aggregate calculation
-                for change_data in changes.values():
-                    medium_end_badges.append(change_data["badge"])
             else:
                 changes = {}
 
             medium_end_headcount_companies[name] = {
                 "current": current_headcount,
                 "data_date": headcount_data[name].get("data_date", ""),
+                "source_urls": headcount_data[name].get("source_urls", []),
                 "changes": changes,
             }
 
-    # Calculate aggregate badge
-    if medium_end_badges:
-        medium_end_aggregate_badge = badge_generator.get_aggregate_badge(
-            medium_end_badges
+    # Calculate net headcount YoY percentage for medium-end
+    total_current_headcount_med = sum(
+        data["current"] for data in medium_end_headcount_companies.values()
+    )
+    net_headcount_pct_yoy_med = None
+    if has_baselines:
+        baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
+        baseline_headcounts = baseline_1yr.get("headcounts", {})
+        if baseline_headcounts:
+            total_baseline_headcount_med = sum(
+                baseline_headcounts[name]["headcount"]
+                for name in baseline_headcounts
+                if name in medium_end_headcount_companies
+            )
+            if total_baseline_headcount_med > 0:
+                net_headcount_pct_yoy_med = (
+                    (total_current_headcount_med - total_baseline_headcount_med)
+                    / total_baseline_headcount_med
+                    * 100
+                )
+
+    # Calculate aggregate badge based on total average YoY percentage
+    if net_headcount_pct_yoy_med is not None:
+        medium_end_aggregate_badge = badge_generator.get_headcount_badge(
+            net_headcount_pct_yoy_med
         )
     else:
         medium_end_aggregate_badge = "neutral"
@@ -425,6 +613,7 @@ def build_metrics_structure(
         "headcount": {
             "companies": medium_end_headcount_companies,
             "aggregate_badge": medium_end_aggregate_badge,
+            "net_headcount_pct_yoy": net_headcount_pct_yoy_med,
         }
     }
 
@@ -434,11 +623,21 @@ def build_metrics_structure(
     # Populate job posting data for AI labs
     # Note: We use history snapshots for job postings since Greenhouse doesn't provide historical data
     high_end_job_companies = {}
-    high_end_badges = []
 
     for name in high_end_companies:
+        # Try to get fresh data first, fallback to recent historical data (up to 7 days old)
+        job_data = None
         if name in job_posting_data:
-            current_jobs = job_posting_data[name]["total_technical_jobs"]
+            job_data = job_posting_data[name]
+        else:
+            # Collection failed for this company, try to find recent data
+            historical_job_data = find_recent_job_posting_data(name, max_days_old=7)
+            if historical_job_data:
+                job_data = historical_job_data
+
+        if job_data:
+            current_jobs = job_data["total_technical_jobs"]
+            collection_date = job_data.get("collection_date", date.today().isoformat())
             changes = {}
 
             # Try to get historical data from baselines (1_year_ago = Dec 26, 2024)
@@ -450,7 +649,6 @@ def build_metrics_structure(
                 job_change = current_jobs - historical_jobs
                 badge = jobs_processor.classify_change(job_change)
                 changes["1_year_ago"] = {"value": job_change, "badge": badge}
-                high_end_badges.append(badge)
             else:
                 # No baseline data available for 1 year ago
                 changes["1_year_ago"] = {"value": None, "badge": "neutral"}
@@ -462,20 +660,45 @@ def build_metrics_structure(
                 job_change = current_jobs - historical_jobs
                 badge = jobs_processor.classify_change(job_change)
                 changes["30_days_ago"] = {"value": job_change, "badge": badge}
-                high_end_badges.append(badge)
             else:
                 # No 30-day snapshot available
                 changes["30_days_ago"] = {"value": None, "badge": "neutral"}
 
             high_end_job_companies[name] = {
                 "current": current_jobs,
-                "collection_date": date.today().isoformat(),  # Use today's date for clarity
+                "collection_date": collection_date,
+                "source_url": job_data.get("source_url", ""),
                 "changes": changes,
             }
 
-    # Calculate aggregate badge
-    if high_end_badges:
-        high_end_aggregate_badge = badge_generator.get_aggregate_badge(high_end_badges)
+    # Calculate net jobs YoY percentage and total change
+    total_current_jobs = sum(
+        data["current"] for data in high_end_job_companies.values()
+    )
+
+    net_change_pct_yoy = None
+    total_job_change_yoy = 0
+    if has_baselines:
+        baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
+        baseline_jobs = baseline_1yr.get("job_postings", {})
+
+        if baseline_jobs:
+            total_baseline_jobs = sum(
+                baseline_jobs[name]["total_technical_jobs"]
+                for name in baseline_jobs
+                if name in high_end_job_companies
+            )
+            if total_baseline_jobs > 0:
+                net_change_pct_yoy = (
+                    (total_current_jobs - total_baseline_jobs)
+                    / total_baseline_jobs
+                    * 100
+                )
+                total_job_change_yoy = total_current_jobs - total_baseline_jobs
+
+    # Calculate aggregate badge based on total YoY job change (absolute number)
+    if total_job_change_yoy != 0:
+        high_end_aggregate_badge = jobs_processor.classify_change(total_job_change_yoy)
     else:
         high_end_aggregate_badge = "neutral"
 
@@ -483,6 +706,7 @@ def build_metrics_structure(
         "job_postings": {
             "companies": high_end_job_companies,
             "aggregate_badge": high_end_aggregate_badge,
+            "net_change_pct_yoy": net_change_pct_yoy,
         }
     }
 
@@ -491,6 +715,7 @@ def build_metrics_structure(
         "low_end": low_end,
         "medium_end": medium_end,
         "high_end": high_end,
+        "stock_index": stock_index_structure,
         "ai_summary": ai_summary,
     }
 
@@ -637,6 +862,9 @@ async def main_async():
     print(f"✅ Metrics copied to {website_metrics_file} (for GitHub Pages)")
     print("=" * 60)
 
+    # Clean up the collector to release resources
+    collector.close()
+
     return 0
 
 
@@ -646,4 +874,4 @@ def main():
 
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())

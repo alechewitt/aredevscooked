@@ -3,6 +3,8 @@
 import json
 import re
 import os
+import threading
+import time
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -50,7 +52,65 @@ class GeminiCollector:
         self.log_dir = Path("logs/gemini_responses")
         self.log_dir.mkdir(parents=True, exist_ok=True)
 
-    def _log_response(self, query_type: str, company_name: str, prompt: str, response_text: str, response_obj: Any):
+        # Track pending requests (thread-safe)
+        self._pending_requests: dict[int, dict[str, Any]] = {}
+        self._pending_lock = threading.Lock()
+
+    def close(self):
+        """Close the client and release resources."""
+        if hasattr(self.client, "close"):
+            self.client.close()
+
+    def get_pending_request(
+        self, thread_id: int | None = None
+    ) -> dict[str, Any] | None:
+        """Get info about a pending request.
+
+        Args:
+            thread_id: Thread ID to look up. If None, uses current thread.
+
+        Returns:
+            Dict with query_type, company_name, prompt, start_time or None
+        """
+        if thread_id is None:
+            thread_id = threading.get_ident()
+        with self._pending_lock:
+            return self._pending_requests.get(thread_id)
+
+    def _set_pending(self, query_type: str, company_name: str, prompt: str):
+        """Mark a request as pending for the current thread."""
+        thread_id = threading.get_ident()
+        with self._pending_lock:
+            self._pending_requests[thread_id] = {
+                "query_type": query_type,
+                "company_name": company_name,
+                "prompt": prompt,
+                "start_time": time.time(),
+            }
+
+    def _clear_pending(self):
+        """Clear the pending request for the current thread."""
+        thread_id = threading.get_ident()
+        with self._pending_lock:
+            self._pending_requests.pop(thread_id, None)
+
+    def get_all_pending_requests(self) -> list[dict[str, Any]]:
+        """Get all pending requests across all threads.
+
+        Returns:
+            List of pending request dicts with query_type, company_name, prompt, start_time
+        """
+        with self._pending_lock:
+            return list(self._pending_requests.values())
+
+    def _log_response(
+        self,
+        query_type: str,
+        company_name: str,
+        prompt: str,
+        response_text: str,
+        response_obj: Any,
+    ):
         """Log Gemini API response to file for debugging.
 
         Args:
@@ -78,10 +138,14 @@ class GeminiCollector:
             f.write(f"=== FULL RESPONSE OBJECT ===\n{response_obj}\n\n")
 
             # Try to extract and format usage metadata
-            if hasattr(response_obj, 'usage_metadata'):
+            if hasattr(response_obj, "usage_metadata"):
                 f.write(f"=== USAGE METADATA ===\n")
-                f.write(f"Prompt tokens: {response_obj.usage_metadata.prompt_token_count}\n")
-                f.write(f"Total tokens: {response_obj.usage_metadata.total_token_count}\n")
+                f.write(
+                    f"Prompt tokens: {response_obj.usage_metadata.prompt_token_count}\n"
+                )
+                f.write(
+                    f"Total tokens: {response_obj.usage_metadata.total_token_count}\n"
+                )
 
     def collect_stock_data(
         self, company_name: str, ticker: str, one_year_ago: date
@@ -101,13 +165,18 @@ class GeminiCollector:
         """
         prompt = create_stock_price_prompt(company_name, ticker, one_year_ago)
 
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=self.generation_config
-        )
+        self._set_pending("stock", company_name, prompt)
+        try:
+            api_start = time.time()
+            response = self.client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.generation_config
+            )
+            api_duration = time.time() - api_start
+        finally:
+            self._clear_pending()
         text = self._get_response_text(response)
         self._log_response("stock", company_name, prompt, text, response)
+        print(f"      [API call took {api_duration:.1f}s]")
         data = self._extract_json(text)
 
         # Validate prices
@@ -130,7 +199,9 @@ class GeminiCollector:
 
         return data
 
-    def collect_headcount(self, company_name: str, target_date: str | None = None) -> dict[str, Any]:
+    def collect_headcount(
+        self, company_name: str, target_date: str | None = None
+    ) -> dict[str, Any]:
         """Collect employee headcount data for a company.
 
         Args:
@@ -145,14 +216,21 @@ class GeminiCollector:
         """
         prompt = create_headcount_prompt(company_name, target_date)
 
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=self.generation_config
-        )
+        self._set_pending("headcount", company_name, prompt)
+        try:
+            api_start = time.time()
+            response = self.client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.generation_config
+            )
+            api_duration = time.time() - api_start
+        finally:
+            self._clear_pending()
         text = self._get_response_text(response)
         date_suffix = f"_{target_date}" if target_date else ""
-        self._log_response("headcount", f"{company_name}{date_suffix}", prompt, text, response)
+        self._log_response(
+            "headcount", f"{company_name}{date_suffix}", prompt, text, response
+        )
+        print(f"      [API call took {api_duration:.1f}s]")
         data = self._extract_json(text)
 
         # Validate headcount range
@@ -185,13 +263,18 @@ class GeminiCollector:
         """
         prompt = create_job_postings_prompt(company_name, greenhouse_board)
 
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=self.generation_config
-        )
+        self._set_pending("jobs", company_name, prompt)
+        try:
+            api_start = time.time()
+            response = self.client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.generation_config
+            )
+            api_duration = time.time() - api_start
+        finally:
+            self._clear_pending()
         text = self._get_response_text(response)
         self._log_response("jobs", company_name, prompt, text, response)
+        print(f"      [API call took {api_duration:.1f}s]")
         data = self._extract_json(text)
 
         # Validate job count
@@ -214,9 +297,7 @@ class GeminiCollector:
 
         # Note: Summary generation doesn't need grounding - it's analyzing provided data
         response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=self.generation_config
+            model=self.model_name, contents=prompt, config=self.generation_config
         )
         text = self._get_response_text(response)
         self._log_response("summary", "market_summary", prompt, text, response)
