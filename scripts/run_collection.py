@@ -11,8 +11,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
+from aredevscooked.collectors.stock_collector import StockCollector
 from aredevscooked.utils.gemini_prompts import (
-    create_stock_price_prompt,
     create_headcount_prompt,
     create_job_postings_prompt,
 )
@@ -90,37 +90,33 @@ async def with_timeout_logging(
 
 
 async def collect_single_stock_data(
-    collector: GeminiCollector,
+    collector: StockCollector,
     company_name: str,
     ticker: str,
     one_year_ago: date,
-    position: int,
 ) -> tuple[str, dict[str, Any] | None]:
-    """Collect stock data for a single company (async wrapper).
+    """Collect stock data for a single company using yfinance.
 
     Args:
-        collector: GeminiCollector instance
+        collector: StockCollector instance
         company_name: Company name
         ticker: Stock ticker symbol
         one_year_ago: Date from exactly 1 year ago
-        position: Position in batch for staggered timeout logging
 
     Returns:
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
         print(f"  Collecting stock data for {company_name} ({ticker})...")
-        prompt = create_stock_price_prompt(company_name, ticker, one_year_ago)
 
-        async def do_collect():
-            return await asyncio.to_thread(
-                collector.collect_stock_data, company_name, ticker, one_year_ago
-            )
-
-        data = await with_timeout_logging(
-            do_collect(), f"{company_name} stock", position, prompt
+        # Run yfinance call in thread pool to avoid blocking
+        data = await asyncio.to_thread(
+            collector.collect_stock_data, company_name, ticker, one_year_ago
         )
-        print(f"    ✓ Current: ${data['current_price']:.2f}")
+
+        # Format currency based on ticker (INR for .NS, USD for others)
+        currency = "₹" if ".NS" in ticker else "$"
+        print(f"    ✓ Current: {currency}{data['current_price']:.2f}")
         return company_name, data
     except Exception as e:
         print(f"    ✗ Error collecting {company_name}: {e}")
@@ -128,12 +124,12 @@ async def collect_single_stock_data(
 
 
 async def collect_all_stock_data(
-    collector: GeminiCollector, one_year_ago: date
+    collector: StockCollector, one_year_ago: date
 ) -> dict[str, dict[str, Any]]:
-    """Collect stock price data for all IT consultancies concurrently.
+    """Collect stock price data for all IT consultancies using yfinance.
 
     Args:
-        collector: GeminiCollector instance
+        collector: StockCollector instance
         one_year_ago: Date from exactly 1 year ago
 
     Returns:
@@ -145,7 +141,6 @@ async def collect_all_stock_data(
             company_info["name"],
             company_info["ticker"],
             one_year_ago,
-            position=i,
         )
         for i, company_info in enumerate(IT_CONSULTANCIES)
     ]
@@ -502,7 +497,8 @@ def build_metrics_structure(
                 if name in baseline_30d_stocks:
                     baseline_price_30d = baseline_30d_stocks[name]["price"]
                     change_30_day = round(
-                        ((current_price - baseline_price_30d) / baseline_price_30d) * 100,
+                        ((current_price - baseline_price_30d) / baseline_price_30d)
+                        * 100,
                         2,
                     )
 
@@ -511,7 +507,8 @@ def build_metrics_structure(
                 if name in baseline_1yr_stocks:
                     baseline_price_1yr = baseline_1yr_stocks[name]["price"]
                     change_1_year = round(
-                        ((current_price - baseline_price_1yr) / baseline_price_1yr) * 100,
+                        ((current_price - baseline_price_1yr) / baseline_price_1yr)
+                        * 100,
                         2,
                     )
 
@@ -825,9 +822,12 @@ async def main_async():
     print("🚀 Starting aredevscooked data collection...")
     print("=" * 60)
 
-    # Initialize collector
+    # Initialize collectors
+    stock_collector = StockCollector()
+    print("✓ StockCollector initialized (yfinance)")
+
     try:
-        collector = GeminiCollector()
+        gemini_collector = GeminiCollector()
         print("✓ GeminiCollector initialized\n")
     except ValueError as e:
         print(f"❌ Error: {e}")
@@ -837,17 +837,17 @@ async def main_async():
     # Calculate dates
     one_year_ago = date.today() - timedelta(days=365)
 
-    # Collect all data concurrently
-    print("\n📊 Collecting stock price data...")
-    stock_data = await collect_all_stock_data(collector, one_year_ago)
+    # Collect stock data using yfinance
+    print("\n📊 Collecting stock price data (via yfinance)...")
+    stock_data = await collect_all_stock_data(stock_collector, one_year_ago)
     print(f"  Collected {len(stock_data)}/7 companies")
 
     print("\n👥 Collecting headcount data...")
-    headcount_data = await collect_all_headcount_data(collector)
+    headcount_data = await collect_all_headcount_data(gemini_collector)
     print(f"  Collected {len(headcount_data)}/12 companies")
 
     print("\n🎯 Collecting job posting data...")
-    job_posting_data = await collect_all_job_posting_data(collector)
+    job_posting_data = await collect_all_job_posting_data(gemini_collector)
     print(f"  Collected {len(job_posting_data)}/3 companies")
 
     # Build metrics structure first (needed for summary generation)
@@ -857,7 +857,7 @@ async def main_async():
     )
 
     print("\n📝 Generating AI summary...")
-    ai_summary = collector.generate_summary(metrics_without_summary)
+    ai_summary = gemini_collector.generate_summary(metrics_without_summary)
 
     # Rebuild with actual summary
     metrics = build_metrics_structure(
@@ -888,8 +888,9 @@ async def main_async():
     print(f"✅ Metrics copied to {website_metrics_file} (for GitHub Pages)")
     print("=" * 60)
 
-    # Clean up the collector to release resources
-    collector.close()
+    # Clean up collectors to release resources
+    stock_collector.close()
+    gemini_collector.close()
 
     return 0
 

@@ -10,44 +10,44 @@
       "stock_prices": {
         "HCLTech": {
           "company": "HCLTech",
-          "ticker": "HCL.NS",
-          "price": 1085.05,
+          "ticker": "HCLTECH.NS",
+          "price": 974.58,
           "date": "2023-03-31"
         },
         "LTIMindtree": {
           "company": "LTIMindtree",
           "ticker": "LTIM.NS",
-          "price": 4814.95,
+          "price": 4587.28,
           "date": "2023-03-31"
         },
         "Cognizant": {
           "company": "Cognizant",
           "ticker": "CTSH",
-          "price": 60.93,
+          "price": 58.25,
           "date": "2023-03-31"
         },
         "Infosys": {
           "company": "Infosys",
           "ticker": "INFY",
-          "price": 17.4,
+          "price": 15.99,
           "date": "2023-03-31"
         },
         "TCS": {
           "company": "TCS",
           "ticker": "TCS.NS",
-          "price": 3205.9,
+          "price": 3001.97,
           "date": "2023-03-31"
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
           "ticker": "TECHM.NS",
-          "price": 1101.5,
+          "price": 1004.58,
           "date": "2023-03-31"
         },
         "Wipro": {
           "company": "Wipro",
           "ticker": "WIT",
-          "price": 4.43,
+          "price": 2.15,
           "date": "2023-03-31"
         }
       },
@@ -116,44 +116,44 @@
       "stock_prices": {
         "HCLTech": {
           "company": "HCLTech",
-          "ticker": "HCL.NS",
-          "price": 1459.55,
+          "ticker": "HCLTECH.NS",
+          "price": 1831.12,
           "date": "2024-12-26"
         },
         "LTIMindtree": {
           "company": "LTIMindtree",
           "ticker": "LTIM.NS",
-          "price": 6290.35,
+          "price": 5678.49,
           "date": "2024-12-26"
         },
         "Cognizant": {
           "company": "Cognizant",
           "ticker": "CTSH",
-          "price": 75.12,
+          "price": 78.62,
           "date": "2024-12-26"
         },
         "Infosys": {
           "company": "Infosys",
           "ticker": "INFY",
-          "price": 15.34,
+          "price": 21.99,
           "date": "2024-12-26"
         },
         "TCS": {
           "company": "TCS",
           "ticker": "TCS.NS",
-          "price": 3793.9,
+          "price": 4028.96,
           "date": "2024-12-26"
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
           "ticker": "TECHM.NS",
-          "price": 1289.05,
+          "price": 1650.93,
           "date": "2024-12-26"
         },
         "Wipro": {
           "company": "Wipro",
           "ticker": "WIT",
-          "price": 4.61,
+          "price": 3.47,
           "date": "2024-12-26"
         }
       },
@@ -240,44 +240,44 @@
       "stock_prices": {
         "HCLTech": {
           "company": "HCLTech",
-          "ticker": "HCL.NS",
-          "price": 1288.45,
+          "ticker": "HCLTECH.NS",
+          "price": 1617.90,
           "date": "2025-11-26"
         },
         "LTIMindtree": {
           "company": "LTIMindtree",
           "ticker": "LTIM.NS",
-          "price": 5415.15,
+          "price": 5890.00,
           "date": "2025-11-26"
         },
         "Cognizant": {
           "company": "Cognizant",
           "ticker": "CTSH",
-          "price": 69.41,
+          "price": 77.05,
           "date": "2025-11-26"
         },
         "Infosys": {
           "company": "Infosys",
           "ticker": "INFY",
-          "price": 17.31,
+          "price": 17.42,
           "date": "2025-11-26"
         },
         "TCS": {
           "company": "TCS",
           "ticker": "TCS.NS",
-          "price": 3514.65,
+          "price": 3162.90,
           "date": "2025-11-26"
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
           "ticker": "TECHM.NS",
-          "price": 1213.55,
+          "price": 1520.40,
           "date": "2025-11-26"
         },
         "Wipro": {
           "company": "Wipro",
           "ticker": "WIT",
-          "price": 4.81,
+          "price": 2.69,
           "date": "2025-11-26"
         }
       },

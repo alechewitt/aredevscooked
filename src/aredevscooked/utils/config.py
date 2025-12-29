@@ -2,7 +2,7 @@
 
 # IT Consultancies (Low-End Companies)
 IT_CONSULTANCIES = [
-    {"name": "HCLTech", "ticker": "HCL.NS"},
+    {"name": "HCLTech", "ticker": "HCLTECH.NS"},
     {"name": "LTIMindtree", "ticker": "LTIM.NS"},
     {"name": "Cognizant", "ticker": "CTSH"},
     {"name": "Infosys", "ticker": "INFY"},
