@@ -33,33 +33,7 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Header */
-header {
-    background: var(--bg-secondary);
-    padding: 2rem 0;
-    border-bottom: 2px solid var(--accent);
-    margin-bottom: 3rem;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-.last-updated {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-style: italic;
+    padding: 2rem 2rem 0 2rem;
 }
 
 /* Overall Verdict Section */
@@ -75,13 +49,18 @@ h1 {
     text-align: center;
 }
 
-.verdict-label {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+.verdict-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
     letter-spacing: 2px;
-    font-weight: 600;
+}
+
+.verdict-tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
 }
 
 .verdict-value {
@@ -89,6 +68,14 @@ h1 {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin: 2rem 0;
+}
+
+.verdict-updated {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 1rem;
 }
 
 .verdict-yes {
@@ -446,11 +433,19 @@ footer a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 0 1rem;
+        padding: 1rem 1rem 0 1rem;
     }
 
-    h1 {
-        font-size: 2rem;
+    .verdict-title {
+        font-size: 2.5rem;
+    }
+
+    .verdict-value {
+        font-size: 2.5rem;
+    }
+
+    .verdict-tagline {
+        font-size: 1rem;
     }
 
     .tiers-grid {
