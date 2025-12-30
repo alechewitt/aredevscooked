@@ -145,19 +145,14 @@ body {
 }
 
 .tier-header {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--border-color);
 }
 
 .tier-header h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.25rem;
-}
-
-.tier-subtitle {
-    color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
 /* Metric Sections */
@@ -167,12 +162,6 @@ body {
 
 .metric-section:last-child {
     margin-bottom: 0;
-}
-
-.metric-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
 }
 
 /* Aggregate Badge */
