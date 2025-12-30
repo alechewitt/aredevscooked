@@ -43,7 +43,7 @@
         if (element) {
             let html = getBadgeHTML(badge);
             if (summaryText) {
-                html += `<span class="summary-text" style="margin-left: 0.75rem; color: var(--text-secondary); font-size: 0.9rem;">${summaryText}</span>`;
+                html += `<br><span class="summary-text" style="margin-top: 0.5rem; display: inline-block; color: var(--text-secondary); font-size: 0.9rem;">${summaryText}</span>`;
             }
             element.innerHTML = html;
         }
