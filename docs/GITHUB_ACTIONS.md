@@ -253,17 +253,6 @@ The project uses the latest versions of GitHub Actions as specified in [Simon Wi
 - `actions/upload-pages-artifact@v4` - Latest artifact upload
 - `actions/deploy-pages@v4` - Latest Pages deployment
 
-### Why Use Latest Versions?
-
-From CLAUDE.md:
-> If you decide to do something with Github Actions, make sure to consult `https://simonw.github.io/actions-latest/versions.txt` to see what the latest versions of packages to use should be.
-
-Using latest versions ensures:
-- Access to latest features and bug fixes
-- Security patches are applied
-- Better performance and reliability
-- Compatibility with GitHub's infrastructure
-
 ## Secrets Configuration
 
 The workflows require one secret to be configured in the GitHub repository settings:
@@ -351,18 +340,6 @@ This is useful for:
 
 ## Implementation Quirks
 
-### Headcount Fallback Logic
-
-When headcount collection fails due to server errors (e.g., "Server disconnected without sending a response"), the system doesn't fail the entire workflow. Instead, it falls back to using recent historical data (up to 7 days old).
-
-**Why This Matters for GitHub Actions**:
-- Prevents workflow failures from transient API errors
-- Ensures daily commits have complete data even with partial failures
-- Maintains website functionality during API outages
-- Logged with `⏪ Using N-day-old headcount data for Company: X,XXX` messages
-
-See commit `3036644` for implementation details.
-
 ### Commit Message Format
 
 The automated commit message follows a specific format:
@@ -391,19 +368,6 @@ This format:
 4. **Performance**: Cache dependencies between workflow runs
 5. **Testing**: Add workflow to run tests before deployment
 6. **Monitoring**: Track collection duration and data quality metrics
-
-### Scalability Notes
-
-Current setup handles:
-- 7 IT consultancies (stock data)
-- 12 companies (headcount data: 7 IT + 5 Big Tech)
-- 3 AI labs (job posting data)
-
-If scaling to more companies:
-- Consider rate limiting for API calls
-- May need to increase timeout limits
-- Could parallelize collection further
-- Might need to split into multiple workflows
 
 ## Related Documentation
 
