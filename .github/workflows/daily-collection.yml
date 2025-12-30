@@ -28,6 +28,17 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Debug - Check if GEMINI_API_KEY is set
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "❌ GEMINI_API_KEY is NOT set"
+            exit 1
+          else
+            echo "✓ GEMINI_API_KEY is set (length: ${#GEMINI_API_KEY} characters)"
+          fi
+
       - name: Run data collection
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
