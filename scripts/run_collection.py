@@ -288,21 +288,58 @@ def calculate_headcount_changes(
     company_name: str,
     baselines_data: dict[str, Any],
     headcount_processor: HeadcountProcessor,
+    gemini_data: dict[str, Any] | None = None,
 ) -> dict[str, dict[str, Any]]:
-    """Calculate headcount changes against all baselines.
+    """Calculate headcount changes against baselines and Gemini historical data.
+
+    For 1_year_ago and q1_2023, uses Gemini's returned historical data with citations.
+    For 30_days_ago, uses stored baselines.
 
     Args:
         current: Current headcount
         company_name: Company name
         baselines_data: Baseline data structure
         headcount_processor: HeadcountProcessor instance
+        gemini_data: Optional Gemini response with one_year_ago and q1_2023 data
 
     Returns:
-        Dictionary of changes for each baseline period
+        Dictionary of changes for each baseline period with source_url citations
     """
     changes = {}
 
+    # Map Gemini response keys to baseline names
+    gemini_period_map = {
+        "1_year_ago": "one_year_ago",
+        "q1_2023": "q1_2023",
+    }
+
     for baseline_name in ["30_days_ago", "1_year_ago", "q1_2023"]:
+        # For 1_year_ago and q1_2023, prefer Gemini's historical data
+        gemini_key = gemini_period_map.get(baseline_name)
+        if gemini_key and gemini_data and gemini_key in gemini_data:
+            period_data = gemini_data[gemini_key]
+            if period_data and isinstance(period_data, dict):
+                baseline_value = period_data.get("headcount")
+                if baseline_value:
+                    pct_change = headcount_processor.calculate_percentage_change(
+                        current, baseline_value
+                    )
+                    abs_change = headcount_processor.calculate_absolute_change(
+                        current, baseline_value
+                    )
+                    badge = headcount_processor.classify_change(pct_change)
+
+                    changes[baseline_name] = {
+                        "value": abs_change,
+                        "pct": round(pct_change, 2),
+                        "badge": badge,
+                        "source_url": period_data.get("source_url", ""),
+                        "baseline_headcount": baseline_value,
+                        "baseline_date": period_data.get("as_of_date", ""),
+                    }
+                    continue
+
+        # Fall back to stored baselines (always used for 30_days_ago)
         baseline = baselines_data["baselines"].get(baseline_name, {})
         headcounts = baseline.get("headcounts", {})
 
@@ -320,6 +357,9 @@ def calculate_headcount_changes(
                 "value": abs_change,
                 "pct": round(pct_change, 2),
                 "badge": badge,
+                "source_url": headcounts[company_name].get("source_url", ""),
+                "baseline_headcount": baseline_value,
+                "baseline_date": headcounts[company_name].get("date", ""),
             }
         else:
             # No baseline data available
@@ -327,6 +367,7 @@ def calculate_headcount_changes(
                 "value": None,
                 "pct": None,
                 "badge": "neutral",
+                "source_url": "",
             }
 
     return changes
@@ -489,14 +530,31 @@ def build_metrics_structure(
             # Calculate changes if we have baselines
             if has_baselines:
                 changes = calculate_headcount_changes(
-                    current_headcount, name, baselines_data, headcount_processor
+                    current_headcount,
+                    name,
+                    baselines_data,
+                    headcount_processor,
+                    gemini_data=company_headcount_data,
                 )
             else:
                 changes = {}
 
+            # Extract current period citation info
+            current_source_url = ""
+            current_notes = ""
+            if "current" in company_headcount_data and isinstance(
+                company_headcount_data["current"], dict
+            ):
+                current_source_url = company_headcount_data["current"].get(
+                    "source_url", ""
+                )
+                current_notes = company_headcount_data["current"].get("notes", "")
+
             low_end_headcount_companies[name] = {
                 "current": current_headcount,
                 "data_date": company_headcount_data.get("data_date", ""),
+                "source_url": current_source_url,
+                "notes": current_notes,
                 "source_urls": company_headcount_data.get("source_urls", []),
                 "changes": changes,
             }
@@ -653,14 +711,31 @@ def build_metrics_structure(
             # Calculate changes if we have baselines
             if has_baselines:
                 changes = calculate_headcount_changes(
-                    current_headcount, name, baselines_data, headcount_processor
+                    current_headcount,
+                    name,
+                    baselines_data,
+                    headcount_processor,
+                    gemini_data=company_headcount_data,
                 )
             else:
                 changes = {}
 
+            # Extract current period citation info
+            current_source_url = ""
+            current_notes = ""
+            if "current" in company_headcount_data and isinstance(
+                company_headcount_data["current"], dict
+            ):
+                current_source_url = company_headcount_data["current"].get(
+                    "source_url", ""
+                )
+                current_notes = company_headcount_data["current"].get("notes", "")
+
             medium_end_headcount_companies[name] = {
                 "current": current_headcount,
                 "data_date": company_headcount_data.get("data_date", ""),
+                "source_url": current_source_url,
+                "notes": current_notes,
                 "source_urls": company_headcount_data.get("source_urls", []),
                 "changes": changes,
             }
@@ -851,11 +926,12 @@ def save_daily_snapshot(
             "ticker": data["ticker"],
         }
 
-    # Save headcounts
+    # Save headcounts (including source_urls for 30-day citation tracking)
     for company_name, data in headcount_data.items():
         snapshot["headcounts"][company_name] = {
             "headcount": data["current_headcount"],
             "data_date": data.get("data_date", ""),
+            "source_urls": data.get("source_urls", []),
         }
 
     # Save job postings

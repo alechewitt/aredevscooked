@@ -83,6 +83,51 @@ def test_headcount_prompt_mentions_sources():
     assert "source" in prompt.lower()
 
 
+def test_headcount_prompt_requests_multiple_periods():
+    """Headcount prompt should request data for multiple time periods."""
+    prompt = create_headcount_prompt("Microsoft")
+    assert "current" in prompt.lower()
+    assert "one year ago" in prompt.lower() or "one_year_ago" in prompt.lower()
+    assert "q1 2023" in prompt.lower() or "q1_2023" in prompt.lower()
+
+
+def test_headcount_prompt_includes_q1_2023_date():
+    """Headcount prompt should include Q1 2023 target date."""
+    prompt = create_headcount_prompt("Microsoft")
+    assert "2023-03-31" in prompt
+
+
+def test_headcount_prompt_requests_per_period_source_url():
+    """Headcount prompt should request source_url for each period."""
+    prompt = create_headcount_prompt("Microsoft")
+    assert "source_url" in prompt
+
+
+def test_headcount_prompt_requests_notes():
+    """Headcount prompt should request notes for layoff adjustments."""
+    prompt = create_headcount_prompt("Microsoft")
+    assert "notes" in prompt.lower()
+
+
+def test_headcount_prompt_amazon_special_handling():
+    """Headcount prompt for Amazon should note total employee count."""
+    prompt = create_headcount_prompt("Amazon")
+    assert "amazon" in prompt.lower()
+    assert "total employee" in prompt.lower() or "all employees" in prompt.lower()
+
+
+def test_headcount_prompt_mentions_quarterly_reports():
+    """Headcount prompt should mention quarterly reports as primary sources."""
+    prompt = create_headcount_prompt("Microsoft")
+    assert "quarterly" in prompt.lower()
+
+
+def test_headcount_prompt_mentions_layoff_adjustments():
+    """Headcount prompt should mention layoff adjustments."""
+    prompt = create_headcount_prompt("Microsoft")
+    assert "layoff" in prompt.lower()
+
+
 # Job Postings Prompt Tests
 
 

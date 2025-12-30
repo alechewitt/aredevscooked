@@ -202,14 +202,20 @@ class GeminiCollector:
     def collect_headcount(
         self, company_name: str, target_date: str | None = None
     ) -> dict[str, Any]:
-        """Collect employee headcount data for a company.
+        """Collect employee headcount data for a company across multiple time periods.
 
         Args:
             company_name: Full company name
-            target_date: Optional target date in YYYY-MM-DD format for historical data
+            target_date: Optional target date in YYYY-MM-DD format (currently unused)
 
         Returns:
-            Dictionary with headcount data
+            Dictionary with headcount data including:
+            - current_headcount: Current headcount (backward compatible)
+            - data_date: Date of current headcount (backward compatible)
+            - source_urls: List of source URLs (backward compatible)
+            - current: Dict with headcount, as_of_date, source_url, notes
+            - one_year_ago: Dict with historical data (or None)
+            - q1_2023: Dict with historical data (or None)
 
         Raises:
             ValueError: If headcount is out of plausible range
@@ -232,6 +238,14 @@ class GeminiCollector:
         )
         print(f"      [API call took {api_duration:.1f}s]")
         data = self._extract_json(text, response)
+
+        # Normalize multi-period response for backward compatibility
+        if "current" in data and isinstance(data["current"], dict):
+            current_data = data["current"]
+            data["current_headcount"] = current_data.get("headcount", 0)
+            data["data_date"] = current_data.get("as_of_date", "")
+            source_url = current_data.get("source_url", "")
+            data["source_urls"] = [source_url] if source_url else []
 
         # Validate headcount range
         headcount = data.get("current_headcount", 0)

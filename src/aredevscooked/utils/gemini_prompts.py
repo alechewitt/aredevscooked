@@ -1,6 +1,6 @@
 """Gemini API prompt templates for data collection."""
 
-from datetime import date
+from datetime import date, timedelta
 from typing import Any
 
 
@@ -36,47 +36,72 @@ Include source URLs for verification."""
 
 
 def create_headcount_prompt(company_name: str, target_date: str | None = None) -> str:
-    """Create prompt for collecting employee headcount data.
+    """Create prompt for collecting employee headcount data across multiple time periods.
 
     Args:
         company_name: Full company name (e.g., "Microsoft")
-        target_date: Optional target date in YYYY-MM-DD format for historical data
+        target_date: Optional target date in YYYY-MM-DD format (currently unused,
+            kept for backward compatibility)
 
     Returns:
         Formatted prompt string for Gemini API
     """
-    # Special handling for Amazon to get corporate-only headcount
+    today = date.today()
+    one_year_ago = (today - timedelta(days=365)).strftime("%Y-%m-%d")
+    q1_2023 = "2023-03-31"
+
     additional_instruction = ""
     if company_name == "Amazon":
-        additional_instruction = "\n\nIMPORTANT: For Amazon, report CORPORATE employee headcount only, excluding warehouse and fulfillment center workers. Look for breakdowns in SEC filings or investor presentations that separate corporate from operations employees."
+        additional_instruction = """
+AMAZON NOTE: Amazon does not separately report corporate vs warehouse headcount in SEC filings.
+Use total employee count from official filings. Note in the "notes" field that this includes all employees."""
 
-    # Add date-specific instruction if target_date provided
-    date_instruction = ""
-    if target_date:
-        date_instruction = f"\n\nIMPORTANT: Find the employee headcount AS OF {target_date} or the closest available date. Look for quarterly reports, SEC filings, or earnings calls from that time period."
-    else:
-        date_instruction = "\n\nFind the most recent total employee headcount."
+    return f"""Search for employee headcount data for {company_name} across multiple time periods.
 
-    return f"""Search the web for the total employee headcount of {company_name}.{date_instruction}
-Look for official investor reports, earnings calls, or recent news articles. If layoffs have been announced,
-please infer how that impacts the headcount numbers.{additional_instruction}
+IMPORTANT RULES:
+1. Use QUARTERLY earnings reports or 10-K/10-Q SEC filings as primary sources
+2. Each company reports headcount quarterly - find the closest quarterly report to each target date
+3. If layoffs were announced AFTER the quarterly report date, subtract them and note this in the "notes" field
+4. ALWAYS provide a source_url for each data point - this is REQUIRED
+{additional_instruction}
+
+Find headcount for these time periods (use closest available quarterly report):
+1. CURRENT: Most recent quarterly report + any subsequent layoff adjustments
+2. ONE YEAR AGO: Quarterly report closest to {one_year_ago}
+3. Q1 2023: Quarterly report closest to {q1_2023}
 
 Return ONLY a JSON object with this exact structure:
 {{
   "company": "{company_name}",
-  "current_headcount": 0,
-  "data_date": "YYYY-MM-DD",
-  "confidence": "high",
-  "source_urls": ["https://..."]
+  "current": {{
+    "headcount": 0,
+    "as_of_date": "YYYY-MM-DD",
+    "source_url": "https://...",
+    "notes": "e.g., 'Q3 2024 10-Q filing minus 5k Jan 2025 layoffs'"
+  }},
+  "one_year_ago": {{
+    "headcount": 0,
+    "as_of_date": "YYYY-MM-DD",
+    "source_url": "https://...",
+    "notes": "e.g., 'Q4 2023 earnings report'"
+  }},
+  "q1_2023": {{
+    "headcount": 0,
+    "as_of_date": "YYYY-MM-DD",
+    "source_url": "https://...",
+    "notes": "e.g., 'FY2023 10-K filing'"
+  }},
+  "confidence": "high"
 }}
 
-Confidence levels:
-- "high": Data from official company reports or SEC filings
-- "medium": Data from reputable news sources
-- "low": Estimates or unverified sources
+RULES:
+- headcount must be integers between 1,000 and 2,000,000
+- as_of_date is when the headcount number is valid (after any layoff adjustments)
+- source_url MUST be provided for each period - use the SEC filing, earnings report, or news article URL
+- notes should explain the source and any adjustments made (e.g., layoffs subtracted)
+- confidence: "high" (SEC/official filings), "medium" (reputable news), "low" (estimates)
 
-Replace placeholder values with actual data. Headcount should be an integer between 1,000 and 2,000,000.
-Include source URLs for verification."""
+If data for a time period is unavailable, use null for that period's object."""
 
 
 def create_job_postings_prompt(company_name: str, greenhouse_board: str) -> str:
