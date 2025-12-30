@@ -305,6 +305,12 @@ body {
     color: var(--text-secondary);
 }
 
+.change-value[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+}
+
 /* Stock Index */
 .stock-index {
     background: var(--bg-card);

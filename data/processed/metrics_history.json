@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-30T18:45:57.051674+00:00"
+    "last_updated": "2025-12-30T23:07:10.565716+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -289,7 +289,7 @@
     },
     "2025-12-30": {
       "date": "2025-12-30",
-      "timestamp": "2025-12-30T18:45:57.051657+00:00",
+      "timestamp": "2025-12-30T23:07:10.565677+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1615.2,
@@ -300,11 +300,11 @@
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
-          "price": 84.29,
+          "price": 84.14,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 18.08,
+          "price": 18.04,
           "ticker": "INFY"
         },
         "TCS": {
@@ -316,7 +316,7 @@
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 2.87,
+          "price": 2.86,
           "ticker": "WIT"
         }
       },
@@ -325,14 +325,14 @@
           "headcount": 226640,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.livemint.com/market/stock-market-news/hcl-tech-attrition-rate-drops-to-12-6-in-q2-total-headcount-improves-by-8-019-to-2-26-lakh-employees-11728822844444.html"
+            "https://www.hcltech.com/investor-relations"
           ]
         },
         "LTIMindtree": {
           "headcount": 86447,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.business-standard.com/companies/results/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1401-cr-125101700484_1.html"
+            "https://www.business-standard.com/companies/results/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1401-cr-125101701131_1.html"
           ]
         },
         "Cognizant": {
@@ -342,36 +342,84 @@
             "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx"
           ]
         },
+        "Infosys": {
+          "headcount": 331991,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.outlookbusiness.com/corporate/infosys-q2-net-profit-rises-13-to-7364-cr-ups-growth-outlook"
+          ]
+        },
+        "TCS": {
+          "headcount": 612724,
+          "data_date": "2024-09-30",
+          "source_urls": [
+            "https://www.tcs.com/content/dam/tcs/pdf/investors/financial-statements/2024-25/q2/TCS-Press-Release-Q2-FY25.pdf"
+          ]
+        },
         "Tech Mahindra": {
           "headcount": 152714,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.techmahindra.com/en-in/investors/quarterly-results/"
+            "https://www.techmahindra.com/en-in/investors/quarterly-earnings/"
+          ]
+        },
+        "Wipro": {
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.wipro.com/newsroom/press-releases/2025/wipro-announces-results-for-the-quarter-ended-september-30-2025/"
           ]
         },
         "Microsoft": {
-          "headcount": 227350,
-          "data_date": "2024-09-30",
+          "headcount": 219000,
+          "data_date": "2025-12-30",
           "source_urls": [
-            "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901924000071/msft-20240630.htm"
+            "https://fintel.io/doc/sec-microsoft-corp-789019-10k-2025-07-30-20299"
+          ]
+        },
+        "Meta": {
+          "headcount": 78450,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Third-Quarter-2025-Results/default.aspx"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000106/aapl-20250927.htm"
           ]
         },
         "Amazon": {
           "headcount": 1564000,
           "data_date": "2025-10-28",
           "source_urls": [
-            "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2025-highlights"
+            "https://aboutamazon.com/news/retail/amazon-q3-2025-earnings-report"
           ]
         },
         "NVIDIA": {
-          "headcount": 42000,
-          "data_date": "2025-08-11",
+          "headcount": 36000,
+          "data_date": "2025-10-26",
           "source_urls": [
-            "https://www.hrgrapevine.com/content/article/2025-08-11-nvidia-ceo-reveals-why-he-personally-reviews-salaries-of-all-42000-employees-each-month"
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/1045810/000104581025000199/nvda-20251026.htm"
           ]
         }
       },
-      "job_postings": {}
+      "job_postings": {
+        "DeepMind": {
+          "total_technical_jobs": 72,
+          "collection_date": "2025-12-30"
+        },
+        "Anthropic": {
+          "total_technical_jobs": 181,
+          "collection_date": "2024-12-30"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 377,
+          "collection_date": "2025-12-30"
+        }
+      }
     }
   }
 }

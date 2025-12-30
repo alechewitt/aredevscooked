@@ -3,12 +3,56 @@
 
 import asyncio
 import json
+import logging
 import sys
 import time
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Coroutine
 from pathlib import Path
 from dotenv import load_dotenv
+
+
+def setup_logging() -> logging.Logger:
+    """Setup logging to both console and file.
+
+    Returns:
+        Configured logger instance
+    """
+    log_dir = Path("logs/collection")
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    log_file = log_dir / f"collection_{timestamp}.log"
+
+    logger = logging.getLogger("collection")
+    logger.setLevel(logging.INFO)
+
+    formatter = logging.Formatter(
+        "%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
+    )
+
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setFormatter(logging.Formatter("%(message)s"))
+    logger.addHandler(console_handler)
+
+    logger.info(f"Logging to: {log_file}")
+    return logger
+
+
+logger: logging.Logger | None = None
+
+
+def log(message: str) -> None:
+    """Log a message to both console and file."""
+    if logger:
+        logger.info(message)
+    else:
+        print(message)
+
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.collectors.stock_collector import StockCollector
@@ -71,11 +115,11 @@ async def with_timeout_logging(
                 last_log_time == 0.0 or elapsed - last_log_time >= 60.0
             )
             if should_log:
-                print(f"    ⏳ {task_name} still running after {elapsed:.0f}s...")
+                log(f"    ⏳ {task_name} still running after {elapsed:.0f}s...")
                 if prompt:
                     # Show first 2 lines of prompt (the actual request, not the JSON template)
                     first_lines = "\n".join(prompt.split("\n")[:2])
-                    print(f"       Request: {first_lines}")
+                    log(f"       Request: {first_lines}")
                 last_log_time = elapsed
 
             try:
@@ -107,7 +151,7 @@ async def collect_single_stock_data(
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
-        print(f"  Collecting stock data for {company_name} ({ticker})...")
+        log(f"  Collecting stock data for {company_name} ({ticker})...")
 
         # Run yfinance call in thread pool to avoid blocking
         data = await asyncio.to_thread(
@@ -116,10 +160,10 @@ async def collect_single_stock_data(
 
         # Format currency based on ticker (INR for .NS, USD for others)
         currency = "₹" if ".NS" in ticker else "$"
-        print(f"    ✓ Current: {currency}{data['current_price']:.2f}")
+        log(f"    ✓ Current: {currency}{data['current_price']:.2f}")
         return company_name, data
     except Exception as e:
-        print(f"    ✗ Error collecting {company_name}: {e}")
+        log(f"    ✗ Error collecting {company_name}: {e}")
         return company_name, None
 
 
@@ -166,7 +210,7 @@ async def collect_single_headcount_data(
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
-        print(f"  Collecting headcount for {company_name}...")
+        log(f"  Collecting headcount for {company_name}...")
         prompt = create_headcount_prompt(company_name)
 
         async def do_collect():
@@ -175,10 +219,10 @@ async def collect_single_headcount_data(
         data = await with_timeout_logging(
             do_collect(), f"{company_name} headcount", position, prompt
         )
-        print(f"    ✓ Headcount: {data['current_headcount']:,}")
+        log(f"    ✓ Headcount: {data['current_headcount']:,}")
         return company_name, data
     except Exception as e:
-        print(f"    ✗ Error collecting {company_name}: {e}")
+        log(f"    ✗ Error collecting {company_name}: {e}")
         return company_name, None
 
 
@@ -225,7 +269,7 @@ async def collect_single_job_posting_data(
         Tuple of (company_name, data) or (company_name, None) on error
     """
     try:
-        print(f"  Collecting job postings for {company_name}...")
+        log(f"  Collecting job postings for {company_name}...")
         prompt = create_job_postings_prompt(company_name, greenhouse_board)
 
         async def do_collect():
@@ -236,10 +280,10 @@ async def collect_single_job_posting_data(
         data = await with_timeout_logging(
             do_collect(), f"{company_name} jobs", position, prompt
         )
-        print(f"    ✓ Technical jobs: {data['total_technical_jobs']}")
+        log(f"    ✓ Technical jobs: {data['total_technical_jobs']}")
         return company_name, data
     except Exception as e:
-        print(f"    ✗ Error collecting {company_name}: {e}")
+        log(f"    ✗ Error collecting {company_name}: {e}")
         return company_name, None
 
 
@@ -276,7 +320,7 @@ def load_baselines() -> dict[str, Any] | None:
     """
     baselines_file = Path("data/processed/baselines.json")
     if not baselines_file.exists():
-        print("  ⚠️  No baselines.json found, skipping change calculations")
+        log("  ⚠️  No baselines.json found, skipping change calculations")
         return None
 
     with open(baselines_file, "r") as f:
@@ -424,7 +468,7 @@ def find_recent_job_posting_data(
 
         if snapshot and company_name in snapshot.get("job_postings", {}):
             job_data = snapshot["job_postings"][company_name]
-            print(
+            log(
                 f"  ⏪ Using {days_back}-day-old data for {company_name}: {job_data['total_technical_jobs']} jobs"
             )
             return job_data
@@ -462,7 +506,7 @@ def find_recent_headcount_data(
 
         if snapshot and company_name in snapshot.get("headcounts", {}):
             headcount_data = snapshot["headcounts"][company_name]
-            print(
+            log(
                 f"  ⏪ Using {days_back}-day-old headcount data for {company_name}: {headcount_data['headcount']:,}"
             )
             return {
@@ -949,52 +993,55 @@ def save_daily_snapshot(
     with open(history_file, "w") as f:
         json.dump(history, f, indent=2)
 
-    print(f"  💾 Daily snapshot saved to {history_file}")
+    log(f"  💾 Daily snapshot saved to {history_file}")
 
 
 async def main_async():
     """Main async entry point for data collection."""
+    global logger
+    logger = setup_logging()
+
     # Load environment variables
     load_dotenv()
 
-    print("🚀 Starting aredevscooked data collection...")
-    print("=" * 60)
+    log("🚀 Starting aredevscooked data collection...")
+    log("=" * 60)
 
     # Initialize collectors
     stock_collector = StockCollector()
-    print("✓ StockCollector initialized (yfinance)")
+    log("✓ StockCollector initialized (yfinance)")
 
     try:
         gemini_collector = GeminiCollector()
-        print("✓ GeminiCollector initialized\n")
+        log("✓ GeminiCollector initialized\n")
     except ValueError as e:
-        print(f"❌ Error: {e}")
-        print("Make sure GEMINI_API_KEY is set in .env file")
+        log(f"❌ Error: {e}")
+        log("Make sure GEMINI_API_KEY is set in .env file")
         return 1
 
     # Calculate dates
     one_year_ago = date.today() - timedelta(days=365)
 
     # Collect stock data using yfinance
-    print("\n📊 Collecting stock price data (via yfinance)...")
+    log("\n📊 Collecting stock price data (via yfinance)...")
     stock_data = await collect_all_stock_data(stock_collector, one_year_ago)
-    print(f"  Collected {len(stock_data)}/7 companies")
+    log(f"  Collected {len(stock_data)}/7 companies")
 
-    print("\n👥 Collecting headcount data...")
+    log("\n👥 Collecting headcount data...")
     headcount_data = await collect_all_headcount_data(gemini_collector)
-    print(f"  Collected {len(headcount_data)}/12 companies")
+    log(f"  Collected {len(headcount_data)}/12 companies")
 
-    print("\n🎯 Collecting job posting data...")
+    log("\n🎯 Collecting job posting data...")
     job_posting_data = await collect_all_job_posting_data(gemini_collector)
-    print(f"  Collected {len(job_posting_data)}/3 companies")
+    log(f"  Collected {len(job_posting_data)}/3 companies")
 
     # Build metrics structure first (needed for summary generation)
-    print("\n🏗️  Building metrics structure...")
+    log("\n🏗️  Building metrics structure...")
     metrics_without_summary = build_metrics_structure(
         stock_data, headcount_data, job_posting_data, ""
     )
 
-    print("\n📝 Generating AI summary...")
+    log("\n📝 Generating AI summary...")
     ai_summary = gemini_collector.generate_summary(metrics_without_summary)
 
     # Rebuild with actual summary
@@ -1003,7 +1050,7 @@ async def main_async():
     )
 
     # Save daily snapshot to history
-    print("\n💾 Saving daily snapshot...")
+    log("\n💾 Saving daily snapshot...")
     save_daily_snapshot(stock_data, headcount_data, job_posting_data)
 
     # Write to file
@@ -1014,7 +1061,7 @@ async def main_async():
     with open(output_file, "w") as f:
         json.dump(metrics, f, indent=2)
 
-    print(f"\n✅ Metrics written to {output_file}")
+    log(f"\n✅ Metrics written to {output_file}")
 
     # Also copy to website/ directory for GitHub Pages deployment
     website_dir = Path("website")
@@ -1023,8 +1070,8 @@ async def main_async():
     with open(website_metrics_file, "w") as f:
         json.dump(metrics, f, indent=2)
 
-    print(f"✅ Metrics copied to {website_metrics_file} (for GitHub Pages)")
-    print("=" * 60)
+    log(f"✅ Metrics copied to {website_metrics_file} (for GitHub Pages)")
+    log("=" * 60)
 
     # Clean up collectors to release resources
     stock_collector.close()

@@ -73,11 +73,12 @@
                     const valueClass = getChangeClass(change.value);
                     const valueText = change.value >= 0 ? `+${formatNumber(change.value)}` : formatNumber(change.value);
                     const pctText = formatPercentage(change.pct);
+                    const tooltipAttr = change.source_url ? `title="Source: ${change.source_url}"` : '';
 
                     changesHTML += `
                         <div class="change-item">
                             <span class="change-label">${periodLabel}</span>
-                            <span class="change-value ${valueClass}">${pctText}</span>
+                            <span class="change-value ${valueClass}" ${tooltipAttr}>${pctText}</span>
                             <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
                         </div>
                     `;
