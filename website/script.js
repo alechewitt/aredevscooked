@@ -209,9 +209,36 @@
         }
     }
 
+    function calculateOverallVerdict(badges) {
+        // Count badges by severity
+        const collapsingCount = badges.filter(b => b === 'collapsing').length;
+        const weakCount = badges.filter(b => b === 'weak').length;
+
+        if (collapsingCount >= 2) {
+            return { verdict: 'Yes', cssClass: 'verdict-yes' };
+        } else if (weakCount >= 2) {
+            return { verdict: 'Maybe', cssClass: 'verdict-maybe' };
+        } else {
+            return { verdict: 'Not Today', cssClass: 'verdict-not-today' };
+        }
+    }
+
     function renderMetrics(data) {
         // Update last updated timestamp
         document.getElementById('lastUpdated').textContent = `Last updated: ${formatDate(data.metadata.last_updated)}`;
+
+        // Calculate overall verdict from 4 main metrics
+        const allBadges = [
+            data.low_end.headcount.aggregate_badge,
+            data.medium_end.headcount.aggregate_badge,
+            data.high_end.job_postings.aggregate_badge,
+            (data.stock_index || data.low_end.stock_index).aggregate_badge
+        ];
+
+        const { verdict, cssClass } = calculateOverallVerdict(allBadges);
+        const verdictCard = document.getElementById('overallVerdict');
+        verdictCard.querySelector('.verdict-value').textContent = verdict;
+        verdictCard.className = `verdict-card ${cssClass}`;
 
         // Update AI summary
         document.getElementById('aiSummary').textContent = data.ai_summary;
