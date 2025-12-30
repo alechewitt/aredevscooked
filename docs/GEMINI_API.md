@@ -6,11 +6,7 @@
 - Latest Gemini 3 Flash model with web search grounding support
 - Available through Google AI Developer API (ai.google.dev)
 - Free tier: 1,500 grounded requests/day
-
-**Alternative Models**:
-- `gemini-2.0-flash-exp` - Gemini 2.0 experimental flash model
-- `gemini-1.5-flash` - Stable Gemini 1.5 flash model
-- `gemini-1.5-pro` - Pro model with higher capabilities
+- Has 1000 RPM
 
 ## Python SDK
 

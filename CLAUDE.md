@@ -8,6 +8,14 @@ Run Black to format code before you commit:
 
 uv run black .
 
+
+document any unusual behavior, edge cases, or implementation quirks encountered during script creation. This creates invaluable context for future modifications and debugging sessions.
+
+If you decide to do something with Github Actions, make sure to consult `https://simonw.github.io/actions-latest/versions.txt` to see what the latest versions of packages to use should be. 
+
+Commit fairly often, once you think you finish a single task. This is especially important if you are about to try something desctructive like deleting code or refactoring a file. 
+
+Don't use `git -C ...` Rather use the commands directly.
 ## Style Guide
 General:
 

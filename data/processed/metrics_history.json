@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-29T23:41:08.305980+00:00"
+    "last_updated": "2025-12-30T01:20:57.976109+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -199,7 +199,7 @@
     },
     "2025-12-29": {
       "date": "2025-12-29",
-      "timestamp": "2025-12-29T23:41:08.305952+00:00",
+      "timestamp": "2025-12-30T01:20:57.976062+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1630.8,
@@ -260,8 +260,8 @@
           "data_date": "2025-09-30"
         },
         "Microsoft": {
-          "headcount": 219000,
-          "data_date": "2025-07-02"
+          "headcount": 228000,
+          "data_date": "2025-06-30"
         },
         "Meta": {
           "headcount": 78450,
@@ -273,7 +273,7 @@
         },
         "Amazon": {
           "headcount": 336000,
-          "data_date": "2025-10-30"
+          "data_date": "2025-10-28"
         },
         "NVIDIA": {
           "headcount": 36000,
@@ -282,12 +282,8 @@
       },
       "job_postings": {
         "DeepMind": {
-          "total_technical_jobs": 78,
-          "collection_date": "2024-12-29"
-        },
-        "Anthropic": {
-          "total_technical_jobs": 184,
-          "collection_date": "2025-12-29"
+          "total_technical_jobs": 72,
+          "collection_date": "2024-12-30"
         }
       }
     }

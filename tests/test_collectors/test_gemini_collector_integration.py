@@ -1,11 +1,11 @@
 """Integration tests for GeminiCollector with real API calls.
 
 These tests require GEMINI_API_KEY to be set in environment or .env file.
-Run with: pytest -m integration -v
 
-Mark tests as integration:
-    pytest -m "not integration"  # Skip integration tests (default for CI)
-    pytest -m integration         # Run only integration tests
+Run integration tests:
+    uv run pytest tests/test_collectors/test_gemini_collector_integration.py
+
+By default, this file is ignored via pyproject.toml to speed up test collection.
 """
 
 import os
@@ -14,10 +14,8 @@ from datetime import date, timedelta
 from dotenv import load_dotenv
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Mark all tests in this module as integration tests
 pytestmark = pytest.mark.integration
 
 

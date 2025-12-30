@@ -200,7 +200,7 @@ def test_build_metrics_structure_includes_metadata(mocker):
 
 
 def test_build_metrics_structure_low_end_tier(mocker):
-    """Should build low-end tier with headcount and stock index."""
+    """Should build low-end tier with headcount."""
     mock_stock_data = {
         "HCLTech": {"current_price": 1450.50, "price_1_year_ago": 1320.00}
     }
@@ -214,7 +214,7 @@ def test_build_metrics_structure_low_end_tier(mocker):
     )
 
     assert "headcount" in result["low_end"]
-    assert "stock_index" in result["low_end"]
+    assert "stock_index" in result  # stock_index is at top level
     assert "companies" in result["low_end"]["headcount"]
     assert "aggregate_badge" in result["low_end"]["headcount"]
 
