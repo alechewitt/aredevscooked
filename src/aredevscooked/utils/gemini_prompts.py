@@ -127,12 +127,15 @@ def create_summary_prompt(metrics_data: dict[str, Any]) -> str:
 
 {metrics_data}
 
-Write a single paragraph (3-4 sentences) summarizing the current state of the tech job market.
+Write a humorous but informative paragraph (MAX 60 words) about whether devs are actually cooked.
 
-Focus on notable changes across the three tiers:
-1. Low-end (IT consultancies): Headcount trends and stock performance
-2. Medium-end (Big Tech): Headcount changes
-3. High-end (AI labs): Hiring momentum via job postings
+Context: Small changes like -3% headcount aren't bad news - that's just normal market dynamics.
+Real concerns are double-digit declines, collapsing stock prices, or AI labs going on hiring freezes.
+Be witty about whether the sky is actually falling or if this is just another day in tech.
 
-Be concise and factual. Highlight significant trends and compare across time periods when notable.
+Focus on:
+1. IT consultancies: Headcount & stock trends
+2. Big Tech: Headcount changes
+3. AI labs: Job posting momentum
+
 Return ONLY the paragraph text, no JSON or additional formatting."""
