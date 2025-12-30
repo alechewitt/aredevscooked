@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-30T02:59:02.654954+00:00"
+    "last_updated": "2025-12-30T08:24:06.903787+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -289,14 +289,14 @@
     },
     "2025-12-30": {
       "date": "2025-12-30",
-      "timestamp": "2025-12-30T02:59:02.654938+00:00",
+      "timestamp": "2025-12-30T08:24:06.903770+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1630.8,
+          "price": 1626.0,
           "ticker": "HCLTECH.NS"
         },
         "LTIMindtree": {
-          "price": 6033.5,
+          "price": 6070.0,
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
@@ -308,11 +308,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 3251.5,
+          "price": 3265.2,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1612.4,
+          "price": 1605.7,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -321,10 +321,6 @@
         }
       },
       "headcounts": {
-        "HCLTech": {
-          "headcount": 226640,
-          "data_date": "2025-09-30"
-        },
         "LTIMindtree": {
           "headcount": 86447,
           "data_date": "2025-09-30"
@@ -342,20 +338,16 @@
           "data_date": "2025-09-30"
         },
         "Tech Mahindra": {
-          "headcount": 152714,
-          "data_date": "2025-09-30"
+          "headcount": 154273,
+          "data_date": "2024-09-30"
         },
         "Wipro": {
-          "headcount": 233889,
-          "data_date": "2024-09-30"
+          "headcount": 235492,
+          "data_date": "2025-09-30"
         },
         "Microsoft": {
           "headcount": 219000,
-          "data_date": "2025-07-30"
-        },
-        "Meta": {
-          "headcount": 78450,
-          "data_date": "2025-09-30"
+          "data_date": "2025-07-02"
         },
         "Apple": {
           "headcount": 164000,
@@ -363,19 +355,14 @@
         },
         "Amazon": {
           "headcount": 336000,
-          "data_date": "2025-10-30"
+          "data_date": "2025-10-28"
         },
         "NVIDIA": {
           "headcount": 36000,
           "data_date": "2025-01-26"
         }
       },
-      "job_postings": {
-        "DeepMind": {
-          "total_technical_jobs": 72,
-          "collection_date": "2024-12-30"
-        }
-      }
+      "job_postings": {}
     }
   }
 }
