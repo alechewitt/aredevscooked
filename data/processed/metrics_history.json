@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-30T17:58:53.986465+00:00"
+    "last_updated": "2025-12-30T18:45:57.051674+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -289,7 +289,7 @@
     },
     "2025-12-30": {
       "date": "2025-12-30",
-      "timestamp": "2025-12-30T17:58:53.986447+00:00",
+      "timestamp": "2025-12-30T18:45:57.051657+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1615.2,
@@ -300,11 +300,11 @@
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
-          "price": 84.19,
+          "price": 84.29,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 18.09,
+          "price": 18.08,
           "ticker": "INFY"
         },
         "TCS": {
@@ -316,62 +316,62 @@
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 2.86,
+          "price": 2.87,
           "ticker": "WIT"
         }
       },
       "headcounts": {
         "HCLTech": {
-          "headcount": 226600,
-          "data_date": "2025-09-30"
+          "headcount": 226640,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.livemint.com/market/stock-market-news/hcl-tech-attrition-rate-drops-to-12-6-in-q2-total-headcount-improves-by-8-019-to-2-26-lakh-employees-11728822844444.html"
+          ]
         },
         "LTIMindtree": {
           "headcount": 86447,
-          "data_date": "2025-09-30"
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.business-standard.com/companies/results/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1401-cr-125101700484_1.html"
+          ]
         },
         "Cognizant": {
           "headcount": 349800,
-          "data_date": "2025-09-30"
-        },
-        "Infosys": {
-          "headcount": 331991,
-          "data_date": "2025-09-30"
-        },
-        "TCS": {
-          "headcount": 593314,
-          "data_date": "2025-09-30"
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx"
+          ]
         },
         "Tech Mahindra": {
           "headcount": 152714,
-          "data_date": "2025-09-30"
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.techmahindra.com/en-in/investors/quarterly-results/"
+          ]
         },
-        "Wipro": {
-          "headcount": 235492,
-          "data_date": "2025-09-30"
-        },
-        "Meta": {
-          "headcount": 70467,
-          "data_date": "2025-02-11"
-        },
-        "Apple": {
-          "headcount": 164000,
-          "data_date": "2024-09-28"
+        "Microsoft": {
+          "headcount": 227350,
+          "data_date": "2024-09-30",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901924000071/msft-20240630.htm"
+          ]
         },
         "Amazon": {
-          "headcount": 336000,
-          "data_date": "2025-10-28"
+          "headcount": 1564000,
+          "data_date": "2025-10-28",
+          "source_urls": [
+            "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2025-highlights"
+          ]
         },
         "NVIDIA": {
-          "headcount": 36000,
-          "data_date": "2025-01-26"
+          "headcount": 42000,
+          "data_date": "2025-08-11",
+          "source_urls": [
+            "https://www.hrgrapevine.com/content/article/2025-08-11-nvidia-ceo-reveals-why-he-personally-reviews-salaries-of-all-42000-employees-each-month"
+          ]
         }
       },
-      "job_postings": {
-        "Anthropic": {
-          "total_technical_jobs": 80,
-          "collection_date": "2025-12-30"
-        }
-      }
+      "job_postings": {}
     }
   }
 }

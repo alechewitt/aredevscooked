@@ -1,319 +1,432 @@
 {
   "metadata": {
-    "last_updated": "2025-12-30T17:58:53.984753+00:00",
+    "last_updated": "2025-12-30T18:45:57.050035+00:00",
     "collection_status": "success"
   },
   "low_end": {
     "headcount": {
       "companies": {
         "HCLTech": {
-          "current": 226600,
+          "current": 226640,
           "data_date": "2025-09-30",
+          "source_url": "https://www.livemint.com/market/stock-market-news/hcl-tech-attrition-rate-drops-to-12-6-in-q2-total-headcount-improves-by-8-019-to-2-26-lakh-employees-11728822844444.html",
+          "notes": "Headcount from Q2 FY26 earnings report (announced Oct 13, 2025). The figure includes the impact of a restructuring exercise mentioned in the report, which resulted in a net addition of 3,489 employees for the quarter.",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgn3-U3LWz6a4N9GzRMi-y7n7lJNbiYOAwfeb8Ff8-WsUef-W-mFc2W3zVPDOjRN5G5gttAM_nmIt2skR25TVDwB88sygYb3IE-J2UZdLKJ2pYATj8JpL4nY8WyVD76cWZkcRrbacHFthmuoMBL4py85gJX3JGPiM="
+            "https://www.livemint.com/market/stock-market-news/hcl-tech-attrition-rate-drops-to-12-6-in-q2-total-headcount-improves-by-8-019-to-2-26-lakh-employees-11728822844444.html"
           ],
           "changes": {
             "30_days_ago": {
-              "value": -881,
-              "pct": -0.39,
-              "badge": "neutral"
+              "value": -841,
+              "pct": -0.37,
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 227481,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
-              "value": 7979,
-              "pct": 3.65,
-              "badge": "neutral"
+              "value": 5885,
+              "pct": 2.67,
+              "badge": "neutral",
+              "source_url": "https://www.livemint.com/companies/news/hcl-tech-q3-results-attrition-rate-rises-to-13-2-11736772844444.html",
+              "baseline_headcount": 220755,
+              "baseline_date": "2024-12-31"
             },
             "q1_2023": {
-              "value": 656,
-              "pct": 0.29,
-              "badge": "neutral"
+              "value": 696,
+              "pct": 0.31,
+              "badge": "neutral",
+              "source_url": "https://www.livemint.com/companies/news/hcl-tech-attrition-continues-to-lower-at-19-5-net-addition-of-over-3000-employees-in-q4-11681994444444.html",
+              "baseline_headcount": 225944,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "LTIMindtree": {
           "current": 86447,
           "data_date": "2025-09-30",
+          "source_url": "https://www.business-standard.com/companies/results/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1401-cr-125101700484_1.html",
+          "notes": "Q2 FY26 earnings report. No subsequent mass layoffs announced as of Dec 30, 2025.",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2nMJ6kG3Tf2uhH9CTvQhiJtieFCJYhayIz-Ih4YX9xIfiCaXAvIGkIDoH1NHXv8Ctu7WCQ8ITICXJgkneHMFNOycP__t89bc72QZweL_Hu4T63gJJcj1n2Q-Kn5VJaF-fnYSen5mqeEdKSFJg7PIOjq1D-Z-Hw3guQo9ADdfZLOXqSpW_Pfj5EA=="
+            "https://www.business-standard.com/companies/results/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1401-cr-125101700484_1.html"
           ],
           "changes": {
             "30_days_ago": {
               "value": 4797,
               "pct": 5.88,
-              "badge": "strong"
+              "badge": "strong",
+              "source_url": "",
+              "baseline_headcount": 81650,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
-              "value": 2009,
-              "pct": 2.38,
-              "badge": "neutral"
+              "value": -353,
+              "pct": -0.41,
+              "badge": "neutral",
+              "source_url": "https://www.ltimindtree.com/news-event/ltimindtree-delivers-1-8-qoq-and-5-6-yoy-revenue-growth-in-cc/",
+              "baseline_headcount": 86800,
+              "baseline_date": "2024-12-31"
             },
             "q1_2023": {
               "value": 1901,
               "pct": 2.25,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "https://www.ltimindtree.com/news-event/ltimindtree-reports-strong-fy23-full-year-constant-currency-revenue-up-19-9-order-inflow-at-usd-4-87-billion/",
+              "baseline_headcount": 84546,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "Cognizant": {
           "current": 349800,
           "data_date": "2025-09-30",
+          "source_url": "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx",
+          "notes": "Q3 2025 earnings report. No subsequent mass layoffs announced as of December 30, 2025.",
           "source_urls": [
-            "https://www.thehindu.com/business/cognizant-q3-net-income-falls-53-to-274-million-revenue-rises-73-to-54-billion/article68808844.ece"
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx"
           ],
           "changes": {
             "30_days_ago": {
               "value": 5400,
               "pct": 1.57,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 344400,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
-              "value": 9700,
-              "pct": 2.85,
-              "badge": "neutral"
+              "value": 13000,
+              "pct": 3.86,
+              "badge": "neutral",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1058290/000105829025000011/ctsh-20241231.htm",
+              "baseline_headcount": 336800,
+              "baseline_date": "2024-12-31"
             },
             "q1_2023": {
-              "value": -1700,
-              "pct": -0.48,
-              "badge": "neutral"
+              "value": 1800,
+              "pct": 0.52,
+              "badge": "neutral",
+              "source_url": "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2023-results-301815144.html",
+              "baseline_headcount": 348000,
+              "baseline_date": "2023-05-03"
             }
           }
         },
         "Infosys": {
           "current": 331991,
           "data_date": "2025-09-30",
-          "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE2ghrans8oUyeaqEH-3bFMdV0Dnjv2EQMNf88D4TPz2NjYM4r9dKl0TMQCqFt1fx8EQOYd3Ue9NcU5FEQM-4ujDi-XGIi80W9F1WQ4_FfxE51qCbwp0QEFEHANLkrrrxgmdda9MWDCT3FCNR6se0xmTZz_iN9oyOdMLYawFpBaKRDpLh3gQvVZa898FlTrGkpReY4a4Bs9BVYIuvotIwNN8IvOZAvZ2Vm6rzk3nBpinqJY_1QelmkzA=="
-          ],
+          "source_url": "",
+          "notes": "",
+          "source_urls": [],
           "changes": {
             "30_days_ago": {
               "value": 14751,
               "pct": 4.65,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 317240,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
               "value": 14203,
               "pct": 4.47,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 317788,
+              "baseline_date": "2024-09-30"
             },
             "q1_2023": {
               "value": -11243,
               "pct": -3.28,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 343234,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "TCS": {
           "current": 593314,
           "data_date": "2025-09-30",
-          "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdasBLXaHcjRnx-1roSddnnlqJMGw6_hH0dPEQDvEw3SahcQFjTnMHSt8Vy87yeH0wfEkFUZ2885xaiqZyotUT6M_g4GsIWmDliAXGte3a_GJw5HYkCA02KNs08mXoCxrGdB9RKS3OvFdyFO9VeLxk5uRvru96kjwDx5B-o7v64GAuUe3aiXM=",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0JEbaMmVbEwAJxuZF38DzgoT4WEck-f4EBH-Cw-3uiWI4U9ypjsd-2e1VzzPRzNS3SdXSPH3IBjgg9QLC2yzO1Qt6EuWUepCD4o9Ra2ajOE7cYTJNTwdl9qIWLRs7U423202Sd8nIkk8cUY7nZsC43oPPxEWZqGv8S7J435OGRmoBj3rlIBfnSQWkFzRFgtV-vElTgoGq4ISBnGGcCQMG9YQR1FY0rOYHf3lTwCIekczi3h5llyPt8Zdn90029Tc="
-          ],
+          "source_url": "",
+          "notes": "",
+          "source_urls": [],
           "changes": {
             "30_days_ago": {
               "value": -8232,
               "pct": -1.37,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 601546,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
               "value": -19410,
               "pct": -3.17,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 612724,
+              "baseline_date": "2024-09-30"
             },
             "q1_2023": {
               "value": -21481,
               "pct": -3.49,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 614795,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "Tech Mahindra": {
           "current": 152714,
           "data_date": "2025-09-30",
+          "source_url": "https://www.techmahindra.com/en-in/investors/quarterly-results/",
+          "notes": "Q2 FY26 earnings report. Total headcount increased sequentially from 148,517 in Q1 FY26 due to growth in Business Process Services (BPS), despite a marginal reduction in IT staff.",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMGmTllPaSQeTJy8eVz2SBbGPJCI3EP3fwQDrSqu3s30dTNW6HA5ZGN0irQyKP1okBR4iD80fRGJUR_uxSyYg39I3gbyE5wj6KvyQW96Jki56Sp5ELvMyRirexkxlqub9S4ai5j6OrTrnq_n6z-Oo0JO03uNNWDC6n7T4Qadam56q5lIBvODblYJ6Ezw==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR8SMpPgkoJ20uoYlgUEo7EebPLmEbF_PtsHA5JBsLSNNN4zZY38bjIDujosvzOw_BK2nW2weKf_cblxsrVLLK2DaDZuuo6aO9xFhBFtQdgxejT3Y7Dq6TVdcWuxthcgTIdohMzCMIbSCxl9xBCG03Q9zW7awBr6SJ5VMeUIfQ",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLELWSbiWD0idZ9ge2wyNivSSUgARVOKNiwXOd4Y-eRGitQTSELcRH70Bva_AY76FtxQDEw8SyaRj3TQEql4fvCxncNMLON-IQtzdfot7RMihWlAseLEBBqHeAB14ngkqf2u_RKrxYwUKRtdiS3sQwlw8tEKmIQRUyGZCGAlI0xJImZXYMrIOLHKsrEw-A8II="
+            "https://www.techmahindra.com/en-in/investors/quarterly-results/"
           ],
           "changes": {
             "30_days_ago": {
               "value": -1559,
               "pct": -1.01,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 154273,
+              "baseline_date": "2024-09-30"
             },
             "1_year_ago": {
-              "value": -1559,
-              "pct": -1.01,
-              "badge": "neutral"
+              "value": 2226,
+              "pct": 1.48,
+              "badge": "neutral",
+              "source_url": "https://www.techmahindra.com/en-in/investors/quarterly-results/",
+              "baseline_headcount": 150488,
+              "baseline_date": "2024-12-31"
             },
             "q1_2023": {
               "value": 314,
               "pct": 0.21,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "https://www.techmahindra.com/en-in/investors/quarterly-results/",
+              "baseline_headcount": 152400,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "Wipro": {
           "current": 235492,
           "data_date": "2025-09-30",
-          "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNZhUiNZCGxOkocUc1-L3tV1LiSImqrXH8RT_rV5uV4hIpECB03AapyF9WvS6y4xIPLpsk6OB-xqheltqL2-OyE6tdMOvlP-kGRIQ44LnyeTLCLJRVTvo-C2_Q39gIg5_p-JxJGU9LDyOPrCqG16rrl3tI5UjN5GKQRCfoyQ-6TPe5JSQJUsJxFu7aRDXCivqM8mwkecoFawcjbHyHZIvS8PBz5P9utUSVXEcSgsHHGwIyJby2u64WEytV0US9fTWwdg==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpOBxZiKl9Tw8a8zkm_Pj_eHM167AOxVJRzgkI1s1kMoUGs7MTVyqMRzEZI5tpNGG5Tlb5IMFDctpJ_mPpx7YksWSAMnKLpVrZgsjRLhPA3r1OzwJy0TE0Tw1knI5mSdvZCbEvN1UPHQ1HIQbrsHAxkgO4_UCajsN5BKUM-TIfBzS9VDa-a4aISw-lgQAYGr-7QyRZnNI-lkSQVzX0gGQVjdsG5Q2rrBEjJhIMeyOFz1tlorjzZN5i2mvSQrpUB9Auay3vF_DavsS80g==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvPjL37EZs8mg26U2V-c_GJFEDv2RQw0b8f7r2rBOZHk-vvdZJOn7i6oWSJQ2MSuqLynk-b6RU8Dff7f1_roKLix_CAOfwo_aEpY3QqX02PzdZ1th7aCXQ-dwaXfDmbSRR0eZXEIFy35zw5eA07_ta77ABDKaNm3Jlp8amZo7HnxjRqmr-AAjn2e01reY-hnSd6JCfKmtdNEY1Z9_YI4xX_UocVSALn9_3gVhs_VQTy_TWQdM="
-          ],
+          "source_url": "",
+          "notes": "",
+          "source_urls": [],
           "changes": {
             "30_days_ago": {
               "value": 1462,
               "pct": 0.62,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 234030,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
               "value": 1603,
               "pct": 0.69,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 233889,
+              "baseline_date": "2024-09-30"
             },
             "q1_2023": {
               "value": -21429,
               "pct": -8.34,
-              "badge": "reasonably_weak"
+              "badge": "reasonably_weak",
+              "source_url": "",
+              "baseline_headcount": 256921,
+              "baseline_date": "2023-03-31"
             }
           }
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": 0.7403790230870824
+      "net_headcount_pct_yoy": 0.7424179326170984
     }
   },
   "medium_end": {
     "headcount": {
       "companies": {
         "Microsoft": {
-          "current": 219000,
-          "data_date": "2025-07-02",
-          "source_urls": [],
+          "current": 227350,
+          "data_date": "2024-09-30",
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901924000071/msft-20240630.htm",
+          "notes": "Based on 228,000 employees reported in the FY2024 10-K (as of June 30, 2024) minus 650 layoffs in the gaming division announced in September 2024.",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901924000071/msft-20240630.htm"
+          ],
           "changes": {
             "30_days_ago": {
-              "value": -2000,
-              "pct": -0.9,
-              "badge": "neutral"
+              "value": 6350,
+              "pct": 2.87,
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 221000,
+              "baseline_date": "2023-06-30"
             },
             "1_year_ago": {
-              "value": -9000,
-              "pct": -3.95,
-              "badge": "neutral"
+              "value": 350,
+              "pct": 0.15,
+              "badge": "neutral",
+              "source_url": "https://www.geekwire.com/2024/microsoft-lays-off-employees-in-new-round-of-cuts/",
+              "baseline_headcount": 227000,
+              "baseline_date": "2023-12-31"
             },
             "q1_2023": {
-              "value": -2000,
-              "pct": -0.9,
-              "badge": "neutral"
+              "value": 16350,
+              "pct": 7.75,
+              "badge": "strong",
+              "source_url": "https://www.fierce-network.com/cloud/aws-has-highest-number-employees-out-all-cloud-providers",
+              "baseline_headcount": 211000,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "Meta": {
           "current": 70467,
           "data_date": "2025-02-11",
-          "source_urls": [
-            "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
-            "https://www.cbsnews.com/news/meta-layoffs-2025-mark-zuckerberg-low-performers/",
-            "https://www.fortune.com/2025/02/11/meta-layoffs-3600-workers-mark-zuckerberg-low-performers/"
-          ],
+          "source_url": "",
+          "notes": "",
+          "source_urls": [],
           "changes": {
             "30_days_ago": {
               "value": 1138,
               "pct": 1.64,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 69329,
+              "baseline_date": "2024-03-31"
             },
             "1_year_ago": {
               "value": -1937,
               "pct": -2.68,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 72404,
+              "baseline_date": "2024-09-30"
             },
             "q1_2023": {
               "value": -6647,
               "pct": -8.62,
-              "badge": "reasonably_weak"
+              "badge": "reasonably_weak",
+              "source_url": "",
+              "baseline_headcount": 77114,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "Apple": {
           "current": 164000,
           "data_date": "2024-09-28",
-          "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIQpPlsrbb2ou4A2UJBqehLfsNK37FewtrEYTphWDKwXV38HIbXxmI1PeH0YnS8z4UT8GeSXTrhbSJyHgrusUj2C7BjN2uxQ_bGk9PNkqD-V3T_swi1PW-ZyrTGatAAQKQzLsRrUVJ20ItbQ==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz2E0gfiI3l6eWb3i0XMkSTInUI6mwvwdPV0gJsSHAIGXwj6CviTAF1nME7L6ZYXBv0d_plMjxM9Z3Mw-1SEUYhRIu_hYTh1NjvMAAnNZ4bz7WvmE3tzmDKUt0CVhdLxFw7TSY-_sqkFirEck="
-          ],
+          "source_url": "",
+          "notes": "",
+          "source_urls": [],
           "changes": {
             "30_days_ago": {
               "value": 3000,
               "pct": 1.86,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 161000,
+              "baseline_date": "2023-09-30"
             },
             "1_year_ago": {
               "value": 0,
               "pct": 0.0,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 164000,
+              "baseline_date": "2024-09-28"
             },
             "q1_2023": {
               "value": 3000,
               "pct": 1.86,
-              "badge": "neutral"
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 161000,
+              "baseline_date": "2023-09-30"
             }
           }
         },
         "Amazon": {
-          "current": 336000,
+          "current": 1564000,
           "data_date": "2025-10-28",
+          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2025-highlights",
+          "notes": "Q3 2025 headcount of 1,578,000 (as of Sept 30) minus 14,000 corporate layoffs announced Oct 27-28, 2025. Includes all employees.",
           "source_urls": [
-            "https://www.theguardian.com/technology/2025/oct/27/amazon-layoffs-corporate-workers",
-            "https://www.aljazeera.com/economy/2025/10/28/is-artificial-intelligence-to-blame-for-amazon-job-cuts",
-            "https://www.sfchronicle.com/tech/article/amazon-layoffs-14000-corporate-workers-19868452.php",
-            "https://www.cnbc.com/2025/10/28/amazon-confirms-14000-corporate-layoffs.html"
+            "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2025-highlights"
           ],
           "changes": {
             "30_days_ago": {
-              "value": -14000,
-              "pct": -4.0,
-              "badge": "neutral"
+              "value": 1214000,
+              "pct": 346.86,
+              "badge": "strong",
+              "source_url": "",
+              "baseline_headcount": 350000,
+              "baseline_date": "2024-05-22"
             },
             "1_year_ago": {
-              "value": -14000,
-              "pct": -4.0,
-              "badge": "neutral"
+              "value": 8000,
+              "pct": 0.51,
+              "badge": "neutral",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+              "baseline_headcount": 1556000,
+              "baseline_date": "2024-12-31"
             },
             "q1_2023": {
-              "value": null,
-              "pct": null,
-              "badge": "neutral"
+              "value": 99000,
+              "pct": 6.76,
+              "badge": "strong",
+              "source_url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q1-2023-highlights",
+              "baseline_headcount": 1465000,
+              "baseline_date": "2023-03-31"
             }
           }
         },
         "NVIDIA": {
-          "current": 36000,
-          "data_date": "2025-01-26",
+          "current": 42000,
+          "data_date": "2025-08-11",
+          "source_url": "https://www.hrgrapevine.com/content/article/2025-08-11-nvidia-ceo-reveals-why-he-personally-reviews-salaries-of-all-42000-employees-each-month",
+          "notes": "CEO Jensen Huang stated in an August 2025 All-In Podcast appearance that he personally reviews salaries for all 42,000 employees; the Q3 FY2026 10-Q (filed Nov 2025) confirms continued employee growth but does not provide a specific updated figure.",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlo9_Zgyd6hzcKhYtEZymO-etX97jcWwfpRqDvyg-QowCj-Fjl_xmEZQm9Ydst3X_DVARvQWDC9vEcKw6n3NP8c1E7AGPSnQIhytvJjE9WHiz_ku8e1luFOrOkrDOXorxhPgX_KSX_zWJHoIZ6LtFkuOG1_OpGaBPzKLoU5VTf_hL7Uk5zgj58CsyYWfP_5A=="
+            "https://www.hrgrapevine.com/content/article/2025-08-11-nvidia-ceo-reveals-why-he-personally-reviews-salaries-of-all-42000-employees-each-month"
           ],
           "changes": {
             "30_days_ago": {
-              "value": 6400,
-              "pct": 21.62,
-              "badge": "strong"
+              "value": 12400,
+              "pct": 41.89,
+              "badge": "strong",
+              "source_url": "",
+              "baseline_headcount": 29600,
+              "baseline_date": "2024-01-28"
             },
             "1_year_ago": {
-              "value": 6361,
-              "pct": 21.46,
-              "badge": "strong"
+              "value": 6000,
+              "pct": 16.67,
+              "badge": "strong",
+              "source_url": "https://investor.nvidia.com/financial-info/annual-reports/default.aspx",
+              "baseline_headcount": 36000,
+              "baseline_date": "2025-01-26"
             },
             "q1_2023": {
-              "value": 9804,
-              "pct": 37.43,
-              "badge": "strong"
+              "value": 15804,
+              "pct": 60.33,
+              "badge": "strong",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1045810/000104581023000017/nvda-20230129.htm",
+              "baseline_headcount": 26196,
+              "baseline_date": "2023-01-29"
             }
           }
         }
       },
-      "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": -2.2008357394113807
+      "aggregate_badge": "strong",
+      "net_headcount_pct_yoy": 144.98953252381693
     }
   },
   "high_end": {
@@ -337,7 +450,7 @@
         "Anthropic": {
           "current": 80,
           "collection_date": "2025-12-30",
-          "source_url": "https://boards.greenhouse.io/v1/boards/anthropic/jobs",
+          "source_url": "",
           "changes": {
             "1_year_ago": {
               "value": 40,
@@ -370,11 +483,11 @@
     }
   },
   "stock_index": {
-    "current_value": 92.1,
+    "current_value": 92.16,
     "baseline_date": "2024-12-30",
     "changes": {
-      "30_day": 4.37,
-      "1_year": -7.9
+      "30_day": 4.43,
+      "1_year": -7.84
     },
     "companies": {
       "HCLTech": {
@@ -393,17 +506,17 @@
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 84.19,
+        "current_price": 84.29,
         "weight": 0.14285714285714285,
-        "change_30_day": 9.27,
-        "change_1_year": 7.08
+        "change_30_day": 9.4,
+        "change_1_year": 7.21
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 18.09,
+        "current_price": 18.08,
         "weight": 0.14285714285714285,
-        "change_30_day": 3.85,
-        "change_1_year": -17.74
+        "change_30_day": 3.79,
+        "change_1_year": -17.78
       },
       "TCS": {
         "ticker": "TCS.NS",
@@ -421,13 +534,13 @@
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 2.86,
+        "current_price": 2.87,
         "weight": 0.14285714285714285,
-        "change_30_day": 6.32,
-        "change_1_year": -17.58
+        "change_30_day": 6.69,
+        "change_1_year": -17.29
       }
     },
     "aggregate_badge": "reasonably_weak"
   },
-  "ai_summary": "You\u2019re not cooked; you\u2019re just simmering. While TCS and Amazon trimmed some fat, NVIDIA\u2019s headcount exploded and AI labs are hiring like mad. Consultancy stocks are bleeding red YoY, but 30-day recoveries and triple-digit AI job growth prove the sky isn't falling. It\u2019s a standard market reorg. Put down the \"Open to Work\" banner and keep shipping."
+  "ai_summary": "You\u2019re not cooked; you\u2019re just lightly saut\u00e9ed. Consultancy stocks are bruised, but headcounts remain stable. Big Tech is holding firm, and AI labs are hiring like they\u2019ve found a money glitch\u2014postings are up over 400% aggregate. Unless you\u2019re a legacy script in a dying data center, the sky isn't falling. It\u2019s just another Tuesday in the simulation."
 }
