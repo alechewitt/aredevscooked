@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-30T08:24:06.903787+00:00"
+    "last_updated": "2025-12-30T17:58:53.986465+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -289,38 +289,42 @@
     },
     "2025-12-30": {
       "date": "2025-12-30",
-      "timestamp": "2025-12-30T08:24:06.903770+00:00",
+      "timestamp": "2025-12-30T17:58:53.986447+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1626.0,
+          "price": 1615.2,
           "ticker": "HCLTECH.NS"
         },
         "LTIMindtree": {
-          "price": 6070.0,
+          "price": 6074.0,
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
-          "price": 85.0,
+          "price": 84.19,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 18.43,
+          "price": 18.09,
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 3265.2,
+          "price": 3246.8,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1605.7,
+          "price": 1604.6,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 2.89,
+          "price": 2.86,
           "ticker": "WIT"
         }
       },
       "headcounts": {
+        "HCLTech": {
+          "headcount": 226600,
+          "data_date": "2025-09-30"
+        },
         "LTIMindtree": {
           "headcount": 86447,
           "data_date": "2025-09-30"
@@ -338,16 +342,16 @@
           "data_date": "2025-09-30"
         },
         "Tech Mahindra": {
-          "headcount": 154273,
-          "data_date": "2024-09-30"
+          "headcount": 152714,
+          "data_date": "2025-09-30"
         },
         "Wipro": {
           "headcount": 235492,
           "data_date": "2025-09-30"
         },
-        "Microsoft": {
-          "headcount": 219000,
-          "data_date": "2025-07-02"
+        "Meta": {
+          "headcount": 70467,
+          "data_date": "2025-02-11"
         },
         "Apple": {
           "headcount": 164000,
@@ -362,7 +366,12 @@
           "data_date": "2025-01-26"
         }
       },
-      "job_postings": {}
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 80,
+          "collection_date": "2025-12-30"
+        }
+      }
     }
   }
 }

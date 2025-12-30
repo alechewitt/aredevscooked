@@ -1,18 +1,40 @@
 {
   "metadata": {
-    "last_updated": "2025-12-30T08:24:06.902757+00:00",
+    "last_updated": "2025-12-30T17:58:53.984753+00:00",
     "collection_status": "success"
   },
   "low_end": {
     "headcount": {
       "companies": {
+        "HCLTech": {
+          "current": 226600,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgn3-U3LWz6a4N9GzRMi-y7n7lJNbiYOAwfeb8Ff8-WsUef-W-mFc2W3zVPDOjRN5G5gttAM_nmIt2skR25TVDwB88sygYb3IE-J2UZdLKJ2pYATj8JpL4nY8WyVD76cWZkcRrbacHFthmuoMBL4py85gJX3JGPiM="
+          ],
+          "changes": {
+            "30_days_ago": {
+              "value": -881,
+              "pct": -0.39,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": 7979,
+              "pct": 3.65,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": 656,
+              "pct": 0.29,
+              "badge": "neutral"
+            }
+          }
+        },
         "LTIMindtree": {
           "current": 86447,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBouP4PMHh_au-HKCUrtbiLBrp0rY7Wj9ike6HeHwTKSAO55E_-vHaslHUlDQDzlyhnIiq6TJZrBSinnCFR5l8LQDk2Xhaot3lI7IgdOxW2CkQoViaGr-AwXvt_WQkGIscpL1hzrzn09ZMdxgAxp9C5zRthsWeFMJ9AX-dUHh0c0-wLRnxSePcqnFnquMnbVHR2Je5TpNL9KBl8iAxIIjX2zcCQWbgrR5KJXNlaTWjvw22TVEh7nHU94le420JuaTTA9SOzo3GVq2tE0fxBa6cRA==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcXjrwV60Qm5LqA4SQU3nY5L1PgxeOF2Vmpbmvj64m0AK1RK84yFmPAUSt2bAbEQ-YO3u-NUBUMfYY5a-sAy-_KW7cLnXCgi_dXHNEXweKoW_14yZSwEO1uS4-a0haCrY8_c-P9xF1cJWv2Vwrgkrs_xKJRORS8iwGJD4Q9SdYajJjLGXfm2MTjGA3YFY=",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8fUojgBWnW-vXMzi_vuw1n9K79nwgTYv9j_LQa89fzX6nkiBKH7RArcm5OZOdjcLAMetT4HCtvF7Dzolz559sAg56SgXHZ2Dusnm-qZaq7anoeBDRBrC7kzfsVrCti__IdFj5NOvK1sPZ7JcQAwvFi_-T97zLWKnlVaoc7-KDE3O3GU0bzYYHflPZgBkfTBzUXSGSWTOSXwDaMO1T545OYmg9z-6HG6mgaTbbsjuaLXgkQqOKk7481Cj1Hpk6qNbh3qvXEa4fSUuapg=="
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2nMJ6kG3Tf2uhH9CTvQhiJtieFCJYhayIz-Ih4YX9xIfiCaXAvIGkIDoH1NHXv8Ctu7WCQ8ITICXJgkneHMFNOycP__t89bc72QZweL_Hu4T63gJJcj1n2Q-Kn5VJaF-fnYSen5mqeEdKSFJg7PIOjq1D-Z-Hw3guQo9ADdfZLOXqSpW_Pfj5EA=="
           ],
           "changes": {
             "30_days_ago": {
@@ -36,7 +58,7 @@
           "current": 349800,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsuHaIIQF76codcS-4pKv0bqbYL8nIEtMLBj7bCN-HpsEfa3O8YfrPaczq0fOzVKBlBkWL-0mYSEHKEGV1A3dRj_4PWymPfVerPqsxXxeg1zEVuhydleAqItbvh7aB-Tn3B3IyMFVkzzv5RY60t2jdnDt_--1ChQa916tU7CB6FE6iLRf45UhkrnJF90dTzeTrc3M6O1OkaYBBaY_CIXU7xvoCVlzgsTNBPFkLrgxMo3E0Krw_cj5P311eiS0HYMgkXes="
+            "https://www.thehindu.com/business/cognizant-q3-net-income-falls-53-to-274-million-revenue-rises-73-to-54-billion/article68808844.ece"
           ],
           "changes": {
             "30_days_ago": {
@@ -60,9 +82,7 @@
           "current": 331991,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNIc57W-b8GlGdOjKUoIygV7WZ3tVwGjlS77uvgS91vOJjyc_ZcXA3pory8nLrDYaeqVAFX5vQXDBfZWZwfVX9kutbNf-QHRUOgTuigDM7HRk9r0JDx-YYVjeOplva0jlNTNvsHeTCgdafDP3mun_QeYjLW9Hv0T2zFc2p1ZD3yfugt5ybHv0ReQ6ihEkUsg==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYB1eOyLGGMdbYP7cSZmYfeCh7AuwmwgMyoaskt3b1b7_hoQLiPRStjI4SSlSV1PT5ceTGntJ76CD0UcnlhVsvnhPGgoykA-LulJlyhnYuMFhScINJU1wRNTvwqI4SiUktFjz0hs46GLCWmWrvsYAnwn5MQqHAZZPBxkqmFYJfN2hN4jcws2j_MoBwZ2U3fcII36RmhwGi4HnvAIAUyOEFn9BVInBc_2UTkDk=",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmq68gkNwvWcNqkZIxJQFipSMp0vJw2BbWOwUZRvFuF-48yqnglic_tFr5XqXA9j16S1zXTLdQX4DHQKLARy0u8SuUJwtH5WVgRp0AmN-OmjOo6ZdEfzGK251Q8d6sYS7XKHrsxjnJsXTGtKS9w_Y84gAv8o07jpfzMEdPfBW3RcIIIMAadj0jOrYqZAiWIG99_5JhVc2c9kPameVkYuGC_w6BQkxrbCDyVDW-zxO3PrUoHA2ONwsPb_5W_3gCakW7xBsbJI_YDSMpzFchlvzz7Imh_lp9z_o7_LDu"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE2ghrans8oUyeaqEH-3bFMdV0Dnjv2EQMNf88D4TPz2NjYM4r9dKl0TMQCqFt1fx8EQOYd3Ue9NcU5FEQM-4ujDi-XGIi80W9F1WQ4_FfxE51qCbwp0QEFEHANLkrrrxgmdda9MWDCT3FCNR6se0xmTZz_iN9oyOdMLYawFpBaKRDpLh3gQvVZa898FlTrGkpReY4a4Bs9BVYIuvotIwNN8IvOZAvZ2Vm6rzk3nBpinqJY_1QelmkzA=="
           ],
           "changes": {
             "30_days_ago": {
@@ -86,8 +106,8 @@
           "current": 593314,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.tcs.com/investor-relations/financial-statements",
-            "https://www.hrkatha.com/news/downsizing/tcs-headcount-falls-by-nearly-20000-in-q2-fy26/"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdasBLXaHcjRnx-1roSddnnlqJMGw6_hH0dPEQDvEw3SahcQFjTnMHSt8Vy87yeH0wfEkFUZ2885xaiqZyotUT6M_g4GsIWmDliAXGte3a_GJw5HYkCA02KNs08mXoCxrGdB9RKS3OvFdyFO9VeLxk5uRvru96kjwDx5B-o7v64GAuUe3aiXM=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0JEbaMmVbEwAJxuZF38DzgoT4WEck-f4EBH-Cw-3uiWI4U9ypjsd-2e1VzzPRzNS3SdXSPH3IBjgg9QLC2yzO1Qt6EuWUepCD4o9Ra2ajOE7cYTJNTwdl9qIWLRs7U423202Sd8nIkk8cUY7nZsC43oPPxEWZqGv8S7J435OGRmoBj3rlIBfnSQWkFzRFgtV-vElTgoGq4ISBnGGcCQMG9YQR1FY0rOYHf3lTwCIekczi3h5llyPt8Zdn90029Tc="
           ],
           "changes": {
             "30_days_ago": {
@@ -108,25 +128,27 @@
           }
         },
         "Tech Mahindra": {
-          "current": 154273,
-          "data_date": "2024-09-30",
+          "current": 152714,
+          "data_date": "2025-09-30",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDM7g6C7M_cGDC2eizwcNOXht33xcSWKINi3vm7cs4s7aYXfnknkyWBeF3VcBQAQhn9PNa9Zf_GlPEwO12gfellIHZbEeS1o9QWTLBK3dMFgz9ibDRST0CMrj1rnFyWXWvxy1t0aAeipP5aSQQFX3C55OwalZ0b9sCTwr92FBsB4dWfNfs9cNHCJG0c92avrj1AvpA6aX7K9S4umYnfmFt01d3m9po5MeguQq__RPce_LOKku84KuF7LEcz-xYiw5zuxFJ6C2xUaQ="
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMGmTllPaSQeTJy8eVz2SBbGPJCI3EP3fwQDrSqu3s30dTNW6HA5ZGN0irQyKP1okBR4iD80fRGJUR_uxSyYg39I3gbyE5wj6KvyQW96Jki56Sp5ELvMyRirexkxlqub9S4ai5j6OrTrnq_n6z-Oo0JO03uNNWDC6n7T4Qadam56q5lIBvODblYJ6Ezw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR8SMpPgkoJ20uoYlgUEo7EebPLmEbF_PtsHA5JBsLSNNN4zZY38bjIDujosvzOw_BK2nW2weKf_cblxsrVLLK2DaDZuuo6aO9xFhBFtQdgxejT3Y7Dq6TVdcWuxthcgTIdohMzCMIbSCxl9xBCG03Q9zW7awBr6SJ5VMeUIfQ",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLELWSbiWD0idZ9ge2wyNivSSUgARVOKNiwXOd4Y-eRGitQTSELcRH70Bva_AY76FtxQDEw8SyaRj3TQEql4fvCxncNMLON-IQtzdfot7RMihWlAseLEBBqHeAB14ngkqf2u_RKrxYwUKRtdiS3sQwlw8tEKmIQRUyGZCGAlI0xJImZXYMrIOLHKsrEw-A8II="
           ],
           "changes": {
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -1559,
+              "pct": -1.01,
               "badge": "neutral"
             },
             "1_year_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -1559,
+              "pct": -1.01,
               "badge": "neutral"
             },
             "q1_2023": {
-              "value": 1873,
-              "pct": 1.23,
+              "value": 314,
+              "pct": 0.21,
               "badge": "neutral"
             }
           }
@@ -135,8 +157,9 @@
           "current": 235492,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBseUNCuwZET7xQceuSdpfSiDJ4QmdNLzsBEclizVV_ski4kcGK35R0P-_MmhMDrcqHZ-cmX3bESJW08u2YYu5yQxLWSKoZntO0x9eQUckxMemPX6CFyKLb6LbHHMxKN3BZCsm76X4SVuvkFgbnNYWIqstCweygZSE3gSI4JH84_JkE9841BqXNu5tspJXyUsr94wg2sSRttbcplnqunSCzo7zp0Nl9WJtPcWMJ4M=",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErJRh6Ey2EYWmHsBUvq65mzzXgX7Gk28dIdU4NRCxUfeqfnQptFEsP3H9SCITGEU7fkBTj8b0NTtYkO-tVvPXbfaNMeO1AxHNaP2GP6XmUyHMEidUrhBJ5sXxdfcnMY-ZsR03UN2N8MTaWECqMoSH_Rt6qo6szUOxYcYLAqKkM9b5EIxgRmhrT7dWQoDYLk3XOLSEa7VER9p3_3LAPk0hosgbiw8MkCSsQ_EoXJf-kLPNtV1Q4Kb0oXaRlS3LgjyD1jw=="
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNZhUiNZCGxOkocUc1-L3tV1LiSImqrXH8RT_rV5uV4hIpECB03AapyF9WvS6y4xIPLpsk6OB-xqheltqL2-OyE6tdMOvlP-kGRIQ44LnyeTLCLJRVTvo-C2_Q39gIg5_p-JxJGU9LDyOPrCqG16rrl3tI5UjN5GKQRCfoyQ-6TPe5JSQJUsJxFu7aRDXCivqM8mwkecoFawcjbHyHZIvS8PBz5P9utUSVXEcSgsHHGwIyJby2u64WEytV0US9fTWwdg==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpOBxZiKl9Tw8a8zkm_Pj_eHM167AOxVJRzgkI1s1kMoUGs7MTVyqMRzEZI5tpNGG5Tlb5IMFDctpJ_mPpx7YksWSAMnKLpVrZgsjRLhPA3r1OzwJy0TE0Tw1knI5mSdvZCbEvN1UPHQ1HIQbrsHAxkgO4_UCajsN5BKUM-TIfBzS9VDa-a4aISw-lgQAYGr-7QyRZnNI-lkSQVzX0gGQVjdsG5Q2rrBEjJhIMeyOFz1tlorjzZN5i2mvSQrpUB9Auay3vF_DavsS80g==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvPjL37EZs8mg26U2V-c_GJFEDv2RQw0b8f7r2rBOZHk-vvdZJOn7i6oWSJQ2MSuqLynk-b6RU8Dff7f1_roKLix_CAOfwo_aEpY3QqX02PzdZ1th7aCXQ-dwaXfDmbSRR0eZXEIFy35zw5eA07_ta77ABDKaNm3Jlp8amZo7HnxjRqmr-AAjn2e01reY-hnSd6JCfKmtdNEY1Z9_YI4xX_UocVSALn9_3gVhs_VQTy_TWQdM="
           ],
           "changes": {
             "30_days_ago": {
@@ -158,7 +181,7 @@
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": 0.4649463174874886
+      "net_headcount_pct_yoy": 0.7403790230870824
     }
   },
   "medium_end": {
@@ -167,11 +190,7 @@
         "Microsoft": {
           "current": 219000,
           "data_date": "2025-07-02",
-          "source_urls": [
-            "https://news.microsoft.com/facts-about-microsoft/",
-            "https://www.geekwire.com/2025/microsoft-cut-product-rd-jobs-added-operations-roles-over-the-past-year-new-filing-confirms/",
-            "https://www.investopedia.com/microsoft-plans-to-lay-off-thousands-of-workers-in-latest-round-of-cuts-8672641"
-          ],
+          "source_urls": [],
           "changes": {
             "30_days_ago": {
               "value": -2000,
@@ -190,15 +209,38 @@
             }
           }
         },
+        "Meta": {
+          "current": 70467,
+          "data_date": "2025-02-11",
+          "source_urls": [
+            "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
+            "https://www.cbsnews.com/news/meta-layoffs-2025-mark-zuckerberg-low-performers/",
+            "https://www.fortune.com/2025/02/11/meta-layoffs-3600-workers-mark-zuckerberg-low-performers/"
+          ],
+          "changes": {
+            "30_days_ago": {
+              "value": 1138,
+              "pct": 1.64,
+              "badge": "neutral"
+            },
+            "1_year_ago": {
+              "value": -1937,
+              "pct": -2.68,
+              "badge": "neutral"
+            },
+            "q1_2023": {
+              "value": -6647,
+              "pct": -8.62,
+              "badge": "reasonably_weak"
+            }
+          }
+        },
         "Apple": {
           "current": 164000,
           "data_date": "2024-09-28",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfQ6LqZv8ntDEqo7J6_gIfR1r4lgpXlVV1vphSC27kmLUoBHK5V1p3q123jHLfL07uEf0qiOwaOJLLjS7ooYzFNMVzeu7KM6Iv-AeCpdOyTcb1dsBEMi0rfJZYJSSqbby0xrMiAGzeZQsFjEqPYlb4nLtzYn-mqoh7hB8C-slaE7yOGr-Uwolu7ciJ",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElnkjUaZZfMBzhzK9qxJc4Sck2bJJJemibvB2BiiI2p0al5veElRW04UwExQlEygIYyZFoVnZm3bBLbF92_OrBjltc9kp5O8L7SaKxJkRCPzhTHoOayjthLMMx9FNxHJmPdVoUVjI7RTQRSCYf2vAg07NUWL7Fs22gUnl28NoCpb000sg=",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCBjnXGFcoCJ3pbqoXhykxDkAaw7waD3PbwnYTK8wW-UoIGQuycYq_UK86brQE3jRi2YsSkiVus82FN2GaxAC1tRxBieosHHqRGwN6c9XklsFQu3eY56V_wgcSttjnXWifJVTBt6lSwMzACw==",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqwydbqAzgPaugy0MITemSE3y7I2U21qL0omr0lzfp0K88KvUHgDJCLZKLGiJz_1LDhF7AVx3RyPXKOA2M92qWB6GfdfgW2BjElRhwf-qpQFAqwnVTsc7TPgIdLzh2f6Yc3A-eAwBvLfCdbzfKh8UkIhXNXVOHBUduX3BTLySS9lmrvEwZsNujGuSaSus7gU5sgJY=",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ4oOfImb-SgK_A9Gx6tlD1JbCQdIssPQQZnFGthEtdEdmEE2aNsn6tOuuCELpKQ1wbzOqw3UDgSfwaX_y9sER9NhGGDhmPM0jCGcbPMSBcNEyNYz1yZXUn2-8RYucBEYC_xEXRLk43uJSl3aDFzl1y8cuz7S3ihDnJi3l2H2dum5Mq7XgGbgzY9aYc5X72lmuJAokPnctuMG7eWvqHdAvm3nYq41Pm29EfB1lHP0Eto53Cd0="
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIQpPlsrbb2ou4A2UJBqehLfsNK37FewtrEYTphWDKwXV38HIbXxmI1PeH0YnS8z4UT8GeSXTrhbSJyHgrusUj2C7BjN2uxQ_bGk9PNkqD-V3T_swi1PW-ZyrTGatAAQKQzLsRrUVJ20ItbQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz2E0gfiI3l6eWb3i0XMkSTInUI6mwvwdPV0gJsSHAIGXwj6CviTAF1nME7L6ZYXBv0d_plMjxM9Z3Mw-1SEUYhRIu_hYTh1NjvMAAnNZ4bz7WvmE3tzmDKUt0CVhdLxFw7TSY-_sqkFirEck="
           ],
           "changes": {
             "30_days_ago": {
@@ -222,8 +264,10 @@
           "current": 336000,
           "data_date": "2025-10-28",
           "source_urls": [
-            "https://www.aboutamazon.com/news/company-news/staying-nimble-and-continuing-to-strengthen-our-organizations",
-            "https://www.theguardian.com/technology/2025/oct/27/amazon-layoffs-corporate-workers"
+            "https://www.theguardian.com/technology/2025/oct/27/amazon-layoffs-corporate-workers",
+            "https://www.aljazeera.com/economy/2025/10/28/is-artificial-intelligence-to-blame-for-amazon-job-cuts",
+            "https://www.sfchronicle.com/tech/article/amazon-layoffs-14000-corporate-workers-19868452.php",
+            "https://www.cnbc.com/2025/10/28/amazon-confirms-14000-corporate-layoffs.html"
           ],
           "changes": {
             "30_days_ago": {
@@ -247,9 +291,7 @@
           "current": 36000,
           "data_date": "2025-01-26",
           "source_urls": [
-            "https://investor.nvidia.com/financial-info/sec-filings/default.aspx",
-            "https://www.macrotrends.net/stocks/charts/NVDA/nvidia/number-of-employees",
-            "https://mlq.ai/nvidia-nvda-employee-count/"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlo9_Zgyd6hzcKhYtEZymO-etX97jcWwfpRqDvyg-QowCj-Fjl_xmEZQm9Ydst3X_DVARvQWDC9vEcKw6n3NP8c1E7AGPSnQIhytvJjE9WHiz_ku8e1luFOrOkrDOXorxhPgX_KSX_zWJHoIZ6LtFkuOG1_OpGaBPzKLoU5VTf_hL7Uk5zgj58CsyYWfP_5A=="
           ],
           "changes": {
             "30_days_ago": {
@@ -271,7 +313,7 @@
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": -2.15631921144473
+      "net_headcount_pct_yoy": -2.2008357394113807
     }
   },
   "high_end": {
@@ -293,12 +335,12 @@
           }
         },
         "Anthropic": {
-          "current": 73,
-          "collection_date": "2025-12-28",
-          "source_url": "",
+          "current": 80,
+          "collection_date": "2025-12-30",
+          "source_url": "https://boards.greenhouse.io/v1/boards/anthropic/jobs",
           "changes": {
             "1_year_ago": {
-              "value": 33,
+              "value": 40,
               "badge": "strong"
             },
             "30_days_ago": {
@@ -324,68 +366,68 @@
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 435.22727272727275
+      "net_change_pct_yoy": 443.1818181818182
     }
   },
   "stock_index": {
-    "current_value": 92.74,
+    "current_value": 92.1,
     "baseline_date": "2024-12-30",
     "changes": {
-      "30_day": 5.14,
-      "1_year": -7.26
+      "30_day": 4.37,
+      "1_year": -7.9
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1626.0,
+        "current_price": 1615.2,
         "weight": 0.14285714285714285,
-        "change_30_day": 0.5,
-        "change_1_year": -11.2
+        "change_30_day": -0.17,
+        "change_1_year": -11.79
       },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
-        "current_price": 6070.0,
+        "current_price": 6074.0,
         "weight": 0.14285714285714285,
-        "change_30_day": 3.06,
-        "change_1_year": 6.89
+        "change_30_day": 3.12,
+        "change_1_year": 6.97
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 85.0,
+        "current_price": 84.19,
         "weight": 0.14285714285714285,
-        "change_30_day": 10.32,
-        "change_1_year": 8.11
+        "change_30_day": 9.27,
+        "change_1_year": 7.08
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 18.43,
+        "current_price": 18.09,
         "weight": 0.14285714285714285,
-        "change_30_day": 5.8,
-        "change_1_year": -16.19
+        "change_30_day": 3.85,
+        "change_1_year": -17.74
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 3265.2,
+        "current_price": 3246.8,
         "weight": 0.14285714285714285,
-        "change_30_day": 3.23,
-        "change_1_year": -18.96
+        "change_30_day": 2.65,
+        "change_1_year": -19.41
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1605.7,
+        "current_price": 1604.6,
         "weight": 0.14285714285714285,
-        "change_30_day": 5.61,
-        "change_1_year": -2.74
+        "change_30_day": 5.54,
+        "change_1_year": -2.81
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 2.89,
+        "current_price": 2.86,
         "weight": 0.14285714285714285,
-        "change_30_day": 7.43,
-        "change_1_year": -16.71
+        "change_30_day": 6.32,
+        "change_1_year": -17.58
       }
     },
     "aggregate_badge": "reasonably_weak"
   },
-  "ai_summary": "You\u2019re not cooked; you\u2019re just lightly charred. While Big Tech trims 4% and consultancy stocks sulk, NVIDIA and AI labs are hiring like it\u2019s 2021. TCS is slimming, but most consultancies are actually adding heads. With OpenAI\u2019s job postings mooning, the sky isn't falling\u2014it\u2019s just being recompiled. Put the spatula down; you\u2019re fine."
+  "ai_summary": "You\u2019re not cooked; you\u2019re just simmering. While TCS and Amazon trimmed some fat, NVIDIA\u2019s headcount exploded and AI labs are hiring like mad. Consultancy stocks are bleeding red YoY, but 30-day recoveries and triple-digit AI job growth prove the sky isn't falling. It\u2019s a standard market reorg. Put down the \"Open to Work\" banner and keep shipping."
 }
