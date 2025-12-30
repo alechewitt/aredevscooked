@@ -6,6 +6,10 @@ on:
       - main
     paths:
       - 'website/**'
+  workflow_run:
+    workflows: ["Daily Data Collection"]
+    types:
+      - completed
   workflow_dispatch:  # Allow manual triggering
 
 permissions:
@@ -20,9 +24,12 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
