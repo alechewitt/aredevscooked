@@ -299,7 +299,8 @@
     // Load metrics on page load
     async function loadMetrics() {
         try {
-            const response = await fetch(METRICS_URL);
+            const cacheBuster = `?t=${Date.now()}`;
+            const response = await fetch(METRICS_URL + cacheBuster);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
