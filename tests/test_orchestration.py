@@ -8,6 +8,7 @@ from scripts.run_collection import (
     collect_all_headcount_data,
     collect_all_job_posting_data,
     build_metrics_structure,
+    find_recent_headcount_data,
 )
 
 
@@ -122,6 +123,111 @@ async def test_collect_all_headcount_data_calls_collector_for_each_company(mocke
     company_names = [call[0][0] for call in calls]
     assert "HCLTech" in company_names
     assert "Microsoft" in company_names
+
+
+def test_find_recent_headcount_data_returns_most_recent(tmp_path, mocker):
+    """Should return most recent headcount data from history."""
+    history_file = tmp_path / "data" / "processed" / "metrics_history.json"
+    history_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today()
+    yesterday = today - timedelta(days=1)
+    two_days_ago = today - timedelta(days=2)
+
+    history_data = {
+        "metadata": {"description": "Test history"},
+        "snapshots": {
+            two_days_ago.isoformat(): {
+                "headcounts": {"Meta": {"headcount": 70000, "data_date": "2024-06-30"}}
+            },
+            yesterday.isoformat(): {
+                "headcounts": {"Meta": {"headcount": 70799, "data_date": "2024-06-30"}}
+            },
+        },
+    }
+
+    import json
+
+    with open(history_file, "w") as f:
+        json.dump(history_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=history_file)
+
+    result = find_recent_headcount_data("Meta", max_days_old=7)
+
+    assert result is not None
+    assert result["current_headcount"] == 70799
+
+
+def test_find_recent_headcount_data_returns_none_if_not_found(tmp_path, mocker):
+    """Should return None if company not found in recent history."""
+    history_file = tmp_path / "data" / "processed" / "metrics_history.json"
+    history_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today()
+    yesterday = today - timedelta(days=1)
+
+    history_data = {
+        "metadata": {"description": "Test history"},
+        "snapshots": {
+            yesterday.isoformat(): {
+                "headcounts": {
+                    "HCLTech": {"headcount": 218621, "data_date": "2024-09-30"}
+                }
+            },
+        },
+    }
+
+    import json
+
+    with open(history_file, "w") as f:
+        json.dump(history_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=history_file)
+
+    result = find_recent_headcount_data("Meta", max_days_old=7)
+
+    assert result is None
+
+
+def test_find_recent_headcount_data_returns_none_if_file_missing(tmp_path, mocker):
+    """Should return None if history file doesn't exist."""
+    history_file = tmp_path / "data" / "processed" / "metrics_history.json"
+
+    mocker.patch("scripts.run_collection.Path", return_value=history_file)
+
+    result = find_recent_headcount_data("Meta", max_days_old=7)
+
+    assert result is None
+
+
+def test_find_recent_headcount_data_respects_max_days_old(tmp_path, mocker):
+    """Should not return data older than max_days_old."""
+    history_file = tmp_path / "data" / "processed" / "metrics_history.json"
+    history_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today()
+    eight_days_ago = today - timedelta(days=8)
+
+    history_data = {
+        "metadata": {"description": "Test history"},
+        "snapshots": {
+            eight_days_ago.isoformat(): {
+                "headcounts": {"Meta": {"headcount": 70799, "data_date": "2024-06-30"}}
+            },
+        },
+    }
+
+    import json
+
+    with open(history_file, "w") as f:
+        json.dump(history_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=history_file)
+
+    result = find_recent_headcount_data("Meta", max_days_old=7)
+
+    assert result is None
 
 
 # Job Posting Data Collection Tests

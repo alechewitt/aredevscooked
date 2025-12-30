@@ -391,6 +391,48 @@ def find_recent_job_posting_data(
     return None
 
 
+def find_recent_headcount_data(
+    company_name: str, max_days_old: int = 7
+) -> dict[str, Any] | None:
+    """Find the most recent headcount data for a company from history.
+
+    Searches backwards through daily snapshots up to max_days_old days.
+
+    Args:
+        company_name: Name of the company to search for
+        max_days_old: Maximum age of data to accept (default: 7 days)
+
+    Returns:
+        Most recent headcount data or None if not found
+    """
+    history_file = Path("data/processed/metrics_history.json")
+    if not history_file.exists():
+        return None
+
+    with open(history_file, "r") as f:
+        history = json.load(f)
+
+    snapshots = history.get("snapshots", {})
+
+    # Search backwards from today up to max_days_old
+    for days_back in range(max_days_old + 1):
+        target_date = (date.today() - timedelta(days=days_back)).isoformat()
+        snapshot = snapshots.get(target_date)
+
+        if snapshot and company_name in snapshot.get("headcounts", {}):
+            headcount_data = snapshot["headcounts"][company_name]
+            print(
+                f"  ⏪ Using {days_back}-day-old headcount data for {company_name}: {headcount_data['headcount']:,}"
+            )
+            return {
+                "current_headcount": headcount_data["headcount"],
+                "data_date": headcount_data.get("data_date", ""),
+                "source_urls": headcount_data.get("source_urls", []),
+            }
+
+    return None
+
+
 def build_metrics_structure(
     stock_data: dict[str, dict[str, Any]],
     headcount_data: dict[str, dict[str, Any]],
@@ -431,8 +473,18 @@ def build_metrics_structure(
     low_end_headcount_companies = {}
 
     for name in low_end_companies:
+        # Try to get fresh data first, fallback to recent historical data (up to 7 days old)
+        company_headcount_data = None
         if name in headcount_data:
-            current_headcount = headcount_data[name]["current_headcount"]
+            company_headcount_data = headcount_data[name]
+        else:
+            # Collection failed for this company, try to find recent data
+            historical_headcount_data = find_recent_headcount_data(name, max_days_old=7)
+            if historical_headcount_data:
+                company_headcount_data = historical_headcount_data
+
+        if company_headcount_data:
+            current_headcount = company_headcount_data["current_headcount"]
 
             # Calculate changes if we have baselines
             if has_baselines:
@@ -444,8 +496,8 @@ def build_metrics_structure(
 
             low_end_headcount_companies[name] = {
                 "current": current_headcount,
-                "data_date": headcount_data[name].get("data_date", ""),
-                "source_urls": headcount_data[name].get("source_urls", []),
+                "data_date": company_headcount_data.get("data_date", ""),
+                "source_urls": company_headcount_data.get("source_urls", []),
                 "changes": changes,
             }
 
@@ -585,8 +637,18 @@ def build_metrics_structure(
     medium_end_headcount_companies = {}
 
     for name in medium_end_companies:
+        # Try to get fresh data first, fallback to recent historical data (up to 7 days old)
+        company_headcount_data = None
         if name in headcount_data:
-            current_headcount = headcount_data[name]["current_headcount"]
+            company_headcount_data = headcount_data[name]
+        else:
+            # Collection failed for this company, try to find recent data
+            historical_headcount_data = find_recent_headcount_data(name, max_days_old=7)
+            if historical_headcount_data:
+                company_headcount_data = historical_headcount_data
+
+        if company_headcount_data:
+            current_headcount = company_headcount_data["current_headcount"]
 
             # Calculate changes if we have baselines
             if has_baselines:
@@ -598,8 +660,8 @@ def build_metrics_structure(
 
             medium_end_headcount_companies[name] = {
                 "current": current_headcount,
-                "data_date": headcount_data[name].get("data_date", ""),
-                "source_urls": headcount_data[name].get("source_urls", []),
+                "data_date": company_headcount_data.get("data_date", ""),
+                "source_urls": company_headcount_data.get("source_urls", []),
                 "changes": changes,
             }
 
