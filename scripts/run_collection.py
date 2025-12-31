@@ -255,14 +255,14 @@ async def collect_all_headcount_data(
 
 
 async def collect_single_job_posting_data(
-    collector: GeminiCollector, company_name: str, greenhouse_board: str, position: int
+    collector: GeminiCollector, company_name: str, jobs_url: str, position: int
 ) -> tuple[str, dict[str, Any] | None]:
     """Collect job posting data for a single company (async wrapper).
 
     Args:
         collector: GeminiCollector instance
         company_name: Company name
-        greenhouse_board: Greenhouse board name
+        jobs_url: URL to the company's job board
         position: Position in batch for staggered timeout logging
 
     Returns:
@@ -270,11 +270,11 @@ async def collect_single_job_posting_data(
     """
     try:
         log(f"  Collecting job postings for {company_name}...")
-        prompt = create_job_postings_prompt(company_name, greenhouse_board)
+        prompt = create_job_postings_prompt(company_name, jobs_url)
 
         async def do_collect():
             return await asyncio.to_thread(
-                collector.collect_job_postings, company_name, greenhouse_board
+                collector.collect_job_postings, company_name, jobs_url
             )
 
         data = await with_timeout_logging(
@@ -300,7 +300,7 @@ async def collect_all_job_posting_data(
     """
     tasks = [
         collect_single_job_posting_data(
-            collector, lab_info["name"], lab_info["greenhouse_board"], position=i
+            collector, lab_info["name"], lab_info["jobs_url"], position=i
         )
         for i, lab_info in enumerate(AI_LABS)
     ]

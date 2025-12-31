@@ -110,10 +110,10 @@ def test_headcount_prompt_requests_notes():
 
 
 def test_headcount_prompt_amazon_special_handling():
-    """Headcount prompt for Amazon should note total employee count."""
+    """Headcount prompt for Amazon should note corporate vs warehouse distinction."""
     prompt = create_headcount_prompt("Amazon")
     assert "amazon" in prompt.lower()
-    assert "total employee" in prompt.lower() or "all employees" in prompt.lower()
+    assert "hourly workers" in prompt.lower() or "warehouse" in prompt.lower()
 
 
 def test_headcount_prompt_mentions_quarterly_reports():
@@ -131,27 +131,34 @@ def test_headcount_prompt_mentions_layoff_adjustments():
 # Job Postings Prompt Tests
 
 
-def test_job_postings_prompt_includes_board_name():
-    """Job postings prompt should include Greenhouse board name."""
-    prompt = create_job_postings_prompt("DeepMind", "deepmind")
-    assert "deepmind" in prompt
+def test_job_postings_prompt_includes_company_name():
+    """Job postings prompt should include company name."""
+    prompt = create_job_postings_prompt(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
+    assert "DeepMind" in prompt
 
 
-def test_job_postings_prompt_includes_greenhouse_url():
-    """Job postings prompt should include greenhouse.io URL."""
-    prompt = create_job_postings_prompt("DeepMind", "deepmind")
-    assert "greenhouse.io" in prompt.lower()
+def test_job_postings_prompt_includes_jobs_url():
+    """Job postings prompt should include the jobs URL."""
+    jobs_url = "https://job-boards.greenhouse.io/deepmind"
+    prompt = create_job_postings_prompt("DeepMind", jobs_url)
+    assert jobs_url in prompt
 
 
 def test_job_postings_prompt_mentions_technical_roles():
     """Job postings prompt should focus on technical roles."""
-    prompt = create_job_postings_prompt("DeepMind", "deepmind")
+    prompt = create_job_postings_prompt(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
     assert "technical" in prompt.lower() or "engineering" in prompt.lower()
 
 
 def test_job_postings_prompt_requests_json():
     """Job postings prompt should request JSON output."""
-    prompt = create_job_postings_prompt("DeepMind", "deepmind")
+    prompt = create_job_postings_prompt(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
     assert "JSON" in prompt or "json" in prompt
 
 

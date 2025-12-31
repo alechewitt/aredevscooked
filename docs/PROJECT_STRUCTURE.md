@@ -71,7 +71,7 @@ aredevscooked/
 - **Methods**:
   - `collect_stock_data(company, ticker, one_year_ago)` → dict
   - `collect_headcount(company)` → dict
-  - `collect_job_postings(company, greenhouse_board)` → dict
+  - `collect_job_postings(company, jobs_url)` → dict
   - `generate_summary(metrics_data)` → str
 - **Key Features**:
   - JSON extraction from Gemini responses (markdown code blocks or plain text)

@@ -40,7 +40,7 @@ async def test_collect_all_stock_data_calls_collector_for_each_company(mocker):
     mock_collector = mocker.Mock()
     mock_collector.collect_stock_data.return_value = {
         "company": "HCLTech",
-        "ticker": "HCL.NS",
+        "ticker": "HCLTECH.NS",
         "current_price": 1450.50,
         "price_1_year_ago": 1320.00,
     }
@@ -53,7 +53,7 @@ async def test_collect_all_stock_data_calls_collector_for_each_company(mocker):
     assert len(calls) == 7
     # Check first call
     assert calls[0][0][0] == "HCLTech"  # company_name
-    assert calls[0][0][1] == "HCL.NS"  # ticker
+    assert calls[0][0][1] == "HCLTECH.NS"  # ticker
     assert calls[0][0][2] == one_year_ago  # date
 
 
@@ -252,7 +252,7 @@ async def test_collect_all_job_posting_data_returns_dict(mocker):
 
 @pytest.mark.asyncio
 async def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker):
-    """Should call collector for each AI lab with board name."""
+    """Should call collector for each AI lab with jobs URL."""
     mock_collector = mocker.Mock()
     mock_collector.collect_job_postings.return_value = {
         "company": "Anthropic",
@@ -261,11 +261,14 @@ async def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker)
 
     await collect_all_job_posting_data(mock_collector)
 
-    # Verify called with correct company and board
+    # Verify called with correct company and jobs URL
     calls = mock_collector.collect_job_postings.call_args_list
     assert len(calls) == 3
-    # Check that board names are passed
-    assert calls[0][0][1] in ["deepmind", "anthropic", "openai"]
+    # Check that jobs URLs are passed
+    jobs_urls = [call[0][1] for call in calls]
+    assert any("greenhouse.io/deepmind" in url for url in jobs_urls)
+    assert any("anthropic.com/jobs" in url for url in jobs_urls)
+    assert any("openai.com/careers" in url for url in jobs_urls)
 
 
 # Metrics Structure Building Tests

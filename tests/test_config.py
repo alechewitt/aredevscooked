@@ -76,14 +76,14 @@ def test_ai_labs_count():
 
 
 def test_ai_labs_have_required_fields():
-    """Each AI lab should have name and greenhouse_board."""
+    """Each AI lab should have name and jobs_url."""
     for company in AI_LABS:
         assert "name" in company
-        assert "greenhouse_board" in company
+        assert "jobs_url" in company
         assert isinstance(company["name"], str)
-        assert isinstance(company["greenhouse_board"], str)
+        assert isinstance(company["jobs_url"], str)
         assert len(company["name"]) > 0
-        assert len(company["greenhouse_board"]) > 0
+        assert company["jobs_url"].startswith("https://")
 
 
 def test_ai_labs_names():

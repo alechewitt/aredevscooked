@@ -83,22 +83,22 @@ async def collect_historical_headcount(
 
 
 async def collect_historical_jobs(
-    collector: GeminiCollector, company_name: str, greenhouse_board: str
+    collector: GeminiCollector, company_name: str, jobs_url: str
 ) -> dict[str, Any] | None:
     """Collect historical job posting count.
 
-    Note: For job postings, we can only get current data from Greenhouse.
-    Historical job posting data is not available, so we'll skip this for now.
+    Note: Historical job posting data is not available from job boards.
+    We'll need to rely on daily snapshots going forward.
 
     Args:
         collector: GeminiCollector instance
         company_name: Company name
-        greenhouse_board: Greenhouse board name
+        jobs_url: URL to the company's job board
 
     Returns:
         Job posting data dict or None
     """
-    # Job postings: Historical data not available via Greenhouse API
+    # Job postings: Historical data not available from job boards
     # We'll need to rely on daily snapshots going forward
     return None
 

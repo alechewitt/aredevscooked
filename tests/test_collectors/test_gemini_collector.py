@@ -180,7 +180,9 @@ def test_collect_job_postings_returns_dict(collector, mock_gemini_response, mock
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
     mock_generate.return_value = mock_gemini_response(mock_response_text)
 
-    result = collector.collect_job_postings("DeepMind", "deepmind")
+    result = collector.collect_job_postings(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
 
     assert isinstance(result, dict)
     assert "company" in result
@@ -195,13 +197,15 @@ def test_collect_job_postings_parses_json(collector, mock_gemini_response, mocke
   "total_technical_jobs": 45,
   "job_titles": ["Senior ML Engineer", "Research Scientist"],
   "collection_date": "2025-12-26",
-  "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
+  "source_url": "https://job-boards.greenhouse.io/deepmind"
 }
 ```"""
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
     mock_generate.return_value = mock_gemini_response(mock_response_text)
 
-    result = collector.collect_job_postings("DeepMind", "deepmind")
+    result = collector.collect_job_postings(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
 
     assert result["company"] == "DeepMind"
     assert result["total_technical_jobs"] == 45
@@ -218,14 +222,16 @@ def test_collect_job_postings_validates_non_negative(
   "total_technical_jobs": -5,
   "job_titles": [],
   "collection_date": "2025-12-26",
-  "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
+  "source_url": "https://job-boards.greenhouse.io/deepmind"
 }
 ```"""
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
     mock_generate.return_value = mock_gemini_response(mock_response_text)
 
     with pytest.raises(ValueError, match="non-negative"):
-        collector.collect_job_postings("DeepMind", "deepmind")
+        collector.collect_job_postings(
+            "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+        )
 
 
 # Summary Generation Tests

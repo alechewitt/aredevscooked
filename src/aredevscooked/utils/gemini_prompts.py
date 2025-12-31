@@ -105,17 +105,17 @@ RULES:
 If data for a time period is unavailable, use null for that period's object."""
 
 
-def create_job_postings_prompt(company_name: str, greenhouse_board: str) -> str:
+def create_job_postings_prompt(company_name: str, jobs_url: str) -> str:
     """Create prompt for collecting job posting counts.
 
     Args:
         company_name: Full company name (e.g., "DeepMind")
-        greenhouse_board: Greenhouse board name (e.g., "deepmind")
+        jobs_url: URL to the company's job board
 
     Returns:
         Formatted prompt string for Gemini API
     """
-    return f"""Search https://boards.greenhouse.io/v1/boards/{greenhouse_board}/jobs and count only technical roles.
+    return f"""Search {jobs_url} and count only technical roles.
 
 Technical roles include:
 - Engineering (Software Engineer, ML Engineer, etc.)
@@ -133,7 +133,7 @@ Return ONLY a JSON object with this exact structure:
   "total_technical_jobs": 0,
   "job_titles": ["Job Title 1", "Job Title 2", "..."],
   "collection_date": "YYYY-MM-DD",
-  "source_url": "https://boards.greenhouse.io/v1/boards/{greenhouse_board}/jobs"
+  "source_url": "{jobs_url}"
 }}
 
 Replace placeholder values with actual data. Include a representative sample of job titles (up to 10).

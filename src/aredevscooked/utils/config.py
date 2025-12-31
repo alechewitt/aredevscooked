@@ -22,9 +22,9 @@ BIG_TECH_COMPANIES = [
 
 # AI Research Labs (High-End Companies)
 AI_LABS = [
-    {"name": "DeepMind", "greenhouse_board": "deepmind"},
-    {"name": "Anthropic", "greenhouse_board": "anthropic"},
-    {"name": "OpenAI", "greenhouse_board": "openai"},
+    {"name": "DeepMind", "jobs_url": "https://job-boards.greenhouse.io/deepmind"},
+    {"name": "Anthropic", "jobs_url": "https://www.anthropic.com/jobs"},
+    {"name": "OpenAI", "jobs_url": "https://openai.com/careers/search/"},
 ]
 
 # Badge Thresholds for Headcount (Percentage-based)

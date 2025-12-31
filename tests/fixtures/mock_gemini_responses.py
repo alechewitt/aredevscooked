@@ -31,7 +31,7 @@ MOCK_JOB_POSTINGS_RESPONSE = """```json
   "total_technical_jobs": 45,
   "job_titles": ["Senior ML Engineer", "Research Scientist", "Software Engineer"],
   "collection_date": "2025-12-26",
-  "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
+  "source_url": "https://job-boards.greenhouse.io/deepmind"
 }
 ```"""
 

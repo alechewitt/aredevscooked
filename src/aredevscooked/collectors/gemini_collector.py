@@ -260,14 +260,12 @@ class GeminiCollector:
 
         return data
 
-    def collect_job_postings(
-        self, company_name: str, greenhouse_board: str
-    ) -> dict[str, Any]:
+    def collect_job_postings(self, company_name: str, jobs_url: str) -> dict[str, Any]:
         """Collect job posting counts for a company.
 
         Args:
             company_name: Full company name
-            greenhouse_board: Greenhouse board name
+            jobs_url: URL to the company's job board
 
         Returns:
             Dictionary with job posting data
@@ -275,7 +273,7 @@ class GeminiCollector:
         Raises:
             ValueError: If job count is negative
         """
-        prompt = create_job_postings_prompt(company_name, greenhouse_board)
+        prompt = create_job_postings_prompt(company_name, jobs_url)
 
         self._set_pending("jobs", company_name, prompt)
         try:
