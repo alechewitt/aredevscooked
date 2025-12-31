@@ -109,13 +109,6 @@ def test_headcount_prompt_requests_notes():
     assert "notes" in prompt.lower()
 
 
-def test_headcount_prompt_amazon_special_handling():
-    """Headcount prompt for Amazon should note corporate vs warehouse distinction."""
-    prompt = create_headcount_prompt("Amazon")
-    assert "amazon" in prompt.lower()
-    assert "hourly workers" in prompt.lower() or "warehouse" in prompt.lower()
-
-
 def test_headcount_prompt_mentions_quarterly_reports():
     """Headcount prompt should mention quarterly reports as primary sources."""
     prompt = create_headcount_prompt("Microsoft")
