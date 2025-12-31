@@ -53,8 +53,9 @@ def create_headcount_prompt(company_name: str, target_date: str | None = None) -
     additional_instruction = ""
     if company_name == "Amazon":
         additional_instruction = """
-AMAZON NOTE: Amazon does not separately report corporate vs warehouse headcount in SEC filings.
-Use total employee count from official filings. Note in the "notes" field that this includes all employees."""
+AMAZON NOTE: Amazon does not separately report corporate vs warehouse headcount in SEC filings so you will need to rely on other sources to get an estimate of corporate workers. 
+If you see a number 
+above 1 million employees, that's the number including hourly workers and you should not consider number."""
 
     return f"""Search for employee headcount data for {company_name} across multiple time periods.
 
