@@ -1,6 +1,6 @@
 """Badge generator for market health indicators."""
 
-from aredevscooked.utils.config import HEADCOUNT_THRESHOLDS, JOB_POSTING_THRESHOLDS
+from aredevscooked.config import HEADCOUNT_THRESHOLDS, JOB_POSTING_THRESHOLDS
 
 
 class BadgeGenerator:

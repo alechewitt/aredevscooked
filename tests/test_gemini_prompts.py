@@ -2,7 +2,7 @@
 
 import pytest
 from datetime import date
-from aredevscooked.utils.gemini_prompts import (
+from aredevscooked.gemini_prompts import (
     create_stock_price_prompt,
     create_headcount_prompt,
     create_job_postings_prompt,

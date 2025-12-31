@@ -18,7 +18,7 @@ from typing import Any
 from dotenv import load_dotenv
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
-from aredevscooked.utils.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
+from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
 
 
 async def collect_historical_stock_data(

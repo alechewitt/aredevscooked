@@ -56,7 +56,7 @@ def log(message: str) -> None:
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.collectors.stock_collector import StockCollector
-from aredevscooked.utils.gemini_prompts import (
+from aredevscooked.gemini_prompts import (
     create_headcount_prompt,
     create_job_postings_prompt,
 )
@@ -64,7 +64,7 @@ from aredevscooked.processors.stock_processor import StockProcessor
 from aredevscooked.processors.headcount_processor import HeadcountProcessor
 from aredevscooked.processors.jobs_processor import JobsProcessor
 from aredevscooked.generators.badge_generator import BadgeGenerator
-from aredevscooked.utils.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
+from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
 
 LOG_TIMEOUT_SECONDS = 60
 STAGGER_SECONDS = 5

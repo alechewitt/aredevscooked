@@ -1,7 +1,7 @@
 """Tests for configuration module."""
 
 import pytest
-from aredevscooked.utils.config import (
+from aredevscooked.config import (
     IT_CONSULTANCIES,
     BIG_TECH_COMPANIES,
     AI_LABS,

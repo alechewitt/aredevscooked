@@ -10,13 +10,13 @@ from pathlib import Path
 from typing import Any
 from google import genai
 from google.genai import types
-from aredevscooked.utils.gemini_prompts import (
+from aredevscooked.gemini_prompts import (
     create_stock_price_prompt,
     create_headcount_prompt,
     create_job_postings_prompt,
     create_summary_prompt,
 )
-from aredevscooked.utils.config import GEMINI_CONFIG, VALIDATION
+from aredevscooked.config import GEMINI_CONFIG, VALIDATION
 
 
 class GeminiCollector:
