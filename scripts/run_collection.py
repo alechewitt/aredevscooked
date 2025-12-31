@@ -604,25 +604,21 @@ def build_metrics_structure(
             }
 
     # Calculate net headcount YoY percentage for low-end
+    # Use baseline values from per-company changes for consistency with Gemini data
     total_current_headcount = sum(
         data["current"] for data in low_end_headcount_companies.values()
     )
     net_headcount_pct_yoy_low = None
-    if has_baselines:
-        baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
-        baseline_headcounts = baseline_1yr.get("headcounts", {})
-        if baseline_headcounts:
-            total_baseline_headcount = sum(
-                baseline_headcounts[name]["headcount"]
-                for name in baseline_headcounts
-                if name in low_end_headcount_companies
-            )
-            if total_baseline_headcount > 0:
-                net_headcount_pct_yoy_low = (
-                    (total_current_headcount - total_baseline_headcount)
-                    / total_baseline_headcount
-                    * 100
-                )
+    total_baseline_headcount = sum(
+        data.get("changes", {}).get("1_year_ago", {}).get("baseline_headcount", 0) or 0
+        for data in low_end_headcount_companies.values()
+    )
+    if total_baseline_headcount > 0:
+        net_headcount_pct_yoy_low = (
+            (total_current_headcount - total_baseline_headcount)
+            / total_baseline_headcount
+            * 100
+        )
 
     # Calculate aggregate badge based on total average YoY percentage
     if net_headcount_pct_yoy_low is not None:
@@ -785,25 +781,21 @@ def build_metrics_structure(
             }
 
     # Calculate net headcount YoY percentage for medium-end
+    # Use baseline values from per-company changes for consistency with Gemini data
     total_current_headcount_med = sum(
         data["current"] for data in medium_end_headcount_companies.values()
     )
     net_headcount_pct_yoy_med = None
-    if has_baselines:
-        baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
-        baseline_headcounts = baseline_1yr.get("headcounts", {})
-        if baseline_headcounts:
-            total_baseline_headcount_med = sum(
-                baseline_headcounts[name]["headcount"]
-                for name in baseline_headcounts
-                if name in medium_end_headcount_companies
-            )
-            if total_baseline_headcount_med > 0:
-                net_headcount_pct_yoy_med = (
-                    (total_current_headcount_med - total_baseline_headcount_med)
-                    / total_baseline_headcount_med
-                    * 100
-                )
+    total_baseline_headcount_med = sum(
+        data.get("changes", {}).get("1_year_ago", {}).get("baseline_headcount", 0) or 0
+        for data in medium_end_headcount_companies.values()
+    )
+    if total_baseline_headcount_med > 0:
+        net_headcount_pct_yoy_med = (
+            (total_current_headcount_med - total_baseline_headcount_med)
+            / total_baseline_headcount_med
+            * 100
+        )
 
     # Calculate aggregate badge based on total average YoY percentage
     if net_headcount_pct_yoy_med is not None:
