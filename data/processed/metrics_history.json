@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-30T23:26:38.170827+00:00"
+    "last_updated": "2025-12-31T00:35:22.601293+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -368,6 +368,99 @@
           "data_date": "2025-11-24",
           "source_urls": [
             "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000110/aapl-20250927.htm"
+          ]
+        }
+      },
+      "job_postings": {}
+    },
+    "2025-12-31": {
+      "date": "2025-12-31",
+      "timestamp": "2025-12-31T00:35:22.601275+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1615.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6074.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 84.14,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 18.04,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3246.8,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1604.6,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.86,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226640,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.hcltech.com/investors/results-reports"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 86447,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.business-standard.com/article/companies/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1-401-cr-125101700844_1.html"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 349800,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx"
+          ]
+        },
+        "Wipro": {
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.wipro.com/newsroom/press-releases/2025/wipro-announces-results-for-the-quarter-ended-september-30-2025/"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 218960,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/789019/000078901925001350/msft-20250630.htm"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/aapl/employees/"
+          ]
+        },
+        "Amazon": {
+          "headcount": 336000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.pbs.org/newshour/economy/amazon-to-lay-off-14000-corporate-employees-as-spending-on-artificial-intelligence-accelerates"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/1045810/000104581025000045/nvda-20250126.htm"
           ]
         }
       },
