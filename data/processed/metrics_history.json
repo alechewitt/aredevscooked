@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2025-12-31T01:17:54.726607+00:00"
+    "last_updated": "2025-12-31T08:24:33.019959+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -375,15 +375,11 @@
     },
     "2025-12-31": {
       "date": "2025-12-31",
-      "timestamp": "2025-12-31T01:17:54.726586+00:00",
+      "timestamp": "2025-12-31T08:24:33.019939+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1615.2,
+          "price": 1623.8,
           "ticker": "HCLTECH.NS"
-        },
-        "LTIMindtree": {
-          "price": 6074.0,
-          "ticker": "LTIM.NS"
         },
         "Cognizant": {
           "price": 84.14,
@@ -394,11 +390,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 3246.8,
+          "price": 3218.2,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1604.6,
+          "price": 1598.2,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -411,69 +407,69 @@
           "headcount": 226640,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.livemint.com/market/stock-market-news/hcl-tech-attrition-rate-drops-to-12-6-in-q2-total-headcount-improves-by-8-019-to-2-26-lakh-employees-11728821444444.html"
+            "https://www.hcltech.com/press-releases/hcltech-delivers-strong-q2-fy26-results"
           ]
         },
         "LTIMindtree": {
           "headcount": 86447,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.ndtvprofit.com/earnings/ltimindtree-q2-results-profit-rises-12-beats-estimates"
+            "https://www.ltimindtree.com/news-event/ltimindtree-delivers-strong-quarter-broad-based-growth-across-business/"
           ]
         },
         "Cognizant": {
-          "headcount": 349800,
-          "data_date": "2025-09-30",
+          "headcount": 339800,
+          "data_date": "2025-12-31",
           "source_urls": [
             "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx"
           ]
         },
-        "Infosys": {
-          "headcount": 331991,
+        "TCS": {
+          "headcount": 593314,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://infotechlead.com/it-services/infosys-q2-fy26-results-revenue-hits-5-08-bn-strong-ai-driven-growth-across-sectors-85432"
+            "https://www.storyboard18.com/it-services/tcs-headcount-falls-by-nearly-20000-in-q2-fy26-nites-accuses-firm-of-underreporting-job-cuts-49321.htm"
           ]
         },
         "Tech Mahindra": {
-          "headcount": 154273,
-          "data_date": "2024-09-30",
+          "headcount": 152714,
+          "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.techmahindra.com/en-in/investors/financial-results/"
+            "https://www.techmahindra.com/en-in/investors/quarterly-earnings/"
           ]
         },
         "Wipro": {
-          "headcount": 235492,
-          "data_date": "2025-09-30",
+          "headcount": 233889,
+          "data_date": "2024-09-30",
           "source_urls": [
-            "https://www.wipro.com/newsroom/press-releases/2025/wipro-announces-results-for-the-quarter-ended-september-30-2025/"
+            "https://www.wipro.com/newsroom/press-releases/2024/wipro-announces-results-for-the-second-quarter-ended-september-30-2024/"
           ]
         },
         "Microsoft": {
           "headcount": 219000,
-          "data_date": "2025-07-02",
+          "data_date": "2025-12-31",
           "source_urls": [
-            "https://www.microsoft.com/en-us/investor/reporting.aspx"
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000119312525256321/d256321d10k.htm"
           ]
         },
         "Amazon": {
           "headcount": 336000,
-          "data_date": "2025-12-31",
+          "data_date": "2025-10-28",
           "source_urls": [
-            "https://www.theguardian.com/technology/2025/oct/27/amazon-layoffs-corporate-workers"
+            "https://www.theguardian.com/business/2025/oct/27/amazon-confirms-plans-to-lay-off-14000-corporate-workers-as-part-of-wave-of-cuts"
           ]
         },
         "NVIDIA": {
           "headcount": 36000,
           "data_date": "2025-01-26",
           "source_urls": [
-            "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025"
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/1045810/000104581025000045/nvda-20250126.htm"
           ]
         }
       },
       "job_postings": {
         "OpenAI": {
-          "total_technical_jobs": 348,
+          "total_technical_jobs": 314,
           "collection_date": "2025-12-31"
         }
       }
