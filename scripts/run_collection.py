@@ -219,7 +219,7 @@ async def collect_single_headcount_data(
         data = await with_timeout_logging(
             do_collect(), f"{company_name} headcount", position, prompt
         )
-        log(f"    ✓ Headcount: {data['current_headcount']:,}")
+        log(f"    ✓ {company_name} Headcount: {data['current_headcount']:,}")
         return company_name, data
     except Exception as e:
         log(f"    ✗ Error collecting {company_name}: {e}")
