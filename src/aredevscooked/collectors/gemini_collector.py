@@ -1,10 +1,12 @@
 """Gemini API collector for market data."""
 
 import json
-import re
 import os
+import re
 import threading
 import time
+
+import requests
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -342,6 +344,26 @@ class GeminiCollector:
 
         raise ValueError(f"Could not extract text from Gemini response: {response}")
 
+    def _resolve_redirect_url(self, redirect_url: str) -> str:
+        """Resolve a Google redirect URL to its actual destination.
+
+        Gemini returns temporary redirect URLs like
+        'https://vertexaisearch.cloud.google.com/grounding-api-redirect/...'
+        instead of actual source URLs. This method follows the redirect
+        to get the real URL.
+
+        Args:
+            redirect_url: The redirect URL from grounding metadata
+
+        Returns:
+            The actual destination URL, or the original if resolution fails
+        """
+        try:
+            response = requests.head(redirect_url, allow_redirects=True, timeout=5)
+            return response.url
+        except requests.RequestException:
+            return redirect_url
+
     def _extract_grounding_urls(self, response) -> list[str]:
         """Extract actual source URLs from grounding metadata.
 
@@ -349,7 +371,7 @@ class GeminiCollector:
             response: Gemini API response object
 
         Returns:
-            List of source URLs from grounding chunks
+            List of resolved source URLs from grounding chunks
         """
         urls = []
         try:
@@ -363,7 +385,9 @@ class GeminiCollector:
                     ):
                         for chunk in metadata.grounding_chunks:
                             if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
-                                urls.append(chunk.web.uri)
+                                redirect_url = chunk.web.uri
+                                actual_url = self._resolve_redirect_url(redirect_url)
+                                urls.append(actual_url)
         except Exception as e:
             print(f"      [Warning: Could not extract grounding URLs: {e}]")
         return urls
