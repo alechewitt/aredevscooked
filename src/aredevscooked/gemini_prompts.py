@@ -27,12 +27,10 @@ Return ONLY a JSON object with this exact structure:
   "current_price": 0.00,
   "current_date": "YYYY-MM-DD",
   "price_1_year_ago": 0.00,
-  "price_1_year_ago_date": "{one_year_ago.strftime('%Y-%m-%d')}",
-  "source_urls": ["https://..."]
+  "price_1_year_ago_date": "{one_year_ago.strftime('%Y-%m-%d')}"
 }}
 
-Replace the placeholder values with actual data. Ensure prices are positive numbers.
-Include source URLs for verification."""
+Replace the placeholder values with actual data. Ensure prices are positive numbers."""
 
 
 def create_headcount_prompt(company_name: str, target_date: str | None = None) -> str:
@@ -63,7 +61,6 @@ IMPORTANT RULES:
 1. Use QUARTERLY earnings reports or 10-K/10-Q SEC filings as primary sources
 2. Each company reports headcount quarterly - find the closest quarterly report to each target date
 3. If layoffs were announced AFTER the quarterly report date, subtract them and note this in the "notes" field
-4. ALWAYS provide a source_url for each data point - this is REQUIRED
 {additional_instruction}
 
 Find headcount for these time periods (use closest available quarterly report):
@@ -77,19 +74,16 @@ Return ONLY a JSON object with this exact structure:
   "current": {{
     "headcount": 0,
     "as_of_date": "YYYY-MM-DD",
-    "source_url": "https://...",
     "notes": "e.g., 'Q3 2024 10-Q filing minus 5k Jan 2025 layoffs'"
   }},
   "one_year_ago": {{
     "headcount": 0,
     "as_of_date": "YYYY-MM-DD",
-    "source_url": "https://...",
     "notes": "e.g., 'Q4 2023 earnings report'"
   }},
   "q1_2023": {{
     "headcount": 0,
     "as_of_date": "YYYY-MM-DD",
-    "source_url": "https://...",
     "notes": "e.g., 'FY2023 10-K filing'"
   }},
   "confidence": "high"
@@ -98,7 +92,6 @@ Return ONLY a JSON object with this exact structure:
 RULES:
 - headcount must be integers between 1,000 and 2,000,000
 - as_of_date is when the headcount number is valid (after any layoff adjustments)
-- source_url MUST be provided for each period - use the SEC filing, earnings report, or news article URL
 - notes should explain the source and any adjustments made (e.g., layoffs subtracted)
 - confidence: "high" (SEC/official filings), "medium" (reputable news), "low" (estimates)
 
@@ -132,8 +125,7 @@ Return ONLY a JSON object with this exact structure:
   "company": "{company_name}",
   "total_technical_jobs": 0,
   "job_titles": ["Job Title 1", "Job Title 2", "..."],
-  "collection_date": "YYYY-MM-DD",
-  "source_url": "{jobs_url}"
+  "collection_date": "YYYY-MM-DD"
 }}
 
 Replace placeholder values with actual data. Include a representative sample of job titles (up to 10).

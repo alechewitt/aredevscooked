@@ -97,12 +97,6 @@ def test_headcount_prompt_includes_q1_2023_date():
     assert "2023-03-31" in prompt
 
 
-def test_headcount_prompt_requests_per_period_source_url():
-    """Headcount prompt should request source_url for each period."""
-    prompt = create_headcount_prompt("Microsoft")
-    assert "source_url" in prompt
-
-
 def test_headcount_prompt_requests_notes():
     """Headcount prompt should request notes for layoff adjustments."""
     prompt = create_headcount_prompt("Microsoft")
