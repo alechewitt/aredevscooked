@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-01T05:29:36.472227+00:00"
+    "last_updated": "2026-01-01T08:24:25.694541+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -476,14 +476,14 @@
     },
     "2026-01-01": {
       "date": "2026-01-01",
-      "timestamp": "2026-01-01T05:29:36.472205+00:00",
+      "timestamp": "2026-01-01T08:24:25.694519+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1635.0,
+          "price": 1641.0,
           "ticker": "HCLTECH.NS"
         },
         "LTIMindtree": {
-          "price": 6057.0,
+          "price": 6077.5,
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
@@ -495,11 +495,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 3220.0,
+          "price": 3219.6,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1606.6,
+          "price": 1607.5,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -512,108 +512,81 @@
           "headcount": 226640,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEVwMLHYKrtGH4gZPoV60V76THKtj3nadX2BF87mjhAexGeyZZNwhRSgS-qwATaVhsJ947AxTEZuhjP7Wb0AfevKjB4XQaHq70esrimXKw0FcGRJU9-xoiDRApMX-Oo8PhtpBOEDvmCZq-vmENLaevZisfGpYJ_Gk39RDUmg1YQFua0J7FmZsNypHtiRlwoBsGGvhea0LW_ZWh_4NDUAnx2kY="
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGc0DXLMsDWM6LS4MGyUK6inG6j-8XSRX6ePhZBDOpRUT3JEDYWw_90nRoA7HIptA9ttBWEAajMLFnKxCx2xu-a4utrZb0J2t4MRPfNysFL3837DP4F4IbtQlPpxMelA535aMKsQ=="
           ]
         },
         "LTIMindtree": {
           "headcount": 86447,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.whalesbook.com/news/English/Economy/Indias-2025-Shockwaves-CEO-Exodus-Layoff-Storms-and-Culture-Crises-Rock-Corporate-India/6954dadb4342f77179edd1ee",
             "https://www.equitymaster.com/research-it/annual-results-analysis/LTI/LTIMINDTREE-2023-24-Annual-Report-Analysis/10199",
-            "https://scanx.trade/stock-market-news/earnings/ltimindtree-reports-strong-q2-results-targets-nearly-double-digit-usd-growth-by-h2-fy26/22217283",
-            "https://www.business-standard.com/markets/capital-market-news/ltimindtree-q2-pat-climbs-12-qoq-to-rs-1-401-cr-125101700668_1.html",
-            "https://scanx.trade/stock-market-news/earnings/ltimindtree-reports-strong-q2-results-with-2-4-sequential-growth-and-margin-expansion/22765954",
-            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms",
             "https://www.businesstoday.in/markets/stocks/story/ltimindtree-q3-results-profit-slips-7-to-rs-1085-crore-revenue-climbs-461062-2025-01-16"
-          ]
-        },
-        "Cognizant": {
-          "headcount": 349800,
-          "data_date": "2025-09-30",
-          "source_urls": [
-            "https://www.google.com/search?q=Cognizant+layoffs+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Cognizant+headcount+Q4+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Cognizant+headcount+Q3+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Cognizant+headcount+Q1+2023+earnings+report&client=app-vertex-grounding&safesearch=active"
           ]
         },
         "Infosys": {
           "headcount": 331991,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://en.wikipedia.org/wiki/Infosys",
-            "https://www.livemint.com/market/stock-market-news/infosys-q3-results-2025-live-updates-infy-q3-earnings-profit-loss-dividend-latest-news-infosys-share-price-infosys-stock-11737005786316.html"
+            "https://www.google.com/search?q=Infosys+headcount+Q2+FY26+Sept+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY26+Dec+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY25+Dec+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active"
           ]
         },
         "TCS": {
           "headcount": 593314,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.businesstoday.in/latest/corporate/story/tcs-q2-fy26-results-it-giants-workforce-shrinks-by-nearly-20000-in-q2-fy26-amid-restructuring-497579-2025-10-09",
-            "https://www.republicworld.com/business/tcs-reports-sharp-headcount-drop-of-nearly-20000-in-q2-fy26-amid-restructuring-drive"
+            "https://thefederal.com/category/business/tcs-headcount-falls-by-19755-in-q2-union-disputes-figures-210792",
+            "https://www.hrkatha.com/news/tcs-headcount-falls-by-nearly-20000-in-q2-fy26/"
           ]
         },
         "Tech Mahindra": {
           "headcount": 152714,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.whalesbook.com/news/English/Economy/Indias-2025-Shockwaves-CEO-Exodus-Layoff-Storms-and-Culture-Crises-Rock-Corporate-India/6954dadb4342f77179edd1ee"
+            "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q2-revenue-rises-on-growth-in-europe"
           ]
         },
         "Wipro": {
           "headcount": 235492,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.google.com/search?q=Wipro+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+headcount+Q2+FY26+September+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+headcount+Q3+FY25+December+2024+earnings+report&client=app-vertex-grounding&safesearch=active"
+            "https://www.google.com/search?q=Wipro+headcount+Dec+31+2024+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Sept+30+2025+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+March+31+2023+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active"
           ]
         },
         "Microsoft": {
           "headcount": 218958,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.google.com/search?q=Microsoft+headcount+as+of+March+31+2023+Q3+FY2023+10-Q&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+headcount+as+of+September+30+2025+Q1+FY2026+10-Q&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+headcount+as+of+December+31+2024+Q2+FY2025+10-Q&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+total+employees+June+30+2025+10-K&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+layoffs+announced+after+September+30+2025&client=app-vertex-grounding&safesearch=active"
+            "https://stockanalysis.com/stocks/msft/revenue/"
           ]
         },
         "Apple": {
           "headcount": 166000,
           "data_date": "2025-09-27",
           "source_urls": [
-            "https://mlq.ai/stocks/AAPL/employee-count/",
-            "https://mlq.ai/stocks/AAPL/employee-count/",
-            "https://seo.ai/blog/how-many-people-work-at-apple"
-          ]
-        },
-        "Amazon": {
-          "headcount": 336000,
-          "data_date": "2025-10-28",
-          "source_urls": [
-            "https://stockanalysis.com/stocks/amzn/employees/"
+            "https://www.stocktitan.net/sec-filings/AAPL/",
+            "https://s2.q4cdn.com/470004039/files/doc_financials/2025/ar/_10-K-2025-As-Filed.pdf"
           ]
         },
         "NVIDIA": {
-          "headcount": 36000,
+          "headcount": 42000,
           "data_date": "2025-10-26",
           "source_urls": [
-            "https://mlq.ai/stocks/NVDA/employee-count/"
+            "https://stockanalysis.com/quote/bvl/NVDA/employees/",
+            "https://www.peoplematters.in/news/leadership/nvidia-ceo-reviews-pay-of-all-42000-staff-monthly-heres-why-42391"
           ]
         }
       },
       "job_postings": {
-        "Anthropic": {
-          "total_technical_jobs": 82,
-          "collection_date": "2026-01-01"
-        },
-        "OpenAI": {
-          "total_technical_jobs": 287,
-          "collection_date": "2026-01-01"
+        "DeepMind": {
+          "total_technical_jobs": 17,
+          "collection_date": "2025-01-01"
         }
       }
     }
