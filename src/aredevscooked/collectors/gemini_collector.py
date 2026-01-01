@@ -346,7 +346,7 @@ class GeminiCollector:
 
         raise ValueError(f"Could not extract text from Gemini response: {response}")
 
-    def _resolve_redirect_url(self, redirect_url: str) -> str:
+    def _resolve_redirect_url(self, redirect_url: str, retries: int = 2) -> str:
         """Resolve a Google redirect URL to its actual destination.
 
         Gemini returns temporary redirect URLs like
@@ -356,15 +356,31 @@ class GeminiCollector:
 
         Args:
             redirect_url: The redirect URL from grounding metadata
+            retries: Number of retry attempts on failure
 
         Returns:
             The actual destination URL, or the original if resolution fails
         """
-        try:
-            response = requests.head(redirect_url, allow_redirects=True, timeout=5)
-            return response.url
-        except requests.RequestException:
-            return redirect_url
+        for attempt in range(retries + 1):
+            try:
+                response = requests.head(redirect_url, allow_redirects=True, timeout=10)
+                if response.url != redirect_url:
+                    return response.url
+                # If HEAD didn't follow redirect, try GET
+                response = requests.get(
+                    redirect_url, allow_redirects=True, timeout=10, stream=True
+                )
+                response.close()
+                return response.url
+            except requests.RequestException as e:
+                if attempt < retries:
+                    time.sleep(0.5)  # Brief pause before retry
+                    continue
+                print(
+                    f"      [Warning: Failed to resolve URL after {retries + 1} attempts: {e}]"
+                )
+                return redirect_url
+        return redirect_url
 
     def _extract_grounding_urls(self, response) -> list[str]:
         """Extract actual source URLs from grounding metadata.
@@ -381,6 +397,7 @@ class GeminiCollector:
                 candidate = response.candidates[0]
                 if hasattr(candidate, "grounding_metadata"):
                     metadata = candidate.grounding_metadata
+                    # First try grounding_chunks (preferred source)
                     if (
                         hasattr(metadata, "grounding_chunks")
                         and metadata.grounding_chunks
@@ -388,6 +405,18 @@ class GeminiCollector:
                         for chunk in metadata.grounding_chunks:
                             if hasattr(chunk, "web") and hasattr(chunk.web, "uri"):
                                 redirect_url = chunk.web.uri
+                                actual_url = self._resolve_redirect_url(redirect_url)
+                                urls.append(actual_url)
+                    # Fallback: extract from search_entry_point HTML if no chunks
+                    if not urls and hasattr(metadata, "search_entry_point"):
+                        entry_point = metadata.search_entry_point
+                        if hasattr(entry_point, "rendered_content"):
+                            html = entry_point.rendered_content
+                            # Extract URLs from <a class="chip" href="..."> tags
+                            chip_urls = re.findall(
+                                r'<a\s+class="chip"\s+href="([^"]+)"', html
+                            )
+                            for redirect_url in chip_urls:
                                 actual_url = self._resolve_redirect_url(redirect_url)
                                 urls.append(actual_url)
         except Exception as e:
