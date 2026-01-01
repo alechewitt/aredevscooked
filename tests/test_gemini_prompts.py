@@ -1,22 +1,11 @@
 """Tests for Gemini prompt templates."""
 
 import pytest
-from datetime import date
 from aredevscooked.gemini_prompts import (
-    create_stock_price_prompt,
     create_headcount_prompt,
     create_job_postings_prompt,
     create_summary_prompt,
 )
-
-
-# Fixtures
-
-
-@pytest.fixture
-def sample_date():
-    """Sample date for testing."""
-    return date(2024, 12, 26)
 
 
 @pytest.fixture
@@ -27,33 +16,6 @@ def sample_metrics():
         "medium_end": {"headcount": {"aggregate_badge": "neutral"}},
         "high_end": {"job_postings": {"aggregate_badge": "strong"}},
     }
-
-
-# Stock Price Prompt Tests
-
-
-def test_stock_price_prompt_includes_company_name(sample_date):
-    """Stock price prompt should include company name."""
-    prompt = create_stock_price_prompt("HCLTech", "HCL.NS", sample_date)
-    assert "HCLTech" in prompt
-
-
-def test_stock_price_prompt_includes_ticker(sample_date):
-    """Stock price prompt should include ticker symbol."""
-    prompt = create_stock_price_prompt("HCLTech", "HCL.NS", sample_date)
-    assert "HCL.NS" in prompt
-
-
-def test_stock_price_prompt_includes_one_year_ago_date(sample_date):
-    """Stock price prompt should include 1 year ago date."""
-    prompt = create_stock_price_prompt("HCLTech", "HCL.NS", sample_date)
-    assert "2024-12-26" in prompt
-
-
-def test_stock_price_prompt_requests_json(sample_date):
-    """Stock price prompt should request JSON output."""
-    prompt = create_stock_price_prompt("HCLTech", "HCL.NS", sample_date)
-    assert "JSON" in prompt or "json" in prompt
 
 
 # Headcount Prompt Tests

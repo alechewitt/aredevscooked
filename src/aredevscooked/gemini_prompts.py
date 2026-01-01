@@ -4,35 +4,6 @@ from datetime import date, timedelta
 from typing import Any
 
 
-def create_stock_price_prompt(
-    company_name: str, ticker: str, one_year_ago: date
-) -> str:
-    """Create prompt for collecting stock price data.
-
-    Args:
-        company_name: Full company name (e.g., "HCLTech")
-        ticker: Stock ticker symbol (e.g., "HCL.NS")
-        one_year_ago: Date from exactly 1 year ago
-
-    Returns:
-        Formatted prompt string for Gemini API
-    """
-    return f"""Search the web for the current stock price of {company_name} (ticker: {ticker}).
-Also find the stock price from exactly 1 year ago ({one_year_ago.strftime('%Y-%m-%d')}).
-
-Return ONLY a JSON object with this exact structure:
-{{
-  "company": "{company_name}",
-  "ticker": "{ticker}",
-  "current_price": 0.00,
-  "current_date": "YYYY-MM-DD",
-  "price_1_year_ago": 0.00,
-  "price_1_year_ago_date": "{one_year_ago.strftime('%Y-%m-%d')}"
-}}
-
-Replace the placeholder values with actual data. Ensure prices are positive numbers."""
-
-
 def create_headcount_prompt(company_name: str, target_date: str | None = None) -> str:
     """Create prompt for collecting employee headcount data across multiple time periods.
 
@@ -112,7 +83,7 @@ def create_job_postings_prompt(company_name: str, jobs_url: str) -> str:
 
 Technical roles include:
 - Engineering (Software Engineer, ML Engineer, etc.)
-- Research (Research Scientist, Applied Scientist, etc.)
+- Research (Fellow, Research Scientist, Applied Scientist, etc.)
 - Technical roles with AI, ML, Data Science in the title
 
 Ignore non-technical roles like:
@@ -156,4 +127,18 @@ Focus on:
 2. Big Tech: Headcount changes
 3. AI labs: Job posting momentum
 
-Return ONLY the paragraph text, no JSON or additional formatting."""
+Here is some additional context about the metrics that might be useful:
+IT Consultancy Stock Price Changes. These are companies like Infosys and TCS that provide relatively low value-add consultancy services. 
+    - Strengths of Metric: It seems like they do work that is the closest analogue to LLMs. My guess is that if Generative AI is going to automate large portions of the tech workforce, we will see it in IT Consultancy stock prices first since the stock market is very forward-looking. 
+    - Weaknesses of Metric: It’s plausible the companies that are most used to providing LLM-related services are also the most able to use LLMs to provide the services they are already providing more efficiently or by doing more layoffs. 
+IT Consultancy Employment changes. 
+    - Strengths of Metric: Robust to the possibility that IT Consultancies will cut headcount and provide LLM-based services directly. 
+    - Weaknesses of Metric: Backwards looking. Many companies only start reducing headcount when their finances deteriorate. 
+Big Tech Headcount
+    - Strengths of Metric: They have enormous demand for Software and are quite good at adapting new technologies to their particular use case. They are very sensitive to their stock price and if they think they have an opportunity to cut their labor costs by XX, they will take it. 
+    - Weaknesses of Metric: This would go down along with stock prices in a recession. A better metric would account for this by only counting declining headcount as bad if the stock is up or flat. I’m not going to do this now but I will probably make the change if it becomes relevant. 
+AI Lab Open Positions. 
+    - Strengths of Metric: Handles the AI 2027 case where the major AI labs keep the best technology for themselves in order to gain a strategic advantage. If that happens, the opportunity cost of hiring people will be so high they won’t want to spend any time doing it and new positions will open to zero. 
+    Weaknesses of Metric: (1) Unfortunately Deepmind doesn’t have a web archive of job postings so for now we really only have Anthropic and OpenAI. And job openings are much more noisy than (2) This doesn’t cover the “AI as a normal technology” case where engineers are automatable for 99% of jobs but not for AI research/ safety. 
+
+Return ONLY the paragraph text, no JSON or additional formatting. """

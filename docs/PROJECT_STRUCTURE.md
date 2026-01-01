@@ -139,7 +139,7 @@ aredevscooked/
 
 **`utils/gemini_prompts.py`**
 - Prompt templates requesting JSON responses
-- Functions: `create_stock_price_prompt()`, `create_headcount_prompt()`, `create_job_postings_prompt()`, `create_summary_prompt()`
+- Functions: `create_headcount_prompt()`, `create_job_postings_prompt()`, `create_summary_prompt()`
 
 ## Data Schema
 

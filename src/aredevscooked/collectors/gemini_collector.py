@@ -7,13 +7,12 @@ import threading
 import time
 
 import requests
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from google import genai
 from google.genai import types
 from aredevscooked.gemini_prompts import (
-    create_stock_price_prompt,
     create_headcount_prompt,
     create_job_postings_prompt,
     create_summary_prompt,
@@ -148,58 +147,6 @@ class GeminiCollector:
                 f.write(
                     f"Total tokens: {response_obj.usage_metadata.total_token_count}\n"
                 )
-
-    def collect_stock_data(
-        self, company_name: str, ticker: str, one_year_ago: date
-    ) -> dict[str, Any]:
-        """Collect stock price data for a company.
-
-        Args:
-            company_name: Full company name
-            ticker: Stock ticker symbol
-            one_year_ago: Date from exactly 1 year ago
-
-        Returns:
-            Dictionary with stock price data
-
-        Raises:
-            ValueError: If prices are invalid or out of range
-        """
-        prompt = create_stock_price_prompt(company_name, ticker, one_year_ago)
-
-        self._set_pending("stock", company_name, prompt)
-        try:
-            api_start = time.time()
-            response = self.client.models.generate_content(
-                model=self.model_name, contents=prompt, config=self.generation_config
-            )
-            api_duration = time.time() - api_start
-        finally:
-            self._clear_pending()
-        text = self._get_response_text(response)
-        self._log_response("stock", company_name, prompt, text, response)
-        print(f"      [API call took {api_duration:.1f}s]")
-        data = self._extract_json(text, response)
-
-        # Validate prices
-        current_price = data.get("current_price", 0)
-        price_1_year_ago = data.get("price_1_year_ago", 0)
-
-        if current_price <= 0 or price_1_year_ago <= 0:
-            raise ValueError(
-                f"Stock prices must be positive: current={current_price}, "
-                f"1_year_ago={price_1_year_ago}"
-            )
-
-        max_change = VALIDATION["stock_price"]["max_daily_change_pct"]
-        # This is actually 1-year change, but we use a looser validation
-        change_pct = abs((current_price - price_1_year_ago) / price_1_year_ago * 100)
-        if change_pct > max_change * 10:  # 500% max change over 1 year
-            raise ValueError(
-                f"Stock price change seems unrealistic: {change_pct:.1f}% over 1 year"
-            )
-
-        return data
 
     def collect_headcount(
         self, company_name: str, target_date: str | None = None
