@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-01T00:18:00.583312+00:00"
+    "last_updated": "2026-01-01T03:04:54.242786+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -476,7 +476,7 @@
     },
     "2026-01-01": {
       "date": "2026-01-01",
-      "timestamp": "2026-01-01T00:18:00.583296+00:00",
+      "timestamp": "2026-01-01T03:04:54.242766+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1623.3,
@@ -511,81 +511,83 @@
         "HCLTech": {
           "headcount": 226640,
           "data_date": "2025-09-30",
+          "source_urls": []
+        },
+        "LTIMindtree": {
+          "headcount": 86447,
+          "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.storyboard18.com/how-it-works/hcltech-adds-7180-employees-in-fy26-so-far-attrition-dips-to-7-quarter-low-82499.htm",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqu-E-EZRI0wLBo-csWnS6SHZtrH9n4Qk9WiQ4VlM5l1uTAIIJ0y_tCN3kfJ8TnLuQT4ZNYyaoYip9kr_hhLwTMMNd93XBKP5F8AqNJykue49xDvM6kUVijKr6TL75cN9KnYXWTA==",
-            "https://www.livemint.com/companies/news/hcltech-beats-tcs-with-stronger-growth-from-the-americas-11736778686498.html",
-            "https://www.livemint.com/market/stock-market-news/hcl-tech-q3-results-attrition-rate-rises-to-13-2-headcount-increases-by-2134-11736772058096.html",
-            "https://www.youtube.com/watch?v=nlsfMozS9mE"
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmflYuWVA3gyCkGBC8tAhpPc5zizVGnBR1g1VHnsMwXPpwNzyI-RVZZnkGvNaxZA167pCWARY0ZmyaOdcT8HFrXxm1sAViXJS7T2FsWtczc50lqpoQxgaSEHnFbc7ntOCwM2CCUxPgHFs40gGesXVylD1UDKYuiXJ82qDapu7QyR5ny2Hx9i_UEBB-cdIuEqIr82D6xqb3Zf_Ce9--fLNoch2Igc1RyH3jLnAaEcDgAg==",
+            "https://economictimes.indiatimes.com/tech/information-tech/ltimindtree-q3-net-profit-slips-7-to-rs-1085-crore-revenue-climbs/articleshow/117308298.cms?from=mdr"
           ]
         },
         "Cognizant": {
           "headcount": 349800,
           "data_date": "2025-09-30",
-          "source_urls": [
-            "https://news.cognizant.com/2025-10-29-Cognizant-Reports-Third-Quarter-2025-Results",
-            "https://www.thehindu.com/business/Industry/cognizant-q3-net-income-falls-53-to-274-million-revenue-rises-73-to-54-billion/article70218364.ece",
-            "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2024-results-302133502.html",
-            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
-            "https://www.marketscreener.com/quote/stock/COGNIZANT-TECHNOLOGY-SOLU-23219296/news/COGNIZANT-REPORTS-FIRST-QUARTER-2024-RESULTS-46601376/",
-            "https://www.business-standard.com/companies/news/cognizant-announces-400-mn-plan-to-simplify-operations-in-2-years-123050400552_1.html",
-            "https://content.techgig.com/hiring/cognizant-cuts-10700-jobs-but-is-hiring-surge-coming-in-2025/articleshow/118069533.cms",
-            "https://thefederal.com/business/cognizant-to-lay-off-3500-employees-and-reduce-office-space-to-save-costs",
-            "https://www.financialexpress.com/business/industry-cognizant-to-lay-off-3500-employees-expects-2023-revenue-to-decline-marginally-3073824/"
-          ]
+          "source_urls": []
         },
         "Infosys": {
           "headcount": 331991,
           "data_date": "2025-09-30",
-          "source_urls": [
-            "https://news24online.com/business/narayana-murthys-infosys-takes-big-decision-set-to-affect-thousands-of-workers-decides-to/694916/",
-            "https://economictimes.indiatimes.com/markets/stocks/earnings/infosys-q2-results-profit-jumps-13-yoy-to-rs-7364-crore-revenue-up-9/articleshow/124602906.cms?from=mdr",
-            "https://www.newindianexpress.com/business/2025/Dec/26/infosys-to-pay-salary-of-up-to-rs-21-lakh-to-freshers",
-            "https://www.outlookbusiness.com/corporate/infosys-q2-net-profit-rises-13-to-7364-cr-ups-growth-outlook",
-            "https://www.business-standard.com/companies/news/infosys-entry-level-salary-21-lakh-freshers-ai-roles-fy26-125122600155_1.html",
-            "https://www.thestatesman.com/business/infosys-headcount-rises-for-3rd-straight-quarter-adds-6388-employees-in-fy25-1503421689.html",
-            "https://www.thedailyjagran.com/business/infosys-q4-results-it-services-major-reports-reduced-headcount-keeps-fy24-revenue-guidance-of-4-to-7-percent-scrip-ends-314-percent-lower-10073357"
-          ]
+          "source_urls": []
         },
         "TCS": {
           "headcount": 593314,
           "data_date": "2025-09-30",
           "source_urls": [
-            "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2022-23/q4/IND%20AS/Press%20Release%20-%20INR.pdf",
-            "https://www.storyboard18.com/how-it-works/tcs-headcount-falls-by-nearly-20000-in-q2-nites-accuses-firm-of-underreporting-job-cuts-82314.htm",
-            "https://www.business-standard.com/industry/news/tcs-headcount-falls-below-600000-after-layoffs-in-july-2025-125100901286_1.html",
-            "https://www.hrkatha.com/news/tcs-headcount-falls-by-nearly-20000-in-q2-fy26/",
-            "https://www.storyboard18.com/how-it-works/tcs-2025-layoffs-pay-hikes-and-mega-cxo-salaries-explained-78529.htm",
-            "https://hr.economictimes.indiatimes.com/news/industry/tcs-reports-employee-headcount-drop-by-5370-in-q3/117101633",
-            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2023"
+            "https://www.storyboard18.com/how-it-works/tcs-headcount-falls-by-nearly-20000-in-q2-nites-accuses-firm-of-underreporting-job-cuts-82314.htm"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 152714,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.whalesbook.com/news/English/Economy/Indias-2025-Shockwaves-CEO-Exodus-Layoff-Storms-and-Culture-Crises-Rock-Corporate-India/6954dadb4342f77179edd1ee",
+            "https://www.livemint.com/market/stock-market-news/tech-mahindra-q3-results-2025-live-updates-tech-mahindra-q3-profit-tech-mahindra-q3-earnings-tech-mahindra-share-price-11737084769528.html"
           ]
         },
         "Wipro": {
-          "headcount": 241092,
-          "data_date": "2025-12-31",
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": []
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-09-30",
+          "source_urls": []
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
           "source_urls": [
-            "https://www.whalesbook.com/news/English/Economy/Indias-Boardrooms-Empathy-Crisis-Sparks-Mass-Layoffs-Trust-Shattered-Will-Leaders-Step-Up/694e0281e10c98d0788dc1ec",
-            "https://stocktwits.com/news-articles/markets/equity/wipro-to-acquire-harman-dts-business-for-375-million/chsmpMsRd0G",
-            "https://www.angelone.in/news/stocks/wipro-share-price-in-focus-completes-acquisition-of-harman-s-dts-business-unit"
+            "https://en.wikipedia.org/wiki/Apple_Inc.",
+            "https://mlq.ai/stocks/AAPL/employee-count/"
+          ]
+        },
+        "Amazon": {
+          "headcount": 336000,
+          "data_date": "2026-01-01",
+          "source_urls": [
+            "https://www.financialexpress.com/life/technology-amazon-to-350000-employees-relocate-or-resign-without-severance-3894294/",
+            "http://www.ecns.cn/business/2017/09-08/272826.shtml",
+            "https://www.hrgrapevine.com/us/content/article/2025-10-28-amazon-corrects-course-with-biggest-corporate-layoffs-in-its-history",
+            "https://www.foxbusiness.com/lifestyle/amazon-microsoft-google-parent-alphabet-top-growing-list-layoffs",
+            "https://explodingtopics.com/blog/amazon-employees"
           ]
         },
         "NVIDIA": {
           "headcount": 36000,
-          "data_date": "2025-10-26",
-          "source_urls": [
-            "https://investor.nvidia.com/news/press-release-details/2023/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2024/default.aspx",
-            "https://morethanmoore.substack.com/p/nvidia-2025-q4-financials",
-            "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2026/default.aspx",
-            "https://www.fxempire.com/forecasts/article/nvda-post-earnings-outlook-can-ais-biggest-winner-keep-soaring-1545690",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGooQdVCMAu9PrjNv5bfGvJkC43hlCOSrBmE3izJiPhQ179SXLxqK0D7AObs0hfaqjfEbRNE_rKx_bULaCz7IekdAY5mEgeoeHe_1TYQT8BRlcFRs1zJmzo2VEXYeyQ3MOsOTyONUcEr5uQU-GiiBwAeS0_GxA0z3tFndwwjuSF1FDWDf1NNaU7UXQngs85Mjb2U54vDtF3ZCEw0Cw0XJ2V-tuMo9Ys5gZPWSSJXV2JP1c=",
-            "https://www.theworldstimes.com/nvidia-reports-financial-results-for-third-quarter-of-fiscal-year-2026/",
-            "https://s201.q4cdn.com/141608511/files/doc_financials/2026/q2/2e217538-c226-4d05-8f74-aaca89a21b33.pdf",
-            "https://www.investing.com/equities/nvidia-corp",
-            "https://s1.q4cdn.com/365366812/files/doc_financials/2024/ar/2025-ADM-Annual-Report.pdf"
-          ]
+          "data_date": "2025-01-26",
+          "source_urls": []
         }
       },
-      "job_postings": {}
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 312,
+          "collection_date": "2025-01-01"
+        }
+      }
     }
   }
 }
