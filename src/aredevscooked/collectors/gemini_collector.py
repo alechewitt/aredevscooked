@@ -246,8 +246,10 @@ class GeminiCollector:
             current_data = data["current"]
             data["current_headcount"] = current_data.get("headcount", 0)
             data["data_date"] = current_data.get("as_of_date", "")
-            source_url = current_data.get("source_url", "")
-            data["source_urls"] = [source_url] if source_url else []
+            # Only use model-generated source_url if grounding URLs weren't found
+            if "source_urls" not in data or not data["source_urls"]:
+                source_url = current_data.get("source_url", "")
+                data["source_urls"] = [source_url] if source_url else []
 
         # Validate headcount range
         headcount = data.get("current_headcount", 0)
