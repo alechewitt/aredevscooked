@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-02T08:24:04.431989+00:00"
+    "last_updated": "2026-01-05T08:03:50.949818+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -729,6 +729,165 @@
         "OpenAI": {
           "total_technical_jobs": 312,
           "collection_date": "2026-01-02"
+        }
+      }
+    },
+    "2026-01-05": {
+      "date": "2026-01-05",
+      "timestamp": "2026-01-05T08:03:50.949798+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1608.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6117.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 81.28,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 18.15,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3226.9,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1600.0,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.92,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226640,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.google.com/search?q=HCLTech+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q2+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+total+headcount+as+of+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 86447,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.ndtvprofit.com/quarterly-earnings/ltimindtree-q2-results-net-profit-rises-12-beats-estimates",
+            "https://scanx.trade/stock-market-news/earnings/ltimindtree-reports-strong-q2-results-targets-nearly-double-digit-usd-growth-by-h2-fy26/22217283",
+            "https://economictimes.indiatimes.com/tech/information-tech/staggered-pay-hikes-in-it-industry-are-the-new-normal-ltimindtree-ceo/articleshow/124642048.cms?from=mdr",
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms",
+            "https://www.ltimindtree.com/news-event/ltimindtree-reports-1-8-qoq-5-6-yoy-revenue-growth/"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 349800,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.business-standard.com/industry/news/cognizant-technology-q4-earnings-headcount-decline-hiring-outlook-2025-125020600542_1.html",
+            "https://www.sightsinplus.com/news/industry-news/cognizant-workforce-down-10700-in-q4-hiring-planned-for-2025"
+          ]
+        },
+        "Infosys": {
+          "headcount": 331991,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q2+FY26+September+30+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY25+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 152714,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://thefintechtimes.com/tech-mahindra-reports-32-7-yoy-growth-in-ebit-for-q2-fy26/"
+          ]
+        },
+        "Wipro": {
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q2+FY26+September+30+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY25+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q4+FY2025+10-K+June+30+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q1+FY2026+10-Q+September+30+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q2+FY2025+10-Q+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+announced+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2023+10-Q+March+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Meta": {
+          "headcount": 77850,
+          "data_date": "2026-01-05",
+          "source_urls": [
+            "https://www.staffingindustry.com/news/global-daily-news/meta-cfo-says-headcount-could-grow-1-2-next-year-ai-will-be-priority-area"
+          ]
+        },
+        "Apple": {
+          "headcount": 165900,
+          "data_date": "2026-01-05",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+employee+count+Q1+2025+December+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+headcount+FY+2025+10-K+September+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+headcount+March+2023+Q2+2023+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+headcount+FY+2024+10-K+September+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 333600,
+          "data_date": "2026-01-05",
+          "source_urls": [
+            "https://redstagfulfillment.com/how-many-people-work-for-amazon/",
+            "https://www.geekwire.com/2023/amazon-still-pausing-on-headcount-as-part-of-larger-effort-to-boost-profits/",
+            "https://www.howtobuysaas.com/blog/amazon-employees/",
+            "https://www.geekwire.com/2024/amazon-earnings-preview-advertising-and-aws-expected-to-continue-fueling-profits/",
+            "https://www.geekwire.com/2025/amazon-ceo-says-ai-push-will-shrink-corporate-in-next-few-years/",
+            "https://www.geekwire.com/2024/amazon-corporate-headcount-drops-year-over-year-as-tech-giant-aims-for-efficiency/",
+            "https://www.geekwire.com/2024/amazon-plans-to-hold-the-line-on-job-growth-as-hiring-slowdown-contributes-to-record-profits/",
+            "https://www.geekwire.com/2023/amazon-stock-rises-11-after-beating-q1-estimates-with-127-3b-in-revenue/",
+            "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.16.24-medium.pdf",
+            "https://www.geekwire.com/2025/amazon-confirms-14000-corporate-job-cuts-says-push-for-efficiency-gains-will-continue-into-2026/"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.moneycare.io/en/platform/company/US67066G1040"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 72,
+          "collection_date": "2026-01-05"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 331,
+          "collection_date": "2026-01-05"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 78,
+          "collection_date": "2026-01-05"
         }
       }
     }
