@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-09T08:24:56.720706+00:00"
+    "last_updated": "2026-01-10T08:22:01.902267+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -1372,6 +1372,112 @@
         "DeepMind": {
           "total_technical_jobs": 85,
           "collection_date": "2026-01-09"
+        }
+      }
+    },
+    "2026-01-10": {
+      "date": "2026-01-10",
+      "timestamp": "2026-01-10T08:22:01.902249+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1661.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6037.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 85.26,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 17.83,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3207.8,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1582.2,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.87,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226640,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/hcl-tech-q3-results-fy25-revenue-earning-profit-loss-dividend-report-date-time-13-january-2025/liveblog/117185363.cms?from=mdr",
+            "https://www.financialexpress.com/business/industry-hcl-tech-q3-results-live-updates-hcl-tech-expected-to-post-steady-q3-growth-today-on-software-biz-expansion-to-announce-dividend-3713473/"
+          ]
+        },
+        "TCS": {
+          "headcount": 593314,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.businesstoday.in/latest/corporate/story/tcs-q2-fy26-results-it-giants-workforce-shrinks-by-nearly-20000-in-q2-fy26-amid-restructuring-497579-2025-10-09"
+          ]
+        },
+        "Wipro": {
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://timesofindia.indiatimes.com/business/india-business/wipro-q2-results-net-profit-rises-marginally-to-rs-3246-crore-revenue-up-1-7/articleshow/124603404.cms",
+            "https://www.sightsinplus.com/news/industry-news/wipro-total-headcount-down-by-1823-attrition-eased-to-14-1-in-q4",
+            "https://www.livemint.com/companies/news/wipros-q4-attrition-rate-moderates-to-19-2-headcount-reduces-to-256-921-employees-11682594481472.html"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 217600,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.htm",
+            "https://microsoft.gcs-web.com/static-files/95b7f18b-48a2-4e8a-a7b6-170fe9150078",
+            "https://www.reddit.com/r/business/comments/1mebvcy/microsoft_confirms_it_made_27_billion_after/"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-11-24",
+          "source_urls": [
+            "https://www.timesnownews.com/technology-science/apple-layoffs-iphone-maker-removes-multiple-people-from-sales-division-here-is-why-article-153200196",
+            "https://www.youtube.com/watch?v=yhXznA1Tjkg",
+            "https://www.macrumors.com/2025/11/24/apple-eliminates-sales-roles/"
+          ]
+        },
+        "Amazon": {
+          "headcount": 336000,
+          "data_date": "2026-01-10",
+          "source_urls": [
+            "https://redstagfulfillment.com/how-many-people-work-for-amazon/",
+            "https://stockanalysis.com/stocks/amzn/employees/",
+            "https://tradingeconomics.com/amzn:us:employees",
+            "https://www.geekwire.com/2024/amazon-corporate-headcount-drops-year-over-year-as-tech-giant-aims-for-efficiency/"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+layoffs+October+2025+to+January+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2025+10-K+filing+date+and+employee+count&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q3+FY2026+10-Q+filing+date+and+employee+count&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q1+FY2024+10-Q+filing+date+and+employee+count&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+employee+count+January+2025+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+employee+count+April+2023+10-Q&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 315,
+          "collection_date": "2026-01-10"
         }
       }
     }
