@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-11T08:19:35.865174+00:00"
+    "last_updated": "2026-01-12T08:25:57.205011+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -1612,6 +1612,87 @@
         "DeepMind": {
           "total_technical_jobs": 79,
           "collection_date": "2026-01-11"
+        }
+      }
+    },
+    "2026-01-12": {
+      "date": "2026-01-12",
+      "timestamp": "2026-01-12T08:25:57.204995+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1656.1,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5988.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 85.26,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 17.83,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3214.5,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1585.8,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.87,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "LTIMindtree": {
+          "headcount": 86447,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms",
+            "https://www.investing.com/equities/larsen-toubro-infotech-ltd-earnings"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 349800,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/supplemental-info/Q3-2025-Infographic.pdf",
+            "https://www.business-standard.com/industry/news/cognizant-technology-q4-earnings-headcount-decline-hiring-outlook-2025-125020600542_1.html"
+          ]
+        },
+        "Infosys": {
+          "headcount": 331991,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.deccanherald.com/business/companies/amid-it-layoffs-infosys-adds-over-8000-employees-in-q2-3766717"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 152714,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.prysm.fi/news/tech-mahindra-board-meeting-on-jan-15-16-2026-to-approve-q3-fy26-results",
+            "https://www.prysm.fi/news/tech-mahindra-to-announce-q3-fy26-results-on-jan-16-earnings-call-scheduled",
+            "https://scanx.trade/stock-market-news/earnings/tech-mahindra-schedules-q3fy26-earnings-conference-call-for-january-16-2026/29235482"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://mlq.ai/stocks/NVDA/employee-count/"
+          ]
+        }
+      },
+      "job_postings": {
+        "DeepMind": {
+          "total_technical_jobs": 65,
+          "collection_date": "2026-01-12"
         }
       }
     }
