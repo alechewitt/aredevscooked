@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-12T08:25:57.205011+00:00"
+    "last_updated": "2026-01-13T04:43:42.337941+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -1693,6 +1693,111 @@
         "DeepMind": {
           "total_technical_jobs": 65,
           "collection_date": "2026-01-12"
+        }
+      }
+    },
+    "2026-01-13": {
+      "date": "2026-01-13",
+      "timestamp": "2026-01-13T04:43:42.337924+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1634.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6040.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 85.23,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 17.8,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3243.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1598.9,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.91,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.livemint.com/companies/tcs-hcltech-expect-better-days-even-as-profitability-concerns-loom-q3-revenue-labour-code/amp-11768229210271.html",
+            "https://www.storyboard18.com/how-it-works/hcltech-trims-headcount-slashes-fresher-hiring-45-in-q3-87482.htm"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/tech/information-tech/tcs-headcount-drops-by-11000-in-q3-after-19000-in-last-quarter/articleshow/126495333.cms?from=mdr",
+            "https://www.business-standard.com/companies/quarterly-results/tcs-q3-results-net-profit-falls-14-to-10-657-crore-revenue-up-4-8-126011200775_1.html",
+            "https://scanx.trade/stock-market-news/earnings/tcs-q3-net-profit-falls-14-annually-declines-over-11-5-sequentially/29767099",
+            "https://www.thehansindia.com/business/tcs-net-falls-14-to-10657cr-in-q3-as-new-labour-codes-weigh-1038881"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 152714,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.whalesbook.com/news/English/tech/TCS-HCLTech-Cut-Staff-in-Q3-Amid-Restructuring-Efficiency-Drive/6965371948839f428386814d",
+            "https://scanx.trade/stock-market-news/earnings/tech-mahindra-schedules-q3fy26-earnings-conference-call-for-january-16-2026/29235482"
+          ]
+        },
+        "Wipro": {
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.storyboard18.com/how-it-works/wipros-us-workforce-now-80-local-as-company-eases-h1-b-dependencest-82761.htm",
+            "https://scanx.trade/stock-market-news/earnings/wipro-limited-announces-board-meeting-for-q3fy26-results-and-interim-dividend-consideration/29162562",
+            "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2023-2024/q4fy24/press-release-q4fy24.pdf"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 218958,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/789019/000095017023014423/msft-20230331.htm",
+            "https://www.fierce-network.com/multi-cloud/headcount-hoedown-top-cloud-providers-employee-count"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+layoffs+announced+late+2024+early+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+filing+fiscal+year+2024+headcount&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+filing+fiscal+year+2025+headcount&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+filing+fiscal+year+2023+headcount&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+announced+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+headcount+March+2023+10-Q&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 336000,
+          "data_date": "2026-01-13",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/amzn/employees/",
+            "https://www.doofinder.com/en/statistics/how-many-employees-does-amazon-have"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 98,
+          "collection_date": "2026-01-13"
         }
       }
     }
