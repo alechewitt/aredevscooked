@@ -106,6 +106,12 @@
           "company": "NVIDIA",
           "headcount": 26196,
           "date": "2023-01-29"
+        },
+        "Amazon": {
+          "company": "Amazon",
+          "headcount": 300000,
+          "date": "2023-03-31",
+          "source_url": "https://archive.ph/1PPwX"
         }
       },
       "job_postings": {}
