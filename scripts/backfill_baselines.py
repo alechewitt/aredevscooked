@@ -173,24 +173,39 @@ async def main_async():
         print("Make sure GEMINI_API_KEY is set in .env file")
         return 1
 
+    # Load existing baselines to preserve static data (q1_2023)
+    output_dir = Path("data/processed")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = output_dir / "baselines.json"
+
+    existing_baselines = {}
+    if output_file.exists():
+        with open(output_file) as f:
+            existing_data = json.load(f)
+            existing_baselines = existing_data.get("baselines", {})
+
     # Define baseline dates
     today = date.today()
     baselines_to_collect = {
-        "q1_2023": date(2023, 3, 31),  # Q1 2023 baseline
         "1_year_ago": today - timedelta(days=365),  # Annual comparison
         "30_days_ago": today - timedelta(days=30),  # Monthly trend
     }
 
-    # Collect all baselines
+    # Collect dynamic baselines only (q1_2023 is static and preserved from existing data)
     baselines = {}
+
+    # Preserve q1_2023 - this is static historical data that should not be re-collected
+    if "q1_2023" in existing_baselines:
+        print("\n📅 Preserving static baseline: q1_2023 (2023-03-31)")
+        baselines["q1_2023"] = existing_baselines["q1_2023"]
+    else:
+        # Only collect q1_2023 if it doesn't exist
+        baseline_data = await backfill_baseline(collector, "q1_2023", date(2023, 3, 31))
+        baselines["q1_2023"] = baseline_data
+
     for baseline_name, target_date in baselines_to_collect.items():
         baseline_data = await backfill_baseline(collector, baseline_name, target_date)
         baselines[baseline_name] = baseline_data
-
-    # Save to file
-    output_dir = Path("data/processed")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / "baselines.json"
 
     baseline_output = {
         "metadata": {
