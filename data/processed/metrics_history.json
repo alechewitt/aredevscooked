@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-13T08:23:34.847178+00:00"
+    "last_updated": "2026-01-14T08:24:41.110188+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -1825,6 +1825,115 @@
         "DeepMind": {
           "total_technical_jobs": 82,
           "collection_date": "2026-01-13"
+        }
+      }
+    },
+    "2026-01-14": {
+      "date": "2026-01-14",
+      "timestamp": "2026-01-14T08:24:41.110170+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1668.6,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6039.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 84.47,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 17.52,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3195.5,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1590.0,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.88,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.outlookbusiness.com/corporate/hcltech-q3-fy26-profit-falls-11-yoy-revenue-rises-13",
+            "https://opentools.ai/news/hcltech-takes-a-strategic-turn-revenue-up-freshers-down-by-45percent",
+            "https://www.business-standard.com/markets/capital-market-news/hcl-tech-q3-pat-slides-4-qoq-to-rs-4-076-cr-126011201045_1.html",
+            "https://www.storyboard18.com/how-it-works/hcltech-trims-headcount-slashes-fresher-hiring-45-in-q3-87482.htm",
+            "https://timesofindia.indiatimes.com/business/india-business/hcltech-q3-results-net-profit-falls-11-2-to-rs-4076-crore-revenue-rises-13-3/articleshow/126484523.cms"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 86447,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.businessupturn.com/business/corporates/lti-mindtree-reports-headcount-growth-of-2362-in-q3fy25/"
+          ]
+        },
+        "Infosys": {
+          "headcount": 331991,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.infosys.com/newsroom/press-releases/documents/2026/q3-jan14-2026.pdf",
+            "https://www.etnownews.com/markets/infosys-share-price-tardes-mixed-ahead-of-q3-results-article-153444606"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.thequint.com/news/breaking-news/tcs-workforce-shrinks-q3-fy26-results-restructuring-impact"
+          ]
+        },
+        "Wipro": {
+          "headcount": 235492,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.sightsinplus.com/news/industry-news/wipro-total-headcount-down-by-1823-attrition-eased-to-14-1-in-q4",
+            "https://www.thehindu.com/business/wipro-reports-marginal-drop-in-q4-net-profit-expects-revenue-to-fall-in-june-quarter/article66785855.ece"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 217600,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+headcount+Q2+2026+10-Q+Dec+31+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q1+2026+10-Q+Sept+30+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+October+2025+November+2025+December+2025+January+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+March+31+2023+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Dec+31+2024+10-Q&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+headcount+Q3+FY2025+10-Q+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q3+FY2026+10-Q+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q1+FY2024+10-Q+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+employee+count+2025+10-K&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 318,
+          "collection_date": "2026-01-14"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 88,
+          "collection_date": "2026-01-14"
         }
       }
     }
