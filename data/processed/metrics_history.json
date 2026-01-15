@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-14T08:24:41.110188+00:00"
+    "last_updated": "2026-01-15T08:23:52.770507+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -1934,6 +1934,132 @@
         "DeepMind": {
           "total_technical_jobs": 88,
           "collection_date": "2026-01-14"
+        }
+      }
+    },
+    "2026-01-15": {
+      "date": "2026-01-15",
+      "timestamp": "2026-01-15T08:23:52.770489+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1669.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6017.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 86.7,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 19.35,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3197.8,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1592.2,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 3.03,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.outlookbusiness.com/corporate/hcltech-q3-fy26-profit-falls-11-yoy-revenue-rises-13",
+            "https://www.business-standard.com/markets/capital-market-news/hcl-tech-q3-pat-slides-4-qoq-to-rs-4-076-cr-126011201045_1.html",
+            "https://www.storyboard18.com/how-it-works/hcltech-trims-headcount-slashes-fresher-hiring-45-in-q3-87482.htm",
+            "https://www.outlookbusiness.com/corporate/hcltech-announces-restructuring-programme-to-cut-jobs-outside-india",
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/hcl-tech-q3-results-fy25-revenue-earning-profit-loss-dividend-report-date-time-13-january-2025/liveblog/117185363.cms?from=mdr"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 86447,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://scanx.trade/stock-market-news/earnings/ltimindtree-reports-strong-q2-results-targets-nearly-double-digit-usd-growth-by-h2-fy26/22217283",
+            "https://www.investing.com/news/company-news/ltimindtree-q2-fy26-slides-reveal-strengthening-margins-and-strategic-ai-focus-93CH-4292784",
+            "https://www.ndtvprofit.com/quarterly-earnings/ltimindtree-q2-results-net-profit-rises-12-beats-estimates"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 349800,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2025/q3/transcript/Transcript_CTSHQ3-2025-Earnings-Call.pdf",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Third-Quarter-2025-Results/default.aspx"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.timesnownews.com/business-economy/companies/infosys-attrition-dips-further-to-20-9-in-q4-headcount-declines-by-3600-employees-infy-gets-new-hr-head-article-99467453"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 152714,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.whalesbook.com/news/English/Tech/TCS-HCLTech-Cut-Staff-in-Q3-Amid-Restructuring-Efficiency-Drive/6965371948839f428386814d",
+            "https://scanx.trade/stock-market-news/earnings/tech-mahindra-schedules-q3fy26-earnings-conference-call-for-january-16-2026/29235482",
+            "https://www.prysm.fi/news/tech-mahindra-to-announce-q3-fy26-results-on-jan-16-earnings-call-scheduled"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 218958,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://recruiter.daily.dev/resources/microsoft-denies-job-cuts-rumors/"
+          ]
+        },
+        "Meta": {
+          "headcount": 76350,
+          "data_date": "2026-01-13",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+layoffs+announced+October+2025+to+January+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+SEC+filing+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q3+2025+SEC+filing+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2024+SEC+filing+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+Q4+2025+earnings+release+date&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/aapl/employees/"
+          ]
+        },
+        "Amazon": {
+          "headcount": 334000,
+          "data_date": "2026-01-15",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q3+2025+Q4+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+January+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+layoffs+announced+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+total+employees+excluding+warehouse+Q3+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 73,
+          "collection_date": "2026-01-15"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 384,
+          "collection_date": "2025-01-15"
         }
       }
     }
