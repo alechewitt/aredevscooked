@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-18T08:21:52.633376+00:00"
+    "last_updated": "2026-01-21T08:23:13.120659+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -2495,6 +2495,123 @@
         "DeepMind": {
           "total_technical_jobs": 94,
           "collection_date": "2026-01-18"
+        }
+      }
+    },
+    "2026-01-21": {
+      "date": "2026-01-21",
+      "timestamp": "2026-01-21T08:23:13.120639+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1677.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5779.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 82.21,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 18.21,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3113.8,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1674.3,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.6,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOfzIuK_XiLVmcm_88rZ28zzQM1KTcKqgxlw9L_GTXznA1334zoReJVHqIHeV0wICTd9dQ3UC43TpAC3FxSDkg7T4LNo2DYB88kf673_NMp6wt0TAJ5SNeUc6XfR9fl32ELgMQl4wD_BDc9KXVSJFkp2P1-Yr8_tqOB-gFikzG8j-c1ztZ68XyI4RPwQfvgJ-jfVQBWcp5bhD8t2uSD-KaUR1RhwB1be_y",
+            "https://timesofindia.indiatimes.com/business/india-business/tcs-revenue-falls-3-hcls-rises-5-in-q3/articleshow/126494983.cms",
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/hcl-tech-q3-results-fy25-revenue-earning-profit-loss-dividend-report-date-time-13-january-2025/liveblog/117185363.cms?from=mdr"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://stlawyers.ca/blog-news/ltimindtree-layoffs/",
+            "https://alphastreet.com/india/ltimindtree-q2-fy26-earnings-results/",
+            "https://m.rediff.com/business/report/costly-mid-layer-faces-it-layoff-axe/20250818.htm",
+            "https://www.multibagg.ai/deep-dive/blogs/90424-ltimindtree-q3-fy26-performance_LTIM_Q3_FY26_MBEQU3513",
+            "https://www.ltimindtree.com/wp-content/uploads/2023/04/LTIM-EARNINGS-RELEASE-FACTSHEET-Q4FY2023.pdf?pdf=download",
+            "https://economictimes.indiatimes.com/markets/stocks/earnings/ltimindtree-q3-results-pat-falls-11-yoy-to-rs-971-crore-impacted-by-new-labour-code-revenue-up-12/articleshow/126678470.cms?from=mdr",
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.business-standard.com/companies/results/infosys-q3-results-net-profit-rises-11-4-to-rs-6-806-cr-revenue-up-7-6-125011600888_1.html",
+            "https://economictimes.indiatimes.com/markets/stocks/earnings/infosys-q3-results-profit-rises-11-to-rs-6806-cr-revenue-up-8/articleshow/117298376.cms?from=mdr",
+            "https://www.thedailyjagran.com/business/infosys-q4-results-it-services-major-reports-reduced-headcount-keeps-fy24-revenue-guidance-of-4-to-7-percent-scrip-ends-314-percent-lower-10073357"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://thefintechtimes.com/tech-mahindra-reports-32-7-yoy-growth-in-ebit-for-q2-fy26/"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://hr.economictimes.indiatimes.com/news/industry/wipro-slashes-fy26-fresher-hiring-target-to-7500-8000-amid-muted-q3-show/126611631"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+layoffs+2024+2025+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+2023+headcount+%22full-time+equivalent%22&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+2024+headcount+%22full-time+equivalent%22&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+2022+headcount+%22full-time+equivalent%22&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+Q1+2025+earnings+release+date&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 336000,
+          "data_date": "2026-01-21",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+corporate+headcount+estimate+2024+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q3+2025+Q4+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+and+tech+employee+count+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+layoffs+announced+after+September+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+January+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/nvda/employees/"
+          ]
+        }
+      },
+      "job_postings": {
+        "DeepMind": {
+          "total_technical_jobs": 104,
+          "collection_date": "2026-01-21"
         }
       }
     }
