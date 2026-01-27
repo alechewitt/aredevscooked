@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-24T08:18:39.040477+00:00"
+    "last_updated": "2026-01-27T08:25:00.572270+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -2866,6 +2866,126 @@
           "collection_date": "2025-01-24"
         }
       }
+    },
+    "2026-01-27": {
+      "date": "2026-01-27",
+      "timestamp": "2026-01-27T08:25:00.572247+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1717.1,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5881.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 85.61,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 18.55,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3138.4,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1725.0,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.61,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://scanx.trade/stock-market-news/earnings/hcltech-headcount-declines-by-261-employees-in-q3fy26-despite-fresh-graduate-hiring/29767674",
+            "https://scanx.trade/stock-market-news/earnings/hcltech-headcount-declines-by-261-employees-in-q3fy26-despite-fresh-graduate-hiring/29767674",
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/hcl-tech-q3-results-fy25-revenue-earning-profit-loss-dividend-report-date-time-13-january-2025/liveblog/117185363.cms?from=mdr"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://stlawyers.ca/blog-news/ltimindtree-layoffs/",
+            "https://www.ndtvprofit.com/markets/ltimindtree-q2-results-net-profit-rises-12-beats-estimates-9467069",
+            "https://www.ltimindtree.com/annual-report-html/mda.html",
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Infosys+headcount+March+31+2023+Q4+FY23&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+Q3+FY25+earnings+report+headcount+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+December+31+2023+Q3+FY24&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+layoffs+January+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.storyboard18.com/how-it-works/tcs-doubles-fresher-hiring-trains-217000-in-ai-skips-total-headcount-disclosure-in-q3-87463.htm",
+            "https://www.freepressjournal.in/tech/tcs-let-go-30000-employees-in-last-6-months-will-fire-more-this-year-if-needed",
+            "https://www.thehindu.com/business/Industry/tcs-q3-profit-drops-14-to-10657-crore/article70501246.ece",
+            "https://www.thestatesman.com/lifestyle/health/tcs-reports-employee-headcount-drop-by-5370-in-q3-1503384818.html",
+            "https://www.businessworld.in/article/tcs-q4-fy23-net-income-grows-148-to-rs-11392-cr--472627"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.hindustantimes.com/business/tech-mahindra-q2-results-net-profit-up-4-7-revenue-up-4-8-on-bfsi-manufacturing-boost-101760448307833.html"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.newindianexpress.com/business/2026/Jan/16/wipro-q3-profit-falls-7-on-labour-code-costs-revenue-sees-modest-growth"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 218958,
+          "data_date": "2026-01-27",
+          "source_urls": [
+            "https://microsoft.gcs-web.com/static-files/f96f7d38-36ce-4a26-9e29-61701cdca7a7"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+employee+headcount+Q1+2026+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+FY+2025+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+announced+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+Q2+2023+10-Q+or+FY+2022+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+Q1+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+FY+2024+10-K&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 336000,
+          "data_date": "2026-01-27",
+          "source_urls": [
+            "https://s2.q4cdn.com/299287126/files/doc_financials/2024/ar/Amazon-com-Inc-2023-Annual-Report.pdf",
+            "https://www.theguardian.com/technology/2025/oct/27/amazon-corporate-jobs-cuts",
+            "https://www.macrotrends.net/stocks/charts/AMZN/amazon/number-of-employees",
+            "https://poetsandquants.com/2025/10/27/amazon-will-slash-14000-corporate-jobs-in-one-of-its-biggest-layoffs-to-date/"
+          ]
+        }
+      },
+      "job_postings": {}
     }
   }
 }
