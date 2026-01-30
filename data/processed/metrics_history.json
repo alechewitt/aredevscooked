@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-29T08:29:57.288860+00:00"
+    "last_updated": "2026-01-30T08:28:53.269178+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -3228,6 +3228,145 @@
         "OpenAI": {
           "total_technical_jobs": 218,
           "collection_date": "2026-01-29"
+        }
+      }
+    },
+    "2026-01-30": {
+      "date": "2026-01-30",
+      "timestamp": "2026-01-30T08:28:53.269158+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1700.0,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5947.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 82.45,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 17.75,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3125.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1740.1,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.53,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/hcltech-q3-fy26-revenue-up-4-2-qoq-cc-as-annualized-revenue-crosses-15b-bookings-exceptionally-high-at-3b-302658801.html",
+            "https://www.aslindia.net/public/newsletters/hcl-techs-q3-net-slips-11-board-declares-interim-dividend-of-12-for-fy26",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4Ri-AjJVdPnBnLED5AoCtJ6cTbinM51oggqLYkejz0-C__MylpTWTRvDUB4QoESlLgiiTVwfzLDu7XKgHnnmXka5FH1Ts1V5o-j7O3qlrhmoS-gL2zJiNkeMG7uXh-ySL535YoYtJXQ7_IC0wm0WfrnkHqCf9TeZUUCZ_dXbrIPGMJYo6reZIZTxW2D0Y050z9QKv2AiGlcQQU7ZX4lH6pjzaikTnW0x-oZEMD5MTH6FW",
+            "https://www.thehindu.com/business/hcl-techs-q3-net-slips-11-board-declares-interim-dividend-of-12-for-fy26/article70502271.ece",
+            "https://scanx.trade/stock-market-news/earnings/hcltech-headcount-declines-by-261-employees-in-q3fy26-despite-fresh-graduate-hiring/29767674",
+            "https://www.fortuneindia.com/business-news/hcl-tech-shares-fall-over-2-after-q3-profit-declines-11/129416",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-qqhwi_b_Ok5BpDrovTEG9DUlcbCekY8uorxLbdBM0uRvhwBraA5wypTUonU4Tm83wDitnXhWt_VLz-FG6UnfvYotsHVn4sv7C1b7ziiL4Yur49Vdk-0SNHbJsrFBz5_J_Zu5S6ZiYNSeou0PXly4t6vRPylsejjrdPNsPNo8a9-XiWoCnVq1FYku1XrhpMu2W6lNSmp4AEJ4js5Cp7LtF_IVXED5ppBbeAYsY9Por4De",
+            "https://www.financialexpress.com/business/industry/hcltech-q3-results-from-fy26-guidance-to-attrition-rate-5-key-takeaways/4104945/"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 349800,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.business-standard.com/companies/results/cognizant-q1-profit-up-3-personnel-related-action-to-impact-3-500-staff-123050400637_1.html"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://telecom.economictimes.indiatimes.com/news/enterprise-services/tcs-reports-14-drop-in-q3-profit-amid-new-labour-code-changes/126484628",
+            "https://economictimes.indiatimes.com/tech/information-tech/tcs-ceo-k-krithivasan-says-ai-will-not-trigger-mass-layoffs-ft-report/articleshow/127676403.cms?from=mdr",
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q3-fy-2025",
+            "https://www.business-standard.com/companies/news/tcs-q3-fy25-results-headcount-decline-net-profit-growth-campus-hiring-125010900896_1.html",
+            "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2022-23/q4/IND%20AS/Press%20Release%20-%20INR.pdf",
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2023",
+            "https://www.businessworld.in/article/tcs-q4-fy23-net-income-grows-148-to-rs-11392-cr--472627"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+January+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+December+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY26+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q2+FY26+September+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.wipro.com/content/dam/nexus/en/investor/annual-reports/2023-2024/integrated-annual-report-2023-24.pdf"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2026-01-30",
+          "source_urls": [
+            "https://www.fierce-network.com/multi-cloud/headcount-hoedown-top-cloud-providers-employee-count"
+          ]
+        },
+        "Meta": {
+          "headcount": 77265,
+          "data_date": "2026-01-30",
+          "source_urls": [
+            "https://www.siliconrepublic.com/business/meta-job-cuts-layoffs-zuckerberg-low-performers"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.gadgets360.com/internet/news/apple-job-cuts-sales-organisation-rare-layoffs-9695272",
+            "https://s2.q4cdn.com/470004039/files/doc_earnings/2024/q4/filing/10-Q4-2024-As-Filed.pdf"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-01-28",
+          "source_urls": [
+            "https://www.doofinder.com/en/statistics/how-many-employees-does-amazon-have",
+            "https://bullfincher.io/companies/amazoncom/number-of-employees"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+headcount+Q1+FY2024+10-Q+filing+date&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2025+10-K+filing+date&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q3+FY2026+10-Q+filing+date&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2024+10-K+filing+date&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 405,
+          "collection_date": "2026-01-30"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 89,
+          "collection_date": "2026-01-30"
         }
       }
     }
