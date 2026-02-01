@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-01-31T08:23:08.378356+00:00"
+    "last_updated": "2026-02-01T08:26:12.036008+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -3487,6 +3487,127 @@
         "DeepMind": {
           "total_technical_jobs": 69,
           "collection_date": "2026-01-31"
+        }
+      }
+    },
+    "2026-02-01": {
+      "date": "2026-02-01",
+      "timestamp": "2026-02-01T08:26:12.035985+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1695.6,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5974.5,
+          "ticker": "LTIM.NS"
+        },
+        "Infosys": {
+          "price": 17.58,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3123.9,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1743.1,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.52,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.financialexpress.com/business/industry/hcltech-q3-results-from-fy26-guidance-to-attrition-rate-5-key-takeaways/4104945/",
+            "https://content.techgig.com/technology/hcltech-added-2134-new-hires-in-q3fy25-signals-positive-growth/articleshow/117214960.cms"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.businessworld.in/article/ltimindtree-q4-fy23-net-profit-flat-at-rs-1114-cr--474477",
+            "https://indianexpress.com/article/business/companies/tcs-overhaul-hits-it-jobs-but-peers-keep-adding-to-payrolls-10493125/"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 349800,
+          "data_date": "2025-09-30",
+          "source_urls": [
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2023+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+layoffs+announced+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q3+2025+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q4+2025+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q4+2024+earnings+report+10-K&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.financialexpress.com/business/industry-infosys-q3-results-live-labour-code-impact-deal-pipeline-guidance-4106267/",
+            "https://economictimes.indiatimes.com/markets/stocks/earnings/infosys-q3-results-profit-rises-11-to-rs-6806-cr-revenue-up-8/articleshow/117298376.cms?from=mdr"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://scanx.trade/stock-market-news/earnings/tcs-headcount-falls-by-11-151-in-q3fy26-as-restructuring-continues/29766326",
+            "https://www.peoplematters.in/news/business/tcs-headcount-falls-by-11151-in-q3-fy26-extending-workforce-decline-47995",
+            "https://scanx.trade/stock-market-news/earnings/tcs-q3-net-profit-falls-14-annually-declines-over-11-5-sequentially/29767099",
+            "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2022-23/q4/IND%20AS/Press%20Release%20-%20INR.pdf"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY24+Dec+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+Dec+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+January+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.wipro.com/content/dam/nexus/en/investor/corporate-governance/stock-exchange-filing/press-release-media-presentation-q4-fy-2022-23.pdf",
+            "https://www.hrkatha.com/news/wipros-voluntary-attrition-rate-falls-head-count-reduced-by-1823-in-q4/",
+            "https://www.sightsinplus.com/news/industry-news/wipro-total-headcount-down-by-1823-attrition-eased-to-14-1-in-q4"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-01-28",
+          "source_urls": [
+            "https://www.doofinder.com/en/statistics/how-many-employees-does-amazon-have"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/nvda/employees/",
+            "https://eu.36kr.com/en/p/3558186189044608"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 389,
+          "collection_date": "2026-02-01"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 95,
+          "collection_date": "2026-02-01"
         }
       }
     }
