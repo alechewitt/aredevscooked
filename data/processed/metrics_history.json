@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-02T08:26:53.122538+00:00"
+    "last_updated": "2026-02-03T08:27:39.672177+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -3759,6 +3759,128 @@
         "OpenAI": {
           "total_technical_jobs": 247,
           "collection_date": "2026-02-02"
+        }
+      }
+    },
+    "2026-02-03": {
+      "date": "2026-02-03",
+      "timestamp": "2026-02-03T08:27:39.672154+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1700.6,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 6035.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 82.91,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 18.34,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 3221.4,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1728.6,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.69,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=HCLTech+headcount+Q4+FY23+earnings+report+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q3+FY25+earnings+report+Dec+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+layoffs+January+2026+February+2026&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY23+Mar+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY25+Dec+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+layoffs+Jan+2025+Feb+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY24+Dec+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Infosys": {
+          "headcount": 336786,
+          "data_date": "2026-02-02",
+          "source_urls": [
+            "https://www.google.com/search?q=Infosys+headcount+Q2+FY26+earnings+report+September+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY26+earnings+report+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY25+earnings+report+December+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+layoffs+January+2026+February+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+earnings+report+March+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://vgstockresearch.com/tcs-fy26-q3-results-commentary-brief/",
+            "https://www.etnownews.com/companies/tcs-q3-results-fy26-updates-fresh-graduates-intake-doubled-amid-ai-shift-ai-services-revenue-up-17-article-153435916",
+            "https://economictimes.indiatimes.com/tech/information-tech/tcs-ceo-k-krithivasan-says-ai-will-not-trigger-mass-layoffs-ft-report/articleshow/127676403.cms?from=mdr",
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q3-fy-2025",
+            "https://hr.economictimes.indiatimes.com/news/industry/tcs-reports-employee-headcount-drop-by-5370-in-q3/117101633",
+            "https://www.business-standard.com/companies/news/tcs-q3-fy25-results-headcount-decline-net-profit-growth-campus-hiring-125010900896_1.html"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q2+FY26+September+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY26+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+December+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://csa-advisor.com/wp-content/uploads/2025/06/Wipro-LTD-2.pdf"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+headcount+as+of+December+31+2024+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+January+2025+February+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q2+FY2025+Dec+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q2+FY2024+Dec+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2023+March+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 116,
+          "collection_date": "2026-02-03"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 394,
+          "collection_date": "2026-02-03"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 57,
+          "collection_date": "2026-02-03"
         }
       }
     }
