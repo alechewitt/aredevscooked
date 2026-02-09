@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-08T08:28:00.102284+00:00"
+    "last_updated": "2026-02-09T08:35:18.854638+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -4139,6 +4139,119 @@
         }
       },
       "job_postings": {}
+    },
+    "2026-02-09": {
+      "date": "2026-02-09",
+      "timestamp": "2026-02-09T08:35:18.854617+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1600.3,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5636.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 77.08,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 16.84,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2947.1,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1623.3,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.51,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.screener.in/company/HCLTECH/consolidated/",
+            "https://www.thehindu.com/business/hcltech-q4-net-income-grows-108-to-3983-crore/article66760656.ece"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=LTIMindtree+layoffs+2026+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY23+Mar+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY26+Dec+31+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY25+Dec+31+2024&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2025-results-302678354.html",
+            "https://www.ciol.com/news/ognizant-fresher-hiring-2026-ai-broader-pyramid-strategy-11081712",
+            "https://timesofindia.indiatimes.com/technology/tech-news/on-the-day-software-companies-saw-a-250-billion-plus-bloodbath-cognizant-posts-strong-results-says-as-we-enter-2026-our-/articleshow/127915791.cms",
+            "https://news.cognizant.com/2026-02-04-Cognizant-Reports-Fourth-Quarter-and-Full-Year-2025-Results",
+            "https://www.expresscomputer.in/news/cognizant-announces-its-first-quarter-results-for-2023/97428/",
+            "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2024-results-302369335.html",
+            "https://stlawyers.ca/blog-news/cognizant-layoffs/"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.indianweb2.com/2025/05/wipro-shuts-down-baddi-unit-amid-labor.html",
+            "https://www.indianweb2.com/2025/05/wipro-shuts-down-baddi-unit-amid-labor.html"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-12-27",
+          "source_urls": [
+            "https://alpharesearch.io/sec-filings/AAPL/10q",
+            "https://en.wikipedia.org/wiki/Apple_Inc.",
+            "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000320193/c87043b9-5d89-4717-9f49-c4f9663d0061.pdf",
+            "https://s2.q4cdn.com/470004039/files/doc_earnings/2024/q4/filing/10-Q4-2024-As-Filed.pdf",
+            "https://s2.q4cdn.com/470004039/files/doc_financials/2022/q4/_10-K-2022-(As-Filed).pdf"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFesDGcmivCtILFjyh7cr_AmEfkDYUgZQJ0xcfkL2P2KcsyRrVxcO4OdoVYrGjL7SJc09M7oEN8EETiSMZCsXwbGIjX847pBtYPAVNJQPrV8R6AMUkCzTp0Z5OgQ=="
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 60,
+          "collection_date": "2026-02-09"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 97,
+          "collection_date": "2026-02-09"
+        }
+      }
     }
   }
 }
