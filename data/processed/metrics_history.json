@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-12T08:30:58.578146+00:00"
+    "last_updated": "2026-02-13T08:34:23.264364+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -4648,6 +4648,118 @@
         "OpenAI": {
           "total_technical_jobs": 354,
           "collection_date": "2026-02-12"
+        }
+      }
+    },
+    "2026-02-13": {
+      "date": "2026-02-13",
+      "timestamp": "2026-02-13T08:34:23.264344+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1455.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5125.5,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 65.83,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.21,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2688.6,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1534.8,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.28,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.businesstoday.in/markets/stocks/story/hcltech-q3-fy25-results-profit-climbs-6-yoy-to-rs-4591-crore-revenue-up-5-460628-2025-01-13",
+            "https://economictimes.indiatimes.com/tech/information-tech/hcltech-bucks-trend-again-headcount-rises-by-2725-employees/articleshow/109628282.cms?from=mdr"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.ltimindtree.com/annual-report-html/pdf/board-report-ar.pdf",
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms",
+            "https://economictimes.indiatimes.com/markets/pnb-q1-results"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/jobs/now-tech-mahindra-looks-to-lay-off-hundreds-on-performance-ground/articleshow/58614966.cms?from=mdr"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.newsbytesapp.com/news/business/wipros-q3-fy26-quarter-ended-dec-31-2025-profit-dips-but-outlook-for-fy26-brightens/tldr",
+            "https://www.sightsinplus.com/news/industry-news/wipro-q3-fy26-12000-freshers-in-fy26-attrition-falls-to-14-2",
+            "https://www.hrkatha.com/news/wipros-voluntary-attrition-rate-falls-head-count-reduced-by-1823-in-q4/",
+            "https://www.indmoney.com/blog/stocks/wipro-attrition-2025-tcs-headcount-decline",
+            "https://www.sightsinplus.com/news/layoffs/wipro-enterprises-shuts-down-baddi-factory-leading-to-layoffs",
+            "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2024-2025/q3fy25/press-release-q3fy25.pdf",
+            "https://www.fortuneindia.com/business-news/wipro-q3-profit-falls-7-to-3119-crore-amid-cost-pressures-revenue-up-55/129526"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://static.poder360.com.br/2026/01/microsoft-4T25.pdf",
+            "https://microsoft.gcs-web.com/static-files/f96f7d38-36ce-4a26-9e29-61701cdca7a7"
+          ]
+        },
+        "Meta": {
+          "headcount": 77365,
+          "data_date": "2026-01-15",
+          "source_urls": [
+            "https://www.indiatoday.in/technology/news/story/meta-plans-to-layoff-5-per-cent-of-employees-starting-today-2677398-2025-02-10",
+            "https://investor.atmeta.com/financials/",
+            "https://www.hindustantimes.com/business/meta-mass-layoffs-mark-zuckerberg-led-tech-giant-to-fire-over-3-000-lowest-performers-next-week-101739013227316.html",
+            "https://en.wikipedia.org/wiki/Meta_Platforms"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-02-13",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+total+employees+vs+corporate+employees+estimate+2024+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q4+2025+Q3+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+February+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+layoffs+announced+after+Q3+2025+or+Q4+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 289,
+          "collection_date": "2026-02-13"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 256,
+          "collection_date": "2026-02-13"
         }
       }
     }
