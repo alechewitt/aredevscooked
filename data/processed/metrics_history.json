@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-13T08:34:23.264364+00:00"
+    "last_updated": "2026-02-14T08:21:57.745181+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -4760,6 +4760,132 @@
         "OpenAI": {
           "total_technical_jobs": 256,
           "collection_date": "2026-02-13"
+        }
+      }
+    },
+    "2026-02-14": {
+      "date": "2026-02-14",
+      "timestamp": "2026-02-14T08:21:57.745160+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1455.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5115.5,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 66.55,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.72,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2692.2,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1534.4,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.34,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://upstox.com/news/market-news/stocks/hcl-tech-shares-in-focus-as-q3-results-come-mostly-in-line-with-estimates-10-things-you-need-to-know/article-140192/",
+            "https://www.businesstoday.in/markets/stocks/story/hcltech-q3-fy25-results-profit-climbs-6-yoy-to-rs-4591-crore-revenue-up-5-460628-2025-01-13"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY24+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY23+earnings+report+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+layoffs+2025+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2025-results-302678354.html",
+            "https://cognizant.q4cdn.com/123993165/files/doc_earnings/2024/q4/earnings-result/Q4-24-Earnings-Press-Release.pdf"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.sightsinplus.com/news/industry-news/infosys-q4fy23-total-headcount-dropped-by-3611",
+            "https://economictimes.indiatimes.com/tech/information-tech/infosys-adds-5000-employees-in-december-quarter/articleshow/126527637.cms?from=mdr",
+            "https://www.thepeoplesboard.com/news/infosys-in-q3-fy26-added-5000-to-the-workforce-attrition-on-decline/",
+            "https://www.multibagg.ai/market-pulse/articles/infosys-q3-hiring-surge-cmkei97a5000apg0j3u5jfvxl",
+            "https://indianewengland.com/infosys-adds-6388-employees-in-fy25-headcount-rises-for-third-straight-quarter/",
+            "https://timesofindia.indiatimes.com/infosys-q4-fy23-nos-miss-estimates-amid-macro-uncertainties-co-gives-single-digit-rev-growth-guidance-for-fy24/articleshow/99471507.cms",
+            "https://www.peoplematters.in/news/employment-landscape/infosys-q4-results-show-a-decrease-of-3611-employees-in-headcount-37514"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+January+2025+February+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+Dec+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY24+Dec+2023+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY24+December+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY25+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+layoffs+January+February+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-07-02",
+          "source_urls": [
+            "https://microsoft.gcs-web.com/static-files/551f0ab5-5e4c-475f-8508-70818c8ef643",
+            "https://microsoft.gcs-web.com/static-files/a5d14d2c-3dc0-460d-82b4-ba8768331e54",
+            "https://www.geekwire.com/2023/full-memo-microsoft-to-cut-10k-jobs-about-5-of-workforce-and-take-1-2b-restructuring-charge/",
+            "https://www.theregister.com/2023/01/18/microsoft_job_cuts/",
+            "https://www.thenationalnews.com/business/technology/2023/01/19/microsoft-layoffs-10000-jobs/",
+            "https://www.crn.com/news/software/satya-nadella-confirms-10-000-microsoft-layoffs",
+            "https://www.fierce-network.com/multi-cloud/headcount-hoedown-top-cloud-providers-employee-count"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.demandsage.com/apple-statistics/"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 148,
+          "collection_date": "2026-02-14"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 361,
+          "collection_date": "2026-02-14"
         }
       }
     }
