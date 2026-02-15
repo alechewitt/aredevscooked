@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-14T08:21:57.745181+00:00"
+    "last_updated": "2026-02-15T08:25:48.057553+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -4886,6 +4886,135 @@
         "OpenAI": {
           "total_technical_jobs": 361,
           "collection_date": "2026-02-14"
+        }
+      }
+    },
+    "2026-02-15": {
+      "date": "2026-02-15",
+      "timestamp": "2026-02-15T08:25:48.057535+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1455.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5115.5,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 66.55,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.72,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2692.2,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1534.4,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.34,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://medial.app/news/hcltech-workforce-declines-in-q3fy26-despite-hiring-d0ff2f3b7ee7d",
+            "https://www.peoplematters.in/news/talent-management/hcltech-workforce-dips-in-q3fy26-adds-nearly-2900-freshers-47994",
+            "https://upstox.com/news/market-news/stocks/hcl-tech-shares-in-focus-as-q3-results-come-mostly-in-line-with-estimates-10-things-you-need-to-know/article-140192/",
+            "https://www.fortuneindia.com/enterprise/hcltech-stock-tumbles-over-9-after-q3-results-despite-revenue-growth/119962"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://uk.marketscreener.com/quote/stock/LTIMINDTREE-LIMITED-31496899/company/"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.stocktitan.net/sec-filings/CTSH/10-k-cognizant-technology-solutions-corp-files-annual-report-fdac1a15b82f.html",
+            "https://www.business-standard.com/industry/news/cognizant-technology-q4-earnings-headcount-decline-hiring-outlook-2025-125020600542_1.html",
+            "https://www.ciol.com/news/ognizant-fresher-hiring-2026-ai-broader-pyramid-strategy-11081712",
+            "https://www.thehindu.com/business/Industry/cognizant-q3-net-income-falls-53-to-274-million-revenue-rises-73-to-54-billion/article70218364.ece",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+            "https://www.cognizant.com/en_us/about/documents/q3-2025-corporate-factsheet.pdf",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
+            "https://www.investing.com/news/company-news/cognizant-q4-2025-slides-eps-beats-estimates-revenue-slightly-misses-93CH-4485416",
+            "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2024-results-302133502.html",
+            "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2024-results-302369335.html"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+total+employees+December+31+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+layoffs+January+February+2026&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+announced+after+January+1+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+Dec+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY24+Dec+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://images.moneycontrol.com/static-mcnews/2023/04/Wipro-28-04-2023-kr.pdf"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-02-15",
+          "source_urls": [
+            "https://s2.q4cdn.com/299287126/files/doc_financials/2024/ar/Amazon-com-Inc-2023-Annual-Report.pdf",
+            "https://www.forbes.com/sites/brianbushard/2023/04/27/2023-layoff-tracker-gap-dropbox-and-lyft-make-major-cuts/",
+            "https://www.peoplematters.in/article/strategic-hr/the-biggest-layoffs-of-2023-amazon-to-microsoft-firms-fired-employees-in-jaw-dropping-numbers-39753",
+            "https://www.digit.fyi/amazon-corporate-layoffs/",
+            "https://www.tradingview.com/news/financemagnates:b748a075d094b:0-amazon-to-axe-up-to-30-000-corporate-jobs-ahead-of-results/",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3nF3RBi-TGjmFjh4ododqlfcOb3o2RYfTSRGv1ODfouNX3UKzi8k_Yd8i8sqYKsi3ieDLJ3ddJzWs5eeO8ETJpC_ColmrVq1MdZhOm206RR-pd8jUpgUtJnHcU4-cgapv1Lki2VOHj5PgPMsFypWcJhNUeV1lNZhDg-nEJ_CjWt0vm3xtyAY2p3ELGaW3_KiRV64_GtbLhuatF0A="
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2025+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2026+10-K+or+Q3+FY2026+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2023+10-K+or+Q1+FY2024+10-Q&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 163,
+          "collection_date": "2026-02-15"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 95,
+          "collection_date": "2025-02-15"
         }
       }
     }
