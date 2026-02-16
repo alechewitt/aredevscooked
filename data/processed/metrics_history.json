@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-15T08:25:48.057553+00:00"
+    "last_updated": "2026-02-16T08:35:01.709711+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5017,6 +5017,104 @@
           "collection_date": "2025-02-15"
         }
       }
+    },
+    "2026-02-16": {
+      "date": "2026-02-16",
+      "timestamp": "2026-02-16T08:35:01.709691+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1454.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5093.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 66.55,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.72,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2690.9,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1506.5,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.34,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226379,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmZvmulc96ZhGRR0E33QFlCyw4qYLgbrOuTQxz1XgNHpxS1KCy1SosuVnxXbyXb2WtCUxylo24eufWtZjgzGZRmuPv-AJYEQCaDlbt0QS-rFD_hTNsfeoXBzLRm75kTzL3Ab8P5sfUzNV0S3owT5wzSL2MeUqNte-2dyRifLmInRWY1QwQQSQZ0kOqyDP2-ELXbH-D"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.ltimindtree.com/news-event/ltimindtree-reports-1-8-qoq-5-6-yoy-revenue-growth/"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.ciol.com/news/ognizant-fresher-hiring-2026-ai-broader-pyramid-strategy-11081712",
+            "https://www.financialexpress.com/trending/10700-employees-quit-cognizant-in-a-year-as-attrition-rose-to-15-9nbsp/3743932/",
+            "https://www.deccanherald.com/business/cognizant-to-lay-off-3500-non-billable-corporate-personnel-1215483.html",
+            "https://timesofindia.indiatimes.com/gadgets-news/cognizant-to-reportedly-lay-off-3500-employees/articleshow/99986536.cms",
+            "https://www.business-standard.com/companies/news/cognizant-to-lay-off-3-500-employees-in-2023-amid-declining-revenue-123050400284_1.html",
+            "https://www.oneindia.com/education-jobs/amid-amazon-mass-layoffs-cognizant-to-hire-about-25-000-freshers-in-2026-7988577.html"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=TCS+layoffs+announced+after+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q3+FY24+Dec+31+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q3+FY25+Dec+31+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY23+March+31+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+layoffs+announced+after+December+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.indiainfoline.com/company/tech-mahindra-ltd/summary",
+            "https://www.fortuneindia.com/business-news/tech-mahindra-q3-fy26-profit-surges-14-yoy-new-deal-wins-cross-1-billion-milestone/129523"
+          ]
+        },
+        "Apple": {
+          "headcount": 165900,
+          "data_date": "2025-11-25",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/aapl/employees/",
+            "https://www.tradingview.com/news/tradingview:16aa05ee59e52:0-apple-inc-sec-10-k-report/"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://repositorium.uminho.pt/bitstreams/f84aa5bb-5753-461e-8319-b3ad2076659c/download",
+            "https://stockanalysis.com/stocks/nvda/employees/"
+          ]
+        }
+      },
+      "job_postings": {}
     }
   }
 }
