@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-16T08:35:01.709711+00:00"
+    "last_updated": "2026-02-17T08:31:15.412022+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5115,6 +5115,153 @@
         }
       },
       "job_postings": {}
+    },
+    "2026-02-17": {
+      "date": "2026-02-17",
+      "timestamp": "2026-02-17T08:31:15.412001+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1492.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5182.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 66.55,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.72,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2736.3,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1535.9,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.34,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q2+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://news.cognizant.com/2026-02-04-Cognizant-Reports-Fourth-Quarter-and-Full-Year-2025-Results",
+            "https://economictimes.indiatimes.com/tech/information-tech/cognizant-to-hire-about-25000-freshers-in-2026/articleshow/127914571.cms?from=mdr"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q2+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+earnings+report+March+31+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=TCS+layoffs+announced+after+December+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q3+FY24+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.techmahindra.com/insights/press-releases/techmahindra-q3-fy25-results/"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsRSTHCsjxMqrpo-dLC9lZJ230L7ysFdJj5Vzmvsavnshtbv6C19KigAMnaVAV8YYqaCjJJKZ_rrzcvovKWR_EVAkpAYghwPXy8AQPPKD1Z38MzcqFYlCgnPuOouI47NH9SsjwjxEpCzIYOdemsPUyy6ih73JNjVM1mKtTcSLrTB0jQxKA6Anx3oc3HrWwWEpZs51bFSvm2Z_bDGXQ66bG",
+            "https://www.hindustantimes.com/business/layoff-news-wipro-sacks-452-freshers-for-under-performance-report-101674382035164.html",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrLdBvTl2qd0ZLStAhNqjwDkucx5mMJlc-lNFng0yh20VvwgAeYKGxe9VQcBWBLb89O4s42AGVa7bElKsIVONgjQoTfPYMTS8bWVFWPoi6C99fzTES7LLdnFbSBLmZe4R5nxi11RSD1XZvuD3eMUESlP7vUf5lNSdtnVrg8TUlikwEsRLd45g5YobVWaZHp70-_yxVIIHziPNSwnf5HuaPzQ=="
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+layoffs+January+February+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q2+FY2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q2+FY2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q3+FY2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+2025+after+December+31+2024&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Meta": {
+          "headcount": 75265,
+          "data_date": "2026-01-13",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+Q4+2024+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q3+2025+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2025+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+January+2026+February+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/",
+            "https://www.theregister.com/2025/11/24/apple_sales_layoffs_report/",
+            "https://www.thehrdigest.com/apple-confirms-layoffs-in-its-sales-division-as-2025-comes-to-a-close/",
+            "https://www.barchart.com/story/news/30697598/apple-aapl-q1-2025-earnings-call-transcript",
+            "https://www.scribd.com/document/935261010/Apple-10K-2024",
+            "https://www.sec.gov/Archives/edgar/data/320193/000032019325000008/aapl-20241228.htm"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://www.bestbrokers.com/2024/07/09/the-worlds-most-successful-companies-by-profit-per-employee/"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 100,
+          "collection_date": "2026-02-17"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 328,
+          "collection_date": "2026-02-17"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 93,
+          "collection_date": "2026-02-17"
+        }
+      }
     }
   }
 }
