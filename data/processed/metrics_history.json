@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-17T08:31:15.412022+00:00"
+    "last_updated": "2026-02-18T08:33:21.489002+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5262,6 +5262,82 @@
           "collection_date": "2026-02-17"
         }
       }
+    },
+    "2026-02-18": {
+      "date": "2026-02-18",
+      "timestamp": "2026-02-18T08:33:21.488982+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1459.0,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 5024.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 65.18,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.75,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2685.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1492.5,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.29,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://news.cognizant.com/2026-02-04-Cognizant-Reports-Fourth-Quarter-and-Full-Year-2025-Results"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+layoffs+January+February+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+layoffs+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-02-18",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+total+employees+vs+corporate+employees+2023+2024+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+employee+count+February+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q4+2025+Q3+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+layoffs+announced+after+Q4+2025+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 36000,
+          "data_date": "2025-01-26",
+          "source_urls": [
+            "https://mlq.ai/stocks/NVDA/employee-count/",
+            "https://stockanalysis.com/stocks/nvda/employees/",
+            "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2026",
+            "https://www.xrilion.com/blog/stats/nvidia-stats"
+          ]
+        }
+      },
+      "job_postings": {}
     }
   }
 }
