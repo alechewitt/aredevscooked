@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-18T08:33:21.489002+00:00"
+    "last_updated": "2026-02-26T08:32:41.552535+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5338,6 +5338,113 @@
         }
       },
       "job_postings": {}
+    },
+    "2026-02-26": {
+      "date": "2026-02-26",
+      "timestamp": "2026-02-26T08:32:41.552513+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1373.8,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4519.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 61.33,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.24,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2643.8,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1365.5,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.2,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226281,
+          "data_date": "2026-02-18",
+          "source_urls": [
+            "https://www.business-standard.com/companies/quarterly-results/hcltech-q2-results-net-profit-dividend-declared-revenue-125101300954_1.html"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.ltimindtree.com/news-event/ltimindtree-reports-1-8-qoq-5-6-yoy-revenue-growth/",
+            "https://m.rediff.com/business/report/costly-mid-layer-faces-it-layoff-axe/20250818.htm",
+            "https://scanx.trade/stock-market-news/earnings/ltimindtree-reports-robust-q4-performance-revenue-up-9-9-yoy-declares-45-per-share-dividend/6956018"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Cognizant+layoffs+announced+after+February+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q4+2024+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q4+2025+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2023+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+layoffs+announced+after+February+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Infosys": {
+          "headcount": 336786,
+          "data_date": "2026-01-29",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/tech/information-tech/infosys-layoffs-pay-hikes-and-expansion-key-updates/articleshow/118060047.cms?from=mdr",
+            "https://amazingworkplaces.co/infosys-layoffs-what-went-wrong-and-what-it-means-for-the-it-sector/"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.mahindra.com/news-room/press-release/tech-mahindra-q423-revenue-up-19-4-yoy"
+          ]
+        },
+        "Meta": {
+          "headcount": 77263,
+          "data_date": "2026-02-26",
+          "source_urls": [
+            "https://www.tradingview.com/news/zacks:f7ad16d2a094b:0-meta-platforms-q4-earnings-and-revenues-surpass-estimates-rise-y-y/",
+            "https://www.forbes.com/sites/tylerroush/2026/01/28/meta-shares-rise-after-company-reports-24-rise-in-annual-revenue-smashing-expectations/",
+            "https://www.theguardian.com/technology/2023/apr/26/meta-q1-earnings-report-2023"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://alpharesearch.io/sec-filings/AAPL/10q"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-02-26",
+          "source_urls": [
+            "https://www.geekwire.com/2026/amazon-confirms-16000-more-job-cuts-bringing-total-layoffs-to-30000-since-october/"
+          ]
+        }
+      },
+      "job_postings": {
+        "DeepMind": {
+          "total_technical_jobs": 94,
+          "collection_date": "2026-02-26"
+        }
+      }
     }
   }
 }
