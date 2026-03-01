@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-02-28T08:21:19.029843+00:00"
+    "last_updated": "2026-03-01T08:22:16.491046+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5543,6 +5543,128 @@
         "OpenAI": {
           "total_technical_jobs": 412,
           "collection_date": "2025-02-28"
+        }
+      }
+    },
+    "2026-03-01": {
+      "date": "2026-03-01",
+      "timestamp": "2026-03-01T08:22:16.491027+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1389.1,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4462.0,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 64.43,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.44,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2637.4,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1357.8,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.22,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.ltimindtree.com/news-event/ltimindtree-reports-1-8-qoq-5-6-yoy-revenue-growth/",
+            "https://m.rediff.com/business/report/costly-mid-layer-faces-it-layoff-axe/20250818.htm",
+            "https://www.venturasecurities.com/news/stocks/lti-mindtree-crashes-over-7-post-q3-earnings-marks-worst-day-in-2-years-here-is-why/"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.investing.com/news/transcripts/earnings-call-transcript-cognizant-q4-2025-earnings-beat-estimates-stock-dips-93CH-4485317",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-First-Quarter-2025-Results/default.aspx",
+            "https://www.sightsinplus.com/news/industry-news/cognizant-reprts-sequential-drop-in-headcounts-in-q1fy25",
+            "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2025-results-302443083.html",
+            "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000266/exhibit9916302025.htm"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.thepeoplesboard.com/news/infosys-in-q3-fy26-added-5000-to-the-workforce-attrition-on-decline/",
+            "https://economictimes.indiatimes.com/tech/information-tech/infosys-adds-5000-employees-in-december-quarter/articleshow/126527637.cms?from=mdr",
+            "https://www.livemint.com/companies/news/infosys-attrition-drops-to-12-3-in-q3-results-is-a-wage-hike-on-cards-what-cfo-said-11768389522752.html",
+            "https://www.republicworld.com/business/it-major-infosys-attrition-plummets-to-123-in-q3fy26-what-s-next"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.thequint.com/news/breaking-news/tcs-workforce-shrinks-q3-fy26-results-restructuring-impact",
+            "https://www.reddit.com/r/india/comments/1qbsefp/tcs_to_keep_firing_employees_if_needed_in_6/",
+            "https://www.business-standard.com/companies/news/tcs-sees-continued-headcount-decline-despite-higher-fresher-intake-126011201081_1.html",
+            "https://www.fastmailnews.com/page/detailnews/ai-takes-thousands-of-jobs-tcs-to-lay-off-over-12000-employees-this-year/108346"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY25+Dec+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY24+March+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 228000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://tradingeconomics.com/msft:us:employees",
+            "https://microsoft.gcs-web.com/static-files/89eea6bc-9bac-4337-b18d-815a66b794ab",
+            "https://www.microsoft.com/en-us/investor/sec-filings",
+            "https://microsoft.gcs-web.com/static-files/a5d14d2c-3dc0-460d-82b4-ba8768331e54"
+          ]
+        },
+        "Meta": {
+          "headcount": 76663,
+          "data_date": "2026-03-01",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+Q4+2024+10-K+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+announced+late+2025+early+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2025+10-K+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q3+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-03-01",
+          "source_urls": [
+            "https://redstagfulfillment.com/how-many-people-work-for-amazon/",
+            "https://www.macrotrends.net/stocks/charts/AMZN/amazon/number-of-employees"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 345,
+          "collection_date": "2026-03-01"
         }
       }
     }
